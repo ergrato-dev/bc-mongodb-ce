@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460" font-family="Inter,Roboto,'Open Sans',sans-serif">
+
+  <!-- Fondo -->
+  <rect width="760" height="460" fill="#001E2B"/>
+
+  <!-- Barra de título -->
+  <rect width="760" height="46" fill="#023430"/>
+  <text x="380" y="30" text-anchor="middle" fill="#00ED64" font-size="16" font-weight="700">Anatomía de una Query con find() en MongoDB</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN 1: La Query completa                               -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <text x="380" y="76" text-anchor="middle" fill="#94a3b8" font-size="11">La instrucción completa</text>
+
+  <!-- Caja de la query -->
+  <rect x="28" y="84" width="704" height="50" rx="6" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+
+  <!-- db -->
+  <text x="54" y="116" text-anchor="middle" fill="#fbbf24" font-size="18" font-weight="700">db</text>
+  <text x="68" y="116" fill="#e2e8f0" font-size="18">.</text>
+
+  <!-- colección -->
+  <text x="110" y="116" text-anchor="middle" fill="#60a5fa" font-size="18" font-weight="700">products</text>
+  <text x="154" y="116" fill="#e2e8f0" font-size="18">.</text>
+
+  <!-- método -->
+  <text x="190" y="116" text-anchor="middle" fill="#00ED64" font-size="18" font-weight="700">find</text>
+  <text x="214" y="116" fill="#e2e8f0" font-size="18">(</text>
+
+  <!-- filtro -->
+  <text x="273" y="116" text-anchor="middle" fill="#f97316" font-size="17" font-weight="600">{ category: "electronics" }</text>
+  <text x="400" y="116" fill="#e2e8f0" font-size="18">,</text>
+
+  <!-- proyección -->
+  <text x="500" y="116" text-anchor="middle" fill="#a78bfa" font-size="17" font-weight="600">{ name: 1, _id: 0 }</text>
+
+  <text x="608" y="116" fill="#e2e8f0" font-size="18">)</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN 2: Etiquetas de cada parte                         -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Etiqueta: db -->
+  <line x1="54" y1="134" x2="54" y2="164" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="14" y="164" width="80" height="38" rx="4" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="54" y="179" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700">db</text>
+  <text x="54" y="194" text-anchor="middle" fill="#94a3b8" font-size="9">Base de datos</text>
+
+  <!-- Etiqueta: colección -->
+  <line x1="115" y1="134" x2="115" y2="164" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="72" y="164" width="86" height="38" rx="4" fill="#0f172a" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="115" y="179" text-anchor="middle" fill="#60a5fa" font-size="10" font-weight="700">products</text>
+  <text x="115" y="194" text-anchor="middle" fill="#94a3b8" font-size="9">Colección</text>
+
+  <!-- Etiqueta: método -->
+  <line x1="191" y1="134" x2="191" y2="164" stroke="#00ED64" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="158" y="164" width="66" height="38" rx="4" fill="#0f172a" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="191" y="179" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="700">find()</text>
+  <text x="191" y="194" text-anchor="middle" fill="#94a3b8" font-size="9">Método</text>
+
+  <!-- Etiqueta: filtro -->
+  <line x1="272" y1="134" x2="272" y2="164" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="228" y="164" width="88" height="38" rx="4" fill="#0f172a" stroke="#f97316" stroke-width="1.5"/>
+  <text x="272" y="179" text-anchor="middle" fill="#f97316" font-size="10" font-weight="700">filtro</text>
+  <text x="272" y="194" text-anchor="middle" fill="#94a3b8" font-size="9">1er argumento</text>
+
+  <!-- Etiqueta: proyección -->
+  <line x1="500" y1="134" x2="500" y2="164" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <rect x="452" y="164" width="96" height="38" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="500" y="179" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="700">proyección</text>
+  <text x="500" y="194" text-anchor="middle" fill="#94a3b8" font-size="9">2do argumento</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN 3: Filtro — detalle                                -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <text x="28" y="228" fill="#f97316" font-size="12" font-weight="700">Filtro — ¿qué documentos traer?</text>
+
+  <rect x="28" y="236" width="340" height="108" rx="6" fill="#0f172a" stroke="#f97316" stroke-width="1.5"/>
+
+  <text x="44" y="258" fill="#94a3b8" font-size="10">Todos los docs:</text>
+  <text x="180" y="258" fill="#e2e8f0" font-size="10">db.products.find( </text>
+  <text x="295" y="258" fill="#f97316" font-size="10">{ }</text>
+  <text x="315" y="258" fill="#e2e8f0" font-size="10"> )</text>
+
+  <text x="44" y="278" fill="#94a3b8" font-size="10">Igualdad:</text>
+  <text x="180" y="278" fill="#e2e8f0" font-size="10">{ category:</text>
+  <text x="256" y="278" fill="#86efac" font-size="10"> "electronics"</text>
+  <text x="330" y="278" fill="#e2e8f0" font-size="10"> }</text>
+
+  <text x="44" y="298" fill="#94a3b8" font-size="10">Mayor que:</text>
+  <text x="180" y="298" fill="#e2e8f0" font-size="10">{ price: {</text>
+  <text x="242" y="298" fill="#fbbf24" font-size="10"> $gt:</text>
+  <text x="266" y="298" fill="#93c5fd" font-size="10"> 100</text>
+  <text x="284" y="298" fill="#e2e8f0" font-size="10"> } }</text>
+
+  <text x="44" y="318" fill="#94a3b8" font-size="10">Combinado:</text>
+  <text x="180" y="318" fill="#e2e8f0" font-size="10">{ inStock:</text>
+  <text x="240" y="318" fill="#86efac" font-size="10"> true</text>
+  <text x="270" y="318" fill="#e2e8f0" font-size="10">, price: {</text>
+  <text x="340" y="318" fill="#fbbf24" font-size="10"> $lt:</text>
+  <text x="362" y="318" fill="#93c5fd" font-size="10"> 500</text>
+
+  <text x="44" y="334" fill="#e2e8f0" font-size="10">} }</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN 4: Proyección — detalle                            -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <text x="392" y="228" fill="#a78bfa" font-size="12" font-weight="700">Proyección — ¿qué campos mostrar?</text>
+
+  <rect x="392" y="236" width="340" height="108" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+
+  <text x="408" y="258" fill="#94a3b8" font-size="10">Todos los campos (default):</text>
+  <text x="560" y="258" fill="#a78bfa" font-size="10">{ }</text>
+
+  <text x="408" y="278" fill="#86efac" font-size="10">Incluir 1:</text>
+  <text x="480" y="278" fill="#e2e8f0" font-size="10">{ name:</text>
+  <text x="524" y="278" fill="#93c5fd" font-size="10"> 1</text>
+  <text x="534" y="278" fill="#e2e8f0" font-size="10">, price:</text>
+  <text x="574" y="278" fill="#93c5fd" font-size="10"> 1</text>
+  <text x="584" y="278" fill="#e2e8f0" font-size="10"> }</text>
+
+  <text x="408" y="291" fill="#94a3b8" font-size="8" font-style="italic">  ↳ devuelve: _id, name, price</text>
+
+  <text x="408" y="308" fill="#f87171" font-size="10">Excluir 0:</text>
+  <text x="480" y="308" fill="#e2e8f0" font-size="10">{ _id:</text>
+  <text x="516" y="308" fill="#f87171" font-size="10"> 0</text>
+  <text x="526" y="308" fill="#e2e8f0" font-size="10">, stock:</text>
+  <text x="566" y="308" fill="#f87171" font-size="10"> 0</text>
+  <text x="576" y="308" fill="#e2e8f0" font-size="10"> }</text>
+
+  <text x="408" y="321" fill="#94a3b8" font-size="8" font-style="italic">  ↳ devuelve: todo excepto _id y stock</text>
+
+  <text x="408" y="338" fill="#fbbf24" font-size="9">⚠ No mezclar 1 y 0 (excepto _id)</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- SECCIÓN 5: Métodos encadenables (cursor)                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <text x="28" y="366" fill="#00ED64" font-size="12" font-weight="700">Métodos encadenables al cursor</text>
+
+  <rect x="28" y="374" width="704" height="64" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+
+  <!-- sort -->
+  <rect x="44" y="386" width="130" height="40" rx="4" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="109" y="401" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="700">.sort()</text>
+  <text x="109" y="418" text-anchor="middle" fill="#94a3b8" font-size="9">{ price: -1 }  desc</text>
+
+  <!-- limit -->
+  <rect x="202" y="386" width="130" height="40" rx="4" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="267" y="401" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="700">.limit()</text>
+  <text x="267" y="418" text-anchor="middle" fill="#94a3b8" font-size="9">máximo N documentos</text>
+
+  <!-- skip -->
+  <rect x="360" y="386" width="130" height="40" rx="4" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="425" y="401" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="700">.skip()</text>
+  <text x="425" y="418" text-anchor="middle" fill="#94a3b8" font-size="9">saltar N documentos</text>
+
+  <!-- cadena completa -->
+  <rect x="516" y="386" width="200" height="40" rx="4" fill="#001E2B" stroke="#fbbf24" stroke-width="1"/>
+  <text x="616" y="401" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="700">Cadena completa:</text>
+  <text x="616" y="418" text-anchor="middle" fill="#e2e8f0" font-size="8">.sort({p:-1}).skip(10).limit(5)</text>
+
+</svg>

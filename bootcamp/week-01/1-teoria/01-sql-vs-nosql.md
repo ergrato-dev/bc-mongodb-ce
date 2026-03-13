@@ -6,7 +6,7 @@
 - Comprender por qué existe MongoDB y en qué casos brilla
 - Identificar los equivalentes: tabla → colección, fila → documento, columna → campo
 
-> Ver diagrama: [modelo-documento.svg](../0-assets/modelo-documento.svg)
+> Ver diagrama: [01-sql-vs-nosql.svg](../0-assets/01-sql-vs-nosql.svg)
 
 ---
 
