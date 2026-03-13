@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 340" width="780" height="340" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="340" fill="#001E2B"/>
+  <text x="390" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">Combinando Operadores — AND Implícito</text>
+
+  <!-- Query anatomy -->
+  <rect x="55" y="58" width="670" height="180" rx="8" fill="#023430"/>
+
+  <!-- Line labels -->
+  <text x="75" y="85" font-size="13" fill="#94a3b8">db.products.find({</text>
+  <text x="95" y="111" font-size="13" fill="#60a5fa">  category:</text>
+  <text x="240" y="111" font-size="13" fill="#e2e8f0">{ $in: ["electronics", "computers"] },</text>
+  <text x="95" y="137" font-size="13" fill="#fbbf24">  price:</text>
+  <text x="240" y="137" font-size="13" fill="#e2e8f0">{ $gte: Decimal128("100"), $lte: Decimal128("1000") },</text>
+  <text x="95" y="163" font-size="13" fill="#00ED64">  inStock:</text>
+  <text x="240" y="163" font-size="13" fill="#e2e8f0">true,</text>
+  <text x="95" y="190" font-size="13" fill="#ef4444">  discount:</text>
+  <text x="240" y="190" font-size="13" fill="#e2e8f0">{ $exists: true, $ne: null }</text>
+  <text x="75" y="216" font-size="13" fill="#94a3b8">})</text>
+
+  <!-- Annotations -->
+  <line x1="230" y1="111" x2="500" y2="261" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="230" y1="137" x2="500" y2="278" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="230" y1="163" x2="500" y2="295" stroke="#00ED64" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- AND labels between fields -->
+  <rect x="55" y="248" width="420" height="75" rx="6" fill="#001E2B" stroke="#1e3a4a" stroke-width="1"/>
+  <text x="75" y="268" font-size="12" fill="#60a5fa">campo 1</text>
+  <text x="150" y="268" font-size="11" fill="#94a3b8">category en lista</text>
+  <text x="75" y="285" font-size="12" fill="#fbbf24">campo 2</text>
+  <text x="150" y="285" font-size="11" fill="#94a3b8">price en rango [100,1000]</text>
+  <text x="75" y="302" font-size="12" fill="#00ED64">campo 3</text>
+  <text x="150" y="302" font-size="11" fill="#94a3b8">inStock exactamente true</text>
+  <text x="75" y="319" font-size="12" fill="#ef4444">campo 4</text>
+  <text x="150" y="319" font-size="11" fill="#94a3b8">discount existe y no es null</text>
+
+  <!-- AND badge -->
+  <rect x="510" y="248" width="200" height="75" rx="6" fill="#00ED64" fill-opacity="0.12" stroke="#00ED64" stroke-width="1"/>
+  <text x="610" y="278" text-anchor="middle" font-size="28" font-weight="700" fill="#00ED64">AND</text>
+  <text x="610" y="300" text-anchor="middle" font-size="11" fill="#94a3b8">Todos los campos</text>
+  <text x="610" y="315" text-anchor="middle" font-size="11" fill="#94a3b8">deben cumplirse</text>
+</svg>
