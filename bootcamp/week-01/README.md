@@ -9,7 +9,12 @@
 
 ## Diagrama
 
-![Modelo de documento MongoDB](0-assets/modelo-documento.svg)
+| Asset | Concepto |
+|-------|----------|
+| ![SQL vs NoSQL](0-assets/01-sql-vs-nosql.svg) | Modelo relacional vs documental |
+| ![Modelo de documento](0-assets/02-modelo-documento.svg) | Estructura de documentos y tipos BSON |
+| ![Docker Setup](0-assets/03-docker-setup.svg) | Entorno Docker y conexión mongosh |
+| ![Find Query](0-assets/04-find-query.svg) | Anatomía de una query find() |
 
 ## Contenido
 

@@ -8,6 +8,10 @@
 
 ---
 
+> Ver diagrama: [03-docker-setup.svg](../0-assets/03-docker-setup.svg)
+
+---
+
 ## 1. ¿Por qué Docker?
 
 Docker nos da un entorno idéntico en cualquier sistema operativo.
