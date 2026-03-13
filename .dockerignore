@@ -1,0 +1,40 @@
+# .dockerignore — bc-mongodb-ce
+# Excluye archivos innecesarios del contexto de build de Docker
+
+# Control de versiones
+.git/
+.gitignore
+.gitmessage
+
+# Editor y configuración de IDE
+.vscode/
+.github/
+
+# Documentación del proyecto (no necesaria en el contenedor)
+README.md
+README_EN.md
+LICENSE
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+_docs/
+_assets/
+
+# Contenido del bootcamp (el contenedor solo necesita recibir
+# los archivos .js que se montan o pasan por stdin a mongosh)
+bootcamp/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencias locales (no van en el contenedor MongoDB)
+node_modules/
+.venv/
+venv/
+
+# Scripts de pausa/restauración (no van en el contenedor)
+_scripts/pause.sh
+_scripts/resume.sh
+_scripts/restore.sh

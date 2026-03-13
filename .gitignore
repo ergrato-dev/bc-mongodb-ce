@@ -1,0 +1,121 @@
+# ============================================
+# .gitignore — Bootcamp MongoDB CE de Cero a Héroe
+# ============================================
+
+# ============================================
+# MONGODB — ARCHIVOS LOCALES
+# ============================================
+*.bson
+*.archive
+mongodump/
+mongorestore/
+mongoexport/
+dump/
+
+# ============================================
+# EXPORTACIONES Y SALIDAS
+# ============================================
+*.pdf
+_export/
+_output/
+dist/
+
+# ============================================
+# SISTEMA OPERATIVO
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.Trash-*
+
+# ============================================
+# EDITORES
+# ============================================
+
+# VS Code — solo ignorar configuración personal,
+# conservar extensions.json y settings compartidas
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (DataGrip, Compass, etc.)
+.idea/
+*.iml
+
+# Vim / Neovim
+*.swp
+*.swo
+*.swn
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# ============================================
+# SCRIPTS Y HERRAMIENTAS
+# ============================================
+
+# Python (si se usan scripts de automatización)
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Node.js (drivers, scripts de integración)
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+package-lock.json
+
+# ============================================
+# ARCHIVOS TEMPORALES Y LOGS
+# ============================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# ============================================
+# SECRETOS Y CONFIGURACIÓN LOCAL
+# ============================================
+.env
+.env.local
+.env.*.local
+*.secret
+secrets.yml
+credentials.json
+
+# Archivos de conexión con credenciales reales
+.mongorc.js
+mongocredentials*
+
+# ============================================
+# TRABAJO EN PROGRESO DEL APRENDIZ
+# ============================================
+# Las entregas de aprendices van en sus propios forks.
+# Si alguien trabaja en una copia local sin fork:
+homework/
+entregables/
+mi-dominio/
