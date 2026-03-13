@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" font-family="Inter,Roboto,'Open Sans',sans-serif">
+  <rect width="760" height="420" fill="#001E2B"/>
+  <rect width="760" height="46" fill="#023430"/>
+  <text x="380" y="30" text-anchor="middle" fill="#00ED64" font-size="16" font-weight="700">Flujo de Inserción — insertOne() e insertMany()</text>
+
+  <!-- BLOQUE: Tu código -->
+  <rect x="28" y="66" width="190" height="130" rx="8" fill="#023430" stroke="#00684A" stroke-width="2"/>
+  <rect x="28" y="66" width="190" height="28" rx="8" fill="#00684A"/>
+  <rect x="28" y="86" width="190" height="8" fill="#00684A"/>
+  <text x="123" y="85" text-anchor="middle" fill="#001E2B" font-size="11" font-weight="700">📝 Tu código</text>
+  <rect x="40" y="108" width="166" height="30" rx="3" fill="#001E2B"/>
+  <text x="48" y="120" fill="#00ED64" font-size="9">db.books.insertOne({</text>
+  <text x="56" y="133" fill="#e2e8f0" font-size="9">title: "Clean Code"</text>
+  <text x="48" y="146" fill="#00ED64" font-size="9">})</text>
+  <rect x="40" y="158" width="166" height="30" rx="3" fill="#001E2B"/>
+  <text x="48" y="170" fill="#00ED64" font-size="9">db.books.insertMany([</text>
+  <text x="56" y="183" fill="#e2e8f0" font-size="9">{...}, {...}, {...}</text>
+  <text x="48" y="196" fill="#00ED64" font-size="9">])</text>
+
+  <!-- Flecha 1 -->
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/>
+    </marker>
+  </defs>
+  <line x1="219" y1="131" x2="266" y2="131" stroke="#00ED64" stroke-width="2" marker-end="url(#a)"/>
+  <text x="242" y="125" text-anchor="middle" fill="#94a3b8" font-size="8">envía</text>
+
+  <!-- BLOQUE: MongoDB Engine -->
+  <rect x="268" y="66" width="220" height="260" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="268" y="66" width="220" height="28" rx="8" fill="#1e3a5f"/>
+  <rect x="268" y="86" width="220" height="8" fill="#1e3a5f"/>
+  <text x="378" y="85" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="700">⚙️ MongoDB Engine</text>
+
+  <!-- Paso 1: validar -->
+  <rect x="282" y="108" width="192" height="44" rx="5" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="378" y="124" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="600">1. Validar documento</text>
+  <text x="378" y="140" text-anchor="middle" fill="#94a3b8" font-size="9">Verifica estructura BSON válida</text>
+
+  <line x1="378" y1="152" x2="378" y2="164" stroke="#00684A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Paso 2: _id -->
+  <rect x="282" y="164" width="192" height="44" rx="5" fill="#001E2B" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="378" y="180" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">2. Asignar _id</text>
+  <text x="378" y="196" text-anchor="middle" fill="#94a3b8" font-size="9">ObjectId si no se especificó _id</text>
+
+  <line x1="378" y1="208" x2="378" y2="220" stroke="#00684A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Paso 3: escribir -->
+  <rect x="282" y="220" width="192" height="44" rx="5" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="378" y="236" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="600">3. Escribir en disco</text>
+  <text x="378" y="252" text-anchor="middle" fill="#94a3b8" font-size="9">Almacena en colección (BSON)</text>
+
+  <line x1="378" y1="264" x2="378" y2="276" stroke="#00684A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Paso 4: retornar -->
+  <rect x="282" y="276" width="192" height="38" rx="5" fill="#001E2B" stroke="#86efac" stroke-width="1"/>
+  <text x="378" y="292" text-anchor="middle" fill="#86efac" font-size="10" font-weight="600">4. Retornar resultado</text>
+  <text x="378" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">acknowledged + insertedId(s)</text>
+
+  <!-- Flecha 2 -->
+  <line x1="489" y1="295" x2="536" y2="295" stroke="#00ED64" stroke-width="2" marker-end="url(#a)"/>
+  <text x="512" y="289" text-anchor="middle" fill="#94a3b8" font-size="8">retorna</text>
+
+  <!-- BLOQUE: Resultado -->
+  <rect x="538" y="66" width="194" height="260" rx="8" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <rect x="538" y="66" width="194" height="28" rx="8" fill="#00ED64"/>
+  <rect x="538" y="86" width="194" height="8" fill="#00ED64"/>
+  <text x="635" y="85" text-anchor="middle" fill="#001E2B" font-size="11" font-weight="700">✅ Resultado</text>
+
+  <text x="554" y="116" fill="#94a3b8" font-size="9" font-weight="600">insertOne() retorna:</text>
+  <rect x="550" y="122" width="170" height="54" rx="3" fill="#001E2B"/>
+  <text x="558" y="137" fill="#e2e8f0" font-size="9">{</text>
+  <text x="566" y="150" fill="#fbbf24" font-size="9">acknowledged: <text fill="#86efac">true</text>,</text>
+  <text x="566" y="163" fill="#fbbf24" font-size="9">insertedId: <text fill="#60a5fa">ObjectId("...")</text></text>
+  <text x="558" y="176" fill="#e2e8f0" font-size="9">}</text>
+
+  <text x="554" y="198" fill="#94a3b8" font-size="9" font-weight="600">insertMany() retorna:</text>
+  <rect x="550" y="204" width="170" height="66" rx="3" fill="#001E2B"/>
+  <text x="558" y="219" fill="#e2e8f0" font-size="9">{</text>
+  <text x="566" y="232" fill="#fbbf24" font-size="9">acknowledged: <text fill="#86efac">true</text>,</text>
+  <text x="566" y="245" fill="#fbbf24" font-size="9">insertedIds: {</text>
+  <text x="574" y="258" fill="#60a5fa" font-size="9">"0": ObjectId("..."),</text>
+  <text x="574" y="270" fill="#60a5fa" font-size="9">"1": ObjectId("...")</text>
+  <text x="566" y="283" fill="#e2e8f0" font-size="9">} }</text>
+
+  <!-- Zona inferior: nota sobre _id -->
+  <rect x="28" y="352" width="704" height="50" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="44" y="371" fill="#fbbf24" font-size="10" font-weight="700">⚠️ Sobre el _id:</text>
+  <text x="44" y="388" fill="#e2e8f0" font-size="10">MongoDB genera un <tspan fill="#60a5fa">ObjectId</tspan> automáticamente.  Para custom _id:  <tspan fill="#00ED64">{ _id: "mi-clave-propia", title: "..." }</tspan></text>
+</svg>

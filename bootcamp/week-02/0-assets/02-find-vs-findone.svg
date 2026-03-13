@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" font-family="Inter,Roboto,'Open Sans',sans-serif">
+  <rect width="760" height="420" fill="#001E2B"/>
+  <rect width="760" height="46" fill="#023430"/>
+  <text x="380" y="30" text-anchor="middle" fill="#00ED64" font-size="16" font-weight="700">find() vs findOne() — Cursor vs Documento</text>
+
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/>
+    </marker>
+    <marker id="b" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <!-- ===== COLUMNA IZQUIERDA: find() ===== -->
+  <rect x="28" y="56" width="336" height="34" rx="5" fill="#023430"/>
+  <text x="196" y="79" text-anchor="middle" fill="#00ED64" font-size="14" font-weight="700">find() — Retorna un Cursor</text>
+
+  <!-- Código find -->
+  <rect x="28" y="98" width="336" height="28" rx="4" fill="#0f172a"/>
+  <text x="44" y="116" fill="#00ED64" font-size="11">db.books.find(</text>
+  <text x="152" y="116" fill="#f97316" font-size="11">{ inStock: true }</text>
+  <text x="284" y="116" fill="#00ED64" font-size="11">)</text>
+
+  <!-- Cursor box -->
+  <rect x="28" y="136" width="336" height="130" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="196" y="158" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">CURSOR (apuntador al resultado)</text>
+
+  <rect x="44" y="164" width="304" height="22" rx="3" fill="#001E2B"/>
+  <text x="56" y="179" fill="#e2e8f0" font-size="9">→ { _id: ObjectId(".."), title: "Clean Code", ... }</text>
+
+  <rect x="44" y="190" width="304" height="22" rx="3" fill="#001E2B"/>
+  <text x="56" y="205" fill="#e2e8f0" font-size="9">→ { _id: ObjectId(".."), title: "Pragmatic", ... }</text>
+
+  <rect x="44" y="216" width="304" height="22" rx="3" fill="#001E2B"/>
+  <text x="56" y="231" fill="#e2e8f0" font-size="9">→ { _id: ObjectId(".."), title: "YDKJS", ... }</text>
+
+  <text x="196" y="254" text-anchor="middle" fill="#94a3b8" font-size="8" font-style="italic">cursor iterable — 0 a N documentos</text>
+
+  <!-- Características find -->
+  <rect x="28" y="278" width="336" height="90" rx="6" fill="#0f172a"/>
+  <text x="44" y="298" fill="#86efac" font-size="10">✅ Retorna 0, 1 o muchos documentos</text>
+  <text x="44" y="316" fill="#86efac" font-size="10">✅ Encadenable con .sort() .limit() .skip()</text>
+  <text x="44" y="334" fill="#86efac" font-size="10">✅ Iterable con forEach() en scripts</text>
+  <text x="44" y="352" fill="#fbbf24" font-size="10">⚡ Uso típico: listas, reportes, búsquedas</text>
+
+  <!-- Divisor -->
+  <line x1="388" y1="56" x2="388" y2="390" stroke="#00684A" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- ===== COLUMNA DERECHA: findOne() ===== -->
+  <rect x="396" y="56" width="336" height="34" rx="5" fill="#023430"/>
+  <text x="564" y="79" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="700">findOne() — Retorna un Documento</text>
+
+  <!-- Código findOne -->
+  <rect x="396" y="98" width="336" height="28" rx="4" fill="#0f172a"/>
+  <text x="412" y="116" fill="#60a5fa" font-size="11">db.books.findOne(</text>
+  <text x="534" y="116" fill="#f97316" font-size="11">{ inStock: true }</text>
+  <text x="652" y="116" fill="#60a5fa" font-size="11">)</text>
+
+  <!-- Cuadro resultado único / null -->
+  <rect x="396" y="136" width="336" height="130" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="564" y="158" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">DOCUMENTO ÚNICO (primer match)</text>
+
+  <rect x="412" y="164" width="304" height="48" rx="3" fill="#001E2B" stroke="#60a5fa" stroke-width="1"/>
+  <text x="424" y="180" fill="#e2e8f0" font-size="9">{  _id: ObjectId("..."),</text>
+  <text x="424" y="195" fill="#e2e8f0" font-size="9">   title: "Clean Code",  inStock: true  }</text>
+
+  <text x="564" y="228" text-anchor="middle" fill="#94a3b8" font-size="9">Si no hay coincidencias:</text>
+  <rect x="412" y="234" width="304" height="22" rx="3" fill="#0f172a" stroke="#f87171" stroke-width="1"/>
+  <text x="564" y="249" text-anchor="middle" fill="#f87171" font-size="10" font-weight="600">null</text>
+
+  <!-- Características findOne -->
+  <rect x="396" y="278" width="336" height="90" rx="6" fill="#0f172a"/>
+  <text x="412" y="298" fill="#86efac" font-size="10">✅ Retorna 1 documento o null</text>
+  <text x="412" y="316" fill="#86efac" font-size="10">✅ Acepta proyección como 2do argumento</text>
+  <text x="412" y="334" fill="#f87171" font-size="10">❌ No es iterable — no encadena cursor</text>
+  <text x="412" y="352" fill="#fbbf24" font-size="10">⚡ Uso típico: detalle de un item, login</text>
+
+  <!-- Nota inferior -->
+  <rect x="28" y="378" width="704" height="28" rx="4" fill="#023430"/>
+  <text x="380" y="396" text-anchor="middle" fill="#94a3b8" font-size="9">Ambos métodos aceptan filtro y proyección:   <tspan fill="#00ED64">db.books.find( filtro, proyección )</tspan>   y   <tspan fill="#60a5fa">db.books.findOne( filtro, proyección )</tspan></text>
+</svg>
