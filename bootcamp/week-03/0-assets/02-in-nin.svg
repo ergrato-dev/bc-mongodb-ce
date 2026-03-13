@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 340" width="780" height="340" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="340" fill="#001E2B"/>
+  <text x="390" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">$in y $nin — Pertenencia a Conjunto</text>
+
+  <!-- $in circle -->
+  <circle cx="220" cy="190" r="100" fill="#00ED64" fill-opacity="0.10" stroke="#00ED64" stroke-width="2"/>
+  <text x="220" y="120" text-anchor="middle" font-size="12" font-weight="600" fill="#00ED64">Conjunto $in</text>
+  <!-- dots inside -->
+  <circle cx="185" cy="175" r="6" fill="#00ED64"/>
+  <text x="185" y="172" text-anchor="middle" font-size="10" fill="#001E2B" font-weight="700">✓</text>
+  <circle cx="225" cy="200" r="6" fill="#00ED64"/>
+  <text x="225" y="197" text-anchor="middle" font-size="10" fill="#001E2B" font-weight="700">✓</text>
+  <circle cx="255" cy="175" r="6" fill="#00ED64"/>
+  <text x="255" y="172" text-anchor="middle" font-size="10" fill="#001E2B" font-weight="700">✓</text>
+  <!-- labels -->
+  <text x="170" y="195" font-size="11" fill="#e2e8f0">"A"</text>
+  <text x="210" y="220" font-size="11" fill="#e2e8f0">"B"</text>
+  <text x="240" y="195" font-size="11" fill="#e2e8f0">"C"</text>
+  <!-- dot outside -->
+  <circle cx="145" cy="240" r="6" fill="#ef4444"/>
+  <text x="130" y="258" font-size="11" fill="#e2e8f0">"D" (excluido)</text>
+
+  <!-- query box $in -->
+  <rect x="60" y="295" width="300" height="36" rx="6" fill="#023430"/>
+  <text x="210" y="317" text-anchor="middle" font-size="12" fill="#e2e8f0">{ status: { <tspan font-weight="700" fill="#00ED64">$in</tspan>: ["A","B","C"] } }</text>
+
+  <!-- $nin circle -->
+  <circle cx="560" cy="190" r="100" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="2"/>
+  <text x="560" y="120" text-anchor="middle" font-size="12" font-weight="600" fill="#ef4444">Excluir con $nin</text>
+  <!-- dots inside (excluded) -->
+  <circle cx="530" cy="175" r="6" fill="#ef4444"/>
+  <circle cx="570" cy="200" r="6" fill="#ef4444"/>
+  <circle cx="595" cy="175" r="6" fill="#ef4444"/>
+  <text x="530" y="172" text-anchor="middle" font-size="10" fill="#fff">✕</text>
+  <text x="570" y="197" text-anchor="middle" font-size="10" fill="#fff">✕</text>
+  <text x="595" y="172" text-anchor="middle" font-size="10" fill="#fff">✕</text>
+  <text x="515" y="195" font-size="11" fill="#e2e8f0">"X"</text>
+  <text x="554" y="220" font-size="11" fill="#e2e8f0">"Y"</text>
+  <text x="580" y="195" font-size="11" fill="#e2e8f0">"Z"</text>
+  <!-- dot outside (included) -->
+  <circle cx="680" cy="175" r="6" fill="#00ED64"/>
+  <text x="665" y="157" font-size="11" fill="#e2e8f0">"W" (incluido)</text>
+
+  <!-- query box $nin -->
+  <rect x="420" y="295" width="316" height="36" rx="6" fill="#023430"/>
+  <text x="578" y="317" text-anchor="middle" font-size="12" fill="#e2e8f0">{ status: { <tspan font-weight="700" fill="#ef4444">$nin</tspan>: ["X","Y","Z"] } }</text>
+
+  <!-- note about arrays -->
+  <rect x="230" y="65" width="300" height="32" rx="6" fill="#023430"/>
+  <text x="380" y="85" text-anchor="middle" font-size="11" fill="#94a3b8">$in también funciona en campos de tipo array:</text>
+  <rect x="230" y="100" width="300" height="24" rx="4" fill="#023430"/>
+  <text x="380" y="117" text-anchor="middle" font-size="11" fill="#60a5fa">{ tags: { $in: ["mongodb","nosql"] } }</text>
+</svg>

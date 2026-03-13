@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 340" width="780" height="340" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="340" fill="#001E2B"/>
+  <text x="390" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">$exists y $type — Existencia y Tipo</text>
+
+  <!-- Column headers -->
+  <text x="140" y="72" text-anchor="middle" font-size="13" font-weight="600" fill="#60a5fa">Campo presente</text>
+  <text x="390" y="72" text-anchor="middle" font-size="13" font-weight="600" fill="#fbbf24">Valor null</text>
+  <text x="635" y="72" text-anchor="middle" font-size="13" font-weight="600" fill="#ef4444">Campo ausente</text>
+
+  <!-- Column dividers -->
+  <line x1="265" y1="55" x2="265" y2="310" stroke="#1e3a4a" stroke-width="1"/>
+  <line x1="520" y1="55" x2="520" y2="310" stroke="#1e3a4a" stroke-width="1"/>
+
+  <!-- Column 1: Campo presente (discount: 15) -->
+  <rect x="55" y="85" width="175" height="52" rx="6" fill="#023430"/>
+  <text x="70" y="106" font-size="12" fill="#94a3b8">{ name: "Tablet",</text>
+  <text x="70" y="123" font-size="12" fill="#e2e8f0">  discount: 15 }</text>
+
+  <text x="140" y="158" text-anchor="middle" font-size="11" fill="#60a5fa">$exists: true  →  ✓</text>
+  <text x="140" y="174" text-anchor="middle" font-size="11" fill="#ef4444">$exists: false  →  ✗</text>
+  <rect x="55" y="185" width="175" height="32" rx="5" fill="#023430"/>
+  <text x="142" y="205" text-anchor="middle" font-size="11" fill="#60a5fa">$type: "int"  →  ✓</text>
+
+  <!-- Column 2: Valor null -->
+  <rect x="295" y="85" width="175" height="52" rx="6" fill="#023430"/>
+  <text x="310" y="106" font-size="12" fill="#94a3b8">{ name: "Laptop",</text>
+  <text x="310" y="123" font-size="12" fill="#e2e8f0">  discount: null }</text>
+
+  <text x="390" y="158" text-anchor="middle" font-size="11" fill="#60a5fa">$exists: true  →  ✓</text>
+  <text x="390" y="174" text-anchor="middle" font-size="11" fill="#94a3b8">(campo existe, valor es null)</text>
+  <rect x="295" y="185" width="175" height="32" rx="5" fill="#023430"/>
+  <text x="390" y="205" text-anchor="middle" font-size="11" fill="#fbbf24">$type: "null"  →  ✓</text>
+
+  <!-- Column 3: Campo ausente -->
+  <rect x="540" y="85" width="190" height="52" rx="6" fill="#023430"/>
+  <text x="555" y="106" font-size="12" fill="#94a3b8">{ name: "Mouse"</text>
+  <text x="555" y="123" font-size="12" fill="#94a3b8">  (sin discount) }</text>
+
+  <text x="635" y="158" text-anchor="middle" font-size="11" fill="#ef4444">$exists: false  →  ✓</text>
+  <text x="635" y="174" text-anchor="middle" font-size="11" fill="#60a5fa">$exists: true  →  ✗</text>
+  <rect x="540" y="185" width="190" height="32" rx="5" fill="#023430"/>
+  <text x="635" y="205" text-anchor="middle" font-size="11" fill="#ef4444">$type: cualquiera  →  ✗</text>
+
+  <!-- $type aliases box -->
+  <rect x="55" y="235" width="670" height="80" rx="6" fill="#023430"/>
+  <text x="390" y="255" text-anchor="middle" font-size="12" font-weight="600" fill="#00ED64">Alias de $type más usados</text>
+  <text x="120" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"string"</text>
+  <text x="200" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"int"</text>
+  <text x="280" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"double"</text>
+  <text x="380" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"bool"</text>
+  <text x="470" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"date"</text>
+  <text x="555" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"objectId"</text>
+  <text x="650" y="274" text-anchor="middle" font-size="11" fill="#e2e8f0">"array"</text>
+  <text x="390" y="298" text-anchor="middle" font-size="11" fill="#94a3b8">{ discount: { $exists: true, $ne: null } }  ← campo presente Y no null</text>
+</svg>
