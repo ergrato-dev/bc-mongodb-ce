@@ -1,0 +1,63 @@
+# ============================================
+# docker-compose.yml — Bootcamp MongoDB CE
+# ============================================
+# Levanta MongoDB 7.0 Community Edition para el entorno local de aprendizaje.
+#
+# Comandos principales:
+#
+#   Levantar en background:
+#     docker compose -f _scripts/docker-compose.yml up -d
+#
+#   Conectar con mongosh:
+#     docker compose -f _scripts/docker-compose.yml exec mongodb \
+#       mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
+#
+#   Ejecutar un script .js:
+#     docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+#       mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
+#       bootcamp_db --file /dev/stdin < ruta/al/archivo.js
+#
+#   Detener (conserva datos):
+#     docker compose -f _scripts/docker-compose.yml down
+#
+#   Reset completo (elimina datos):
+#     docker compose -f _scripts/docker-compose.yml down -v
+#
+# ⚠️  Solo para entorno local de aprendizaje.
+#     Nunca usar estas credenciales en producción.
+# ============================================
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: bc-mongodb-ce
+    restart: unless-stopped
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-bootcamp}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-bootcamp123}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE:-bootcamp_db}
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --username
+        - "${MONGO_USERNAME:-bootcamp}"
+        - --password
+        - "${MONGO_PASSWORD:-bootcamp123}"
+        - --authenticationDatabase
+        - admin
+        - --eval
+        - "db.adminCommand('ping').ok"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  mongodb_data:
+    name: bc-mongodb-ce-data
