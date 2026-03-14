@@ -1,0 +1,45 @@
+<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="360" fill="#001E2B"/>
+  <text x="430" y="35" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">find() vs aggregate()</text>
+
+  <!-- find() panel -->
+  <rect x="20" y="55" width="400" height="275" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="20" y="55" width="400" height="30" rx="6" fill="#60a5fa"/>
+  <text x="220" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#001E2B">find()</text>
+
+  <text x="40" y="110" font-size="11" font-weight="bold" fill="#e2e8f0">✅ Usar cuando:</text>
+  <text x="40" y="130" font-size="10" fill="#94a3b8">• Necesitas documentos completos o con proyección</text>
+  <text x="40" y="148" font-size="10" fill="#94a3b8">• Filtros simples (uno o pocos campos)</text>
+  <text x="40" y="166" font-size="10" fill="#94a3b8">• Solo quieres filtrar, ordenar y paginar</text>
+  <text x="40" y="184" font-size="10" fill="#94a3b8">• Operación de lectura sencilla</text>
+
+  <line x1="40" y1="200" x2="400" y2="200" stroke="#00684A" stroke-width="1"/>
+
+  <text x="40" y="220" font-size="11" font-weight="bold" fill="#e2e8f0">Ejemplo:</text>
+  <text x="40" y="238" font-size="10" fill="#00ED64">db.products.find(</text>
+  <text x="40" y="253" font-size="10" fill="#00ED64">  { category: "electronics" },</text>
+  <text x="40" y="268" font-size="10" fill="#00ED64">  { name: 1, price: 1, _id: 0 }</text>
+  <text x="40" y="283" font-size="10" fill="#00ED64">).sort({ price: -1 }).limit(10)</text>
+  <text x="40" y="308" font-size="10" fill="#60a5fa">Retorna: documentos filtrados</text>
+
+  <!-- aggregate() panel -->
+  <rect x="440" y="55" width="400" height="275" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <rect x="440" y="55" width="400" height="30" rx="6" fill="#00ED64"/>
+  <text x="640" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#001E2B">aggregate()</text>
+
+  <text x="460" y="110" font-size="11" font-weight="bold" fill="#e2e8f0">✅ Usar cuando:</text>
+  <text x="460" y="130" font-size="10" fill="#94a3b8">• Necesitas calcular totales, promedios o conteos</text>
+  <text x="460" y="148" font-size="10" fill="#94a3b8">• Quieres agrupar documentos por campo</text>
+  <text x="460" y="166" font-size="10" fill="#94a3b8">• Necesitas transformar la forma de los datos</text>
+  <text x="460" y="184" font-size="10" fill="#94a3b8">• Necesitas combinar múltiples colecciones</text>
+
+  <line x1="460" y1="200" x2="820" y2="200" stroke="#00684A" stroke-width="1"/>
+
+  <text x="460" y="220" font-size="11" font-weight="bold" fill="#e2e8f0">Ejemplo:</text>
+  <text x="460" y="238" font-size="10" fill="#00ED64">db.orders.aggregate([</text>
+  <text x="460" y="253" font-size="10" fill="#00ED64">  { $match: { status: "completed" } },</text>
+  <text x="460" y="268" font-size="10" fill="#00ED64">  { $group: { _id: "$category",</text>
+  <text x="460" y="283" font-size="10" fill="#00ED64">    total: { $sum: "$amount" } } },</text>
+  <text x="460" y="298" font-size="10" fill="#00ED64">  { $sort: { total: -1 } }</text>
+  <text x="460" y="313" font-size="10" fill="#00ED64">])</text>
+</svg>

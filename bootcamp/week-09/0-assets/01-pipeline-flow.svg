@@ -1,0 +1,76 @@
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="900" height="360" fill="#001E2B"/>
+  <text x="450" y="35" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">Aggregation Pipeline — Flujo de Etapas</text>
+
+  <!-- Colección fuente -->
+  <rect x="20" y="80" width="110" height="200" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="75" y="103" text-anchor="middle" font-size="11" font-weight="bold" fill="#00ED64">Colección</text>
+  <rect x="30" y="112" width="90" height="18" rx="3" fill="#00684A" opacity="0.6"/>
+  <text x="75" y="125" text-anchor="middle" font-size="9" fill="#e2e8f0">doc 1</text>
+  <rect x="30" y="136" width="90" height="18" rx="3" fill="#00684A" opacity="0.6"/>
+  <text x="75" y="149" text-anchor="middle" font-size="9" fill="#e2e8f0">doc 2</text>
+  <rect x="30" y="160" width="90" height="18" rx="3" fill="#00684A" opacity="0.6"/>
+  <text x="75" y="173" text-anchor="middle" font-size="9" fill="#e2e8f0">doc 3</text>
+  <rect x="30" y="184" width="90" height="18" rx="3" fill="#00684A" opacity="0.6"/>
+  <text x="75" y="197" text-anchor="middle" font-size="9" fill="#e2e8f0">doc 4</text>
+  <rect x="30" y="208" width="90" height="18" rx="3" fill="#00684A" opacity="0.6"/>
+  <text x="75" y="221" text-anchor="middle" font-size="9" fill="#e2e8f0">doc 5</text>
+  <rect x="30" y="232" width="90" height="18" rx="3" fill="#00684A" opacity="0.4"/>
+  <text x="75" y="245" text-anchor="middle" font-size="9" fill="#94a3b8">… N docs</text>
+
+  <!-- Flecha 1 -->
+  <line x1="130" y1="180" x2="170" y2="180" stroke="#00ED64" stroke-width="2"/>
+  <polygon points="168,175 178,180 168,185" fill="#00ED64"/>
+
+  <!-- Stage 1: $match -->
+  <rect x="178" y="130" width="120" height="100" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="178" y="130" width="120" height="28" rx="6" fill="#60a5fa"/>
+  <text x="238" y="149" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$match</text>
+  <text x="238" y="178" text-anchor="middle" font-size="10" fill="#e2e8f0">Filtra documentos</text>
+  <text x="238" y="195" text-anchor="middle" font-size="10" fill="#94a3b8">{ status: "ok" }</text>
+  <text x="238" y="218" text-anchor="middle" font-size="10" fill="#fbbf24">N docs → M docs</text>
+
+  <!-- Flecha 2 -->
+  <line x1="298" y1="180" x2="338" y2="180" stroke="#00ED64" stroke-width="2"/>
+  <polygon points="336,175 346,180 336,185" fill="#00ED64"/>
+
+  <!-- Stage 2: $project -->
+  <rect x="346" y="130" width="120" height="100" rx="6" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <rect x="346" y="130" width="120" height="28" rx="6" fill="#fbbf24"/>
+  <text x="406" y="149" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$project</text>
+  <text x="406" y="178" text-anchor="middle" font-size="10" fill="#e2e8f0">Selecciona campos</text>
+  <text x="406" y="195" text-anchor="middle" font-size="10" fill="#94a3b8">{ name:1, _id:0 }</text>
+  <text x="406" y="218" text-anchor="middle" font-size="10" fill="#fbbf24">M docs → M docs*</text>
+
+  <!-- Flecha 3 -->
+  <line x1="466" y1="180" x2="506" y2="180" stroke="#00ED64" stroke-width="2"/>
+  <polygon points="504,175 514,180 504,185" fill="#00ED64"/>
+
+  <!-- Stage 3: $group -->
+  <rect x="514" y="130" width="120" height="100" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <rect x="514" y="130" width="120" height="28" rx="6" fill="#00ED64"/>
+  <text x="574" y="149" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$group</text>
+  <text x="574" y="178" text-anchor="middle" font-size="10" fill="#e2e8f0">Agrupa y calcula</text>
+  <text x="574" y="195" text-anchor="middle" font-size="10" fill="#94a3b8">{ _id:"$cat" }</text>
+  <text x="574" y="218" text-anchor="middle" font-size="10" fill="#fbbf24">M docs → K grupos</text>
+
+  <!-- Flecha 4 -->
+  <line x1="634" y1="180" x2="674" y2="180" stroke="#00ED64" stroke-width="2"/>
+  <polygon points="672,175 682,180 672,185" fill="#00ED64"/>
+
+  <!-- Stage 4: $sort + $limit -->
+  <rect x="682" y="130" width="120" height="100" rx="6" fill="#023430" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="682" y="130" width="120" height="28" rx="6" fill="#ef4444"/>
+  <text x="742" y="149" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">$sort / $limit</text>
+  <text x="742" y="178" text-anchor="middle" font-size="10" fill="#e2e8f0">Ordena y limita</text>
+  <text x="742" y="195" text-anchor="middle" font-size="10" fill="#94a3b8">{ total: -1 }</text>
+  <text x="742" y="218" text-anchor="middle" font-size="10" fill="#fbbf24">K grupos → resultado</text>
+
+  <!-- Nota final -->
+  <text x="450" y="295" text-anchor="middle" font-size="11" fill="#94a3b8">Cada etapa recibe los documentos de salida de la etapa anterior.</text>
+  <text x="450" y="315" text-anchor="middle" font-size="11" fill="#94a3b8">El orden de las etapas importa — poner <tspan fill="#00ED64">$match</tspan> primero reduce el trabajo de las siguientes.</text>
+
+  <!-- Etiqueta de ejemplo de código -->
+  <rect x="20" y="15" width="370" height="22" rx="4" fill="#023430"/>
+  <text x="30" y="30" font-size="10" fill="#94a3b8">db.collection.aggregate([ { $match }, { $project }, { $group }, { $sort }, { $limit } ])</text>
+</svg>
