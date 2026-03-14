@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <rect width="760" height="380" fill="#001E2B"/>
+  <text x="380" y="26" font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="700" fill="#00ED64" text-anchor="middle">Validación de Esquemas con $jsonSchema</text>
+
+  <!-- Without validation -->
+  <rect x="20" y="40" width="160" height="120" rx="4" fill="#001E2B" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="100" y="57" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#ef4444" text-anchor="middle">❌ Sin validación</text>
+  <text x="30" y="72" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">db.employees.insertOne({</text>
+  <text x="38" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">name: 123,</text>
+  <text x="38" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">salary: "free",</text>
+  <text x="38" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">// falta email</text>
+  <text x="30" y="124" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">})</text>
+  <text x="100" y="151" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#ef4444" text-anchor="middle">→ insertado sin error</text>
+
+  <!-- Arrow -->
+  <line x1="180" y1="100" x2="210" y2="100" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arr16a)"/>
+
+  <!-- Validator definition -->
+  <rect x="210" y="40" width="330" height="195" rx="4" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="375" y="57" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#00ED64" text-anchor="middle">Colección con $jsonSchema validator</text>
+  <text x="220" y="72" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">db.createCollection("employees", {</text>
+  <text x="228" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">validator: { $jsonSchema: {</text>
+  <text x="236" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#60a5fa">bsonType: "object",</text>
+  <text x="236" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">required: ["name","email","salary"],</text>
+  <text x="236" y="124" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">properties: {</text>
+  <text x="244" y="137" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">name:   { bsonType: "string", minLength: 2 },</text>
+  <text x="244" y="150" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">email:  { bsonType: "string",</text>
+  <text x="252" y="163" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">  pattern: "^.+@.+\\..+$" },</text>
+  <text x="244" y="176" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">salary: { bsonType: "decimal", minimum: 0 }</text>
+  <text x="236" y="189" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">}}},</text>
+  <text x="228" y="202" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">validationLevel: "strict", validationAction: "error"</text>
+  <text x="220" y="215" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">})</text>
+
+  <!-- validationLevel/action boxes -->
+  <rect x="555" y="40" width="185" height="195" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="647" y="57" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#fbbf24" text-anchor="middle">validationLevel</text>
+  <rect x="565" y="62" width="75" height="32" rx="3" fill="#001E2B" stroke="#00ED64" stroke-width="1"/>
+  <text x="602" y="75" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64" text-anchor="middle">strict</text>
+  <text x="602" y="87" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">todas las escrituras</text>
+  <rect x="650" y="62" width="80" height="32" rx="3" fill="#001E2B" stroke="#94a3b8" stroke-width="1"/>
+  <text x="690" y="75" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">moderate</text>
+  <text x="690" y="87" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">solo válidos previos</text>
+
+  <text x="647" y="115" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#fbbf24" text-anchor="middle">validationAction</text>
+  <rect x="565" y="120" width="75" height="32" rx="3" fill="#001E2B" stroke="#ef4444" stroke-width="1"/>
+  <text x="602" y="133" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444" text-anchor="middle">error</text>
+  <text x="602" y="145" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">rechaza escritura</text>
+  <rect x="650" y="120" width="80" height="32" rx="3" fill="#001E2B" stroke="#94a3b8" stroke-width="1"/>
+  <text x="690" y="133" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">warn</text>
+  <text x="690" y="145" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">permite + log</text>
+
+  <text x="647" y="172" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#60a5fa" text-anchor="middle">collMod (existente)</text>
+  <text x="565" y="186" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0">db.runCommand({</text>
+  <text x="573" y="198" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0">collMod: "orders",</text>
+  <text x="573" y="210" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0">validator: {...} })</text>
+
+  <!-- Bottom: success vs error -->
+  <rect x="20" y="248" width="340" height="115" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="190" y="265" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#00ED64" text-anchor="middle">✅ Documento válido</text>
+  <text x="35" y="281" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">db.employees.insertOne({</text>
+  <text x="43" y="294" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">employeeId: "emp-001",</text>
+  <text x="43" y="307" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">name: "Ana Torres",</text>
+  <text x="43" y="320" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">email: "ana@test.com",</text>
+  <text x="43" y="333" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">salary: Decimal128("2500.00")</text>
+  <text x="35" y="346" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">})</text>
+  <text x="190" y="358" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#00ED64" text-anchor="middle">→ insertado correctamente</text>
+
+  <rect x="375" y="248" width="365" height="115" rx="4" fill="#001E2B" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="557" y="265" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#ef4444" text-anchor="middle">❌ Documento inválido</text>
+  <text x="390" y="281" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">db.employees.insertOne({</text>
+  <text x="398" y="294" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">employeeId: "emp-002",</text>
+  <text x="398" y="307" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">name: 123,          // ← tipo incorrecto</text>
+  <text x="398" y="320" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">salary: -500        // ← mínimo violado</text>
+  <text x="390" y="333" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">})</text>
+  <text x="557" y="352" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#ef4444" text-anchor="middle">→ MongoServerError: Document failed validation</text>
+
+  <defs>
+    <marker id="arr16a" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/>
+    </marker>
+  </defs>
+</svg>
