@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="300" fill="#001E2B"/>
+  <text x="390" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">COLLSCAN vs IXSCAN</text>
+
+  <!-- COLLSCAN -->
+  <rect x="22" y="52" width="356" height="210" rx="6" fill="#023430"/>
+  <text x="200" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#ef4444">COLLSCAN — sin índice</text>
+
+  <!-- Collection scan docs -->
+  <rect x="36" y="85" width="328" height="120" rx="4" fill="#001E2B"/>
+  <rect x="44" y="93" width="68" height="22" rx="3" fill="#023430" opacity="0.8"/>
+  <text x="78" y="109" text-anchor="middle" font-size="10" fill="#94a3b8">doc #1</text>
+  <rect x="120" y="93" width="68" height="22" rx="3" fill="#023430" opacity="0.8"/>
+  <text x="154" y="109" text-anchor="middle" font-size="10" fill="#94a3b8">doc #2</text>
+  <rect x="196" y="93" width="68" height="22" rx="3" fill="#023430" opacity="0.8"/>
+  <text x="230" y="109" text-anchor="middle" font-size="10" fill="#94a3b8">doc #3</text>
+  <rect x="272" y="93" width="84" height="22" rx="3" fill="#023430" opacity="0.8"/>
+  <text x="314" y="109" text-anchor="middle" font-size="10" fill="#94a3b8">… (100k)</text>
+  <!-- Arrow scan all -->
+  <line x1="44" y1="126" x2="342" y2="126" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="193" y="143" text-anchor="middle" font-size="11" fill="#ef4444">lee TODOS los documentos</text>
+  <text x="193" y="162" text-anchor="middle" font-size="11" fill="#94a3b8">totalDocsExamined: 100,000</text>
+  <text x="193" y="179" text-anchor="middle" font-size="11" fill="#94a3b8">nReturned: 3</text>
+  <text x="193" y="197" text-anchor="middle" font-size="11" fill="#94a3b8">stage: "COLLSCAN"</text>
+
+  <rect x="36" y="213" width="328" height="38" rx="4" fill="#ef4444" opacity="0.1"/>
+  <text x="200" y="230" text-anchor="middle" font-size="11" fill="#ef4444">⚠️  O(n) — lento en colecciones grandes</text>
+  <text x="200" y="245" text-anchor="middle" font-size="11" fill="#ef4444">Evitar en producción con millones de docs</text>
+
+  <!-- IXSCAN -->
+  <rect x="402" y="52" width="356" height="210" rx="6" fill="#023430"/>
+  <text x="580" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#00ED64">IXSCAN — con índice</text>
+
+  <!-- Index tree representation -->
+  <rect x="416" y="85" width="328" height="120" rx="4" fill="#001E2B"/>
+  <text x="580" y="108" text-anchor="middle" font-size="11" fill="#94a3b8">Índice: { email: 1 }</text>
+  <rect x="490" y="115" width="180" height="22" rx="3" fill="#00684A" opacity="0.5"/>
+  <text x="580" y="131" text-anchor="middle" font-size="10" fill="#00ED64">B-Tree: ana@... → doc ptr</text>
+  <line x1="580" y1="137" x2="580" y2="165" stroke="#00684A" stroke-width="1.5"/>
+  <polygon points="575,165 585,165 580,174" fill="#00684A"/>
+  <text x="580" y="162" text-anchor="middle" font-size="11" fill="#00ED64">salta directo al documento</text>
+  <text x="580" y="180" text-anchor="middle" font-size="11" fill="#94a3b8">totalDocsExamined: 3</text>
+  <text x="580" y="197" text-anchor="middle" font-size="11" fill="#94a3b8">stage: "IXSCAN"</text>
+
+  <rect x="416" y="213" width="328" height="38" rx="4" fill="#00684A" opacity="0.15"/>
+  <text x="580" y="230" text-anchor="middle" font-size="11" fill="#00ED64">✅ O(log n) — rápido incluso con millones</text>
+  <text x="580" y="245" text-anchor="middle" font-size="11" fill="#00ED64">totalDocsExamined ≈ nReturned</text>
+
+  <!-- Bottom note -->
+  <rect x="22" y="272" width="736" height="22" rx="4" fill="#023430"/>
+  <text x="390" y="287" text-anchor="middle" font-size="11" fill="#94a3b8">Usa explain("executionStats") para ver qué stage elige MongoDB en tus queries</text>
+</svg>
