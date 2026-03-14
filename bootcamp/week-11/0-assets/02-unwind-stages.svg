@@ -1,0 +1,59 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="320" fill="#001E2B"/>
+  <text x="430" y="33" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">$unwind — Descomponiendo Arrays</text>
+
+  <!-- Input doc -->
+  <rect x="20" y="56" width="230" height="140" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="20" y="56" width="230" height="26" rx="5" fill="#00684A"/>
+  <text x="135" y="74" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">Documento original (1 doc)</text>
+  <text x="30" y="100" font-size="10" fill="#94a3b8">_id: ObjectId("…")</text>
+  <text x="30" y="116" font-size="10" fill="#e2e8f0">orderId: "ORD-001"</text>
+  <text x="30" y="135" font-size="10" fill="#60a5fa">tags: [</text>
+  <text x="42" y="150" font-size="10" fill="#60a5fa">"mongodb",</text>
+  <text x="42" y="165" font-size="10" fill="#60a5fa">"nosql",</text>
+  <text x="42" y="180" font-size="10" fill="#60a5fa">"databases"</text>
+  <text x="30" y="190" font-size="10" fill="#60a5fa">]</text>
+
+  <!-- $unwind stage box -->
+  <rect x="280" y="110" width="155" height="32" rx="5" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="357" y="131" text-anchor="middle" font-size="12" font-weight="bold" fill="#00ED64">{ $unwind: "$tags" }</text>
+
+  <!-- arrow -->
+  <line x1="250" y1="126" x2="280" y2="126" stroke="#00ED64" stroke-width="2" marker-end="url(#uw1)"/>
+
+  <!-- 3 output docs -->
+  <rect x="460" y="56" width="180" height="58" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="470" y="74" font-size="10" fill="#94a3b8">_id: ObjectId("…")</text>
+  <text x="470" y="89" font-size="10" fill="#e2e8f0">orderId: "ORD-001"</text>
+  <text x="470" y="104" font-size="10" fill="#fbbf24">tags: "mongodb"</text>
+
+  <rect x="460" y="126" width="180" height="58" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="470" y="144" font-size="10" fill="#94a3b8">_id: ObjectId("…")</text>
+  <text x="470" y="159" font-size="10" fill="#e2e8f0">orderId: "ORD-001"</text>
+  <text x="470" y="174" font-size="10" fill="#fbbf24">tags: "nosql"</text>
+
+  <rect x="460" y="196" width="180" height="58" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="470" y="214" font-size="10" fill="#94a3b8">_id: ObjectId("…")</text>
+  <text x="470" y="229" font-size="10" fill="#e2e8f0">orderId: "ORD-001"</text>
+  <text x="470" y="244" font-size="10" fill="#fbbf24">tags: "databases"</text>
+
+  <!-- result label -->
+  <text x="550" y="268" text-anchor="middle" font-size="11" fill="#fbbf24">3 documentos de salida</text>
+
+  <!-- arrows to output docs -->
+  <line x1="435" y1="120" x2="460" y2="85" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#uw2)"/>
+  <line x1="435" y1="126" x2="460" y2="155" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#uw3)"/>
+  <line x1="435" y1="132" x2="460" y2="225" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#uw4)"/>
+
+  <!-- Note -->
+  <rect x="20" y="260" width="820" height="42" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="430" y="278" text-anchor="middle" font-size="11" fill="#e2e8f0">1 array con N elementos  →  N documentos individuales</text>
+  <text x="430" y="296" text-anchor="middle" font-size="10" fill="#94a3b8">preserveNullAndEmptyArrays: true — mantiene docs con array vacío o campo ausente</text>
+
+  <defs>
+    <marker id="uw1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#00ED64"/></marker>
+    <marker id="uw2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"/></marker>
+    <marker id="uw3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"/></marker>
+    <marker id="uw4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"/></marker>
+  </defs>
+</svg>
