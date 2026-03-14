@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 340" width="780" height="340" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="340" fill="#001E2B"/>
+  <text x="390" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">$not y $nor — Negación</text>
+
+  <!-- $not -->
+  <rect x="40" y="58" width="330" height="220" rx="8" fill="#023430"/>
+  <text x="205" y="80" text-anchor="middle" font-size="14" font-weight="600" fill="#ef4444">$not</text>
+  <text x="205" y="98" text-anchor="middle" font-size="11" fill="#94a3b8">Niega una expresión de operador</text>
+
+  <circle cx="205" cy="168" r="65" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1.5"/>
+  <!-- hatching for excluded zone inside circle -->
+  <text x="205" y="165" text-anchor="middle" font-size="11" fill="#ef4444">expresión</text>
+  <text x="205" y="180" text-anchor="middle" font-size="11" fill="#ef4444">{ $gt: 100 }</text>
+  <!-- arrows showing NOT reversal -->
+  <text x="80" y="168" text-anchor="middle" font-size="20" fill="#94a3b8">←</text>
+  <text x="55" y="163" text-anchor="middle" font-size="11" fill="#00ED64">✓</text>
+  <text x="330" y="168" text-anchor="middle" font-size="20" fill="#94a3b8">→</text>
+  <text x="350" y="163" text-anchor="middle" font-size="11" fill="#00ED64">✓</text>
+
+  <rect x="55" y="246" width="295" height="22" rx="4" fill="#001E2B"/>
+  <text x="202" y="261" text-anchor="middle" font-size="11" fill="#e2e8f0">{ price: { $not: { $gt: Decimal128("100") } } }</text>
+  <text x="202" y="285" text-anchor="middle" font-size="10" fill="#94a3b8">equivale a: price &lt;= 100</text>
+
+  <!-- $nor -->
+  <rect x="410" y="58" width="330" height="220" rx="8" fill="#023430"/>
+  <text x="575" y="80" text-anchor="middle" font-size="14" font-weight="600" fill="#ef4444">$nor</text>
+  <text x="575" y="98" text-anchor="middle" font-size="11" fill="#94a3b8">Excluye si cumple CUALQUIERA de las condiciones</text>
+
+  <!-- Two circles (excluded) -->
+  <circle cx="540" cy="168" r="48" fill="#ef4444" fill-opacity="0.10" stroke="#ef4444" stroke-width="1.5"/>
+  <circle cx="610" cy="168" r="48" fill="#ef4444" fill-opacity="0.10" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="520" y="160" text-anchor="middle" font-size="10" fill="#ef4444">A</text>
+  <text x="628" y="160" text-anchor="middle" font-size="10" fill="#ef4444">B</text>
+  <!-- Check mark outside -->
+  <text x="490" y="225" text-anchor="middle" font-size="10" fill="#00ED64">✓ pasa</text>
+  <text x="660" y="225" text-anchor="middle" font-size="10" fill="#00ED64">✓ pasa</text>
+  <text x="500" y="240" text-anchor="middle" font-size="10" fill="#94a3b8">no A ni B</text>
+  <text x="648" y="240" text-anchor="middle" font-size="10" fill="#94a3b8">no A ni B</text>
+
+  <rect x="420" y="246" width="310" height="22" rx="4" fill="#001E2B"/>
+  <text x="575" y="261" text-anchor="middle" font-size="11" fill="#e2e8f0">{ $nor: [ {status:"cancelled"}, {total:{$lt:10}} ] }</text>
+  <text x="575" y="285" text-anchor="middle" font-size="10" fill="#94a3b8">Ni cancelado NI total &lt; 10</text>
+
+  <!-- Bottom comparison -->
+  <rect x="40" y="292" width="700" height="32" rx="6" fill="#023430"/>
+  <text x="390" y="312" text-anchor="middle" font-size="11" fill="#94a3b8">$ne vs $not: $ne niega igualdad directa | $not niega cualquier expresión de operador</text>
+</svg>
