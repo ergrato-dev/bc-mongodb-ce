@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <rect width="760" height="420" fill="#001E2B"/>
+
+  <!-- Título -->
+  <text x="380" y="30" font-family="Inter, Roboto, sans-serif" font-size="15" font-weight="bold"
+        fill="#00ED64" text-anchor="middle">Arquitectura Capstone — Patrones Avanzados</text>
+  <text x="380" y="50" font-family="Inter, Roboto, sans-serif" font-size="11"
+        fill="#94a3b8" text-anchor="middle">Extended Reference · Bucket · Computed</text>
+
+  <!-- ── Colección principal: events ── -->
+  <rect x="40" y="70" width="200" height="170" rx="8" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="140" y="93" font-family="Inter, Roboto, sans-serif" font-size="12" font-weight="bold"
+        fill="#00ED64" text-anchor="middle">events</text>
+  <line x1="40" y1="100" x2="240" y2="100" stroke="#00684A" stroke-width="1"/>
+  <text x="56" y="118" font-family="monospace" font-size="10" fill="#e2e8f0">_id: ObjectId</text>
+  <text x="56" y="134" font-family="monospace" font-size="10" fill="#e2e8f0">title: String</text>
+  <text x="56" y="150" font-family="monospace" font-size="10" fill="#fbbf24">venueId: ObjectId</text>
+  <text x="56" y="166" font-family="monospace" font-size="10" fill="#60a5fa">venueName: String ←</text>
+  <text x="56" y="182" font-family="monospace" font-size="10" fill="#60a5fa">venueCity: String ←</text>
+  <text x="56" y="198" font-family="monospace" font-size="10" fill="#e2e8f0">startDate: Date</text>
+  <text x="56" y="214" font-family="monospace" font-size="10" fill="#e2e8f0">capacity: Int</text>
+  <text x="80" y="232" font-family="Inter, Roboto, sans-serif" font-size="9" fill="#60a5fa">← Extended Reference</text>
+
+  <!-- ── Colección: venues ── -->
+  <rect x="40" y="270" width="200" height="120" rx="8" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="140" y="293" font-family="Inter, Roboto, sans-serif" font-size="12" font-weight="bold"
+        fill="#00ED64" text-anchor="middle">venues</text>
+  <line x1="40" y1="300" x2="240" y2="300" stroke="#00684A" stroke-width="1"/>
+  <text x="56" y="318" font-family="monospace" font-size="10" fill="#e2e8f0">_id: ObjectId</text>
+  <text x="56" y="334" font-family="monospace" font-size="10" fill="#e2e8f0">name: String</text>
+  <text x="56" y="350" font-family="monospace" font-size="10" fill="#e2e8f0">city: String</text>
+  <text x="56" y="366" font-family="monospace" font-size="10" fill="#e2e8f0">capacity: Int</text>
+  <!-- flecha Extended Reference -->
+  <line x1="240" y1="170" x2="280" y2="300" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="277,292 285,304 271,304" fill="#60a5fa"/>
+
+  <!-- ── Colección: sensor_buckets (Bucket Pattern) ── -->
+  <rect x="290" y="70" width="215" height="190" rx="8" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="397" y="93" font-family="Inter, Roboto, sans-serif" font-size="12" font-weight="bold"
+        fill="#00ED64" text-anchor="middle">sensor_buckets</text>
+  <line x1="290" y1="100" x2="505" y2="100" stroke="#00684A" stroke-width="1"/>
+  <text x="306" y="118" font-family="monospace" font-size="10" fill="#e2e8f0">_id: ObjectId</text>
+  <text x="306" y="134" font-family="monospace" font-size="10" fill="#e2e8f0">sensorId: String</text>
+  <text x="306" y="150" font-family="monospace" font-size="10" fill="#e2e8f0">hour: Date</text>
+  <text x="306" y="166" font-family="monospace" font-size="10" fill="#fbbf24">readings: [ {...}, {...} ]</text>
+  <text x="306" y="182" font-family="monospace" font-size="10" fill="#e2e8f0">  ts: Date</text>
+  <text x="306" y="198" font-family="monospace" font-size="10" fill="#e2e8f0">  value: Number</text>
+  <text x="306" y="214" font-family="monospace" font-size="10" fill="#fbbf24">count: Int</text>
+  <text x="306" y="230" font-family="monospace" font-size="10" fill="#fbbf24">avgValue: Decimal128</text>
+  <text x="320" y="252" font-family="Inter, Roboto, sans-serif" font-size="9" fill="#fbbf24">← Bucket Pattern</text>
+
+  <!-- ── Colección: daily_stats (Computed Pattern) ── -->
+  <rect x="290" y="290" width="215" height="100" rx="8" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="397" y="313" font-family="Inter, Roboto, sans-serif" font-size="12" font-weight="bold"
+        fill="#00ED64" text-anchor="middle">daily_stats</text>
+  <line x1="290" y1="320" x2="505" y2="320" stroke="#00684A" stroke-width="1"/>
+  <text x="306" y="338" font-family="monospace" font-size="10" fill="#e2e8f0">date: Date</text>
+  <text x="306" y="354" font-family="monospace" font-size="10" fill="#ef4444">totalRevenue: Decimal128</text>
+  <text x="306" y="370" font-family="monospace" font-size="10" fill="#ef4444">totalEvents: Int</text>
+  <text x="320" y="382" font-family="Inter, Roboto, sans-serif" font-size="9" fill="#ef4444">← Computed Pattern</text>
+
+  <!-- flecha Bucket → daily_stats -->
+  <line x1="397" y1="260" x2="397" y2="290" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="392,286 402,286 397,295" fill="#fbbf24"/>
+
+  <!-- ── Node.js App ── -->
+  <rect x="540" y="70" width="185" height="260" rx="8" fill="#0d3349" stroke="#00684A" stroke-width="1.5"/>
+  <text x="633" y="93" font-family="Inter, Roboto, sans-serif" font-size="12" font-weight="bold"
+        fill="#00ED64" text-anchor="middle">Node.js App</text>
+  <line x1="540" y1="100" x2="725" y2="100" stroke="#00684A" stroke-width="1"/>
+
+  <!-- Connection Pool box -->
+  <rect x="556" y="110" width="153" height="50" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="632" y="127" font-family="Inter, Roboto, sans-serif" font-size="10" font-weight="bold"
+        fill="#94a3b8" text-anchor="middle">MongoClient (Pool)</text>
+  <text x="632" y="143" font-family="Inter, Roboto, sans-serif" font-size="9"
+        fill="#60a5fa" text-anchor="middle">maxPoolSize: 10</text>
+  <text x="632" y="155" font-family="Inter, Roboto, sans-serif" font-size="9"
+        fill="#60a5fa" text-anchor="middle">singleton pattern</text>
+
+  <!-- withTransaction box -->
+  <rect x="556" y="175" width="153" height="50" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1"/>
+  <text x="632" y="192" font-family="Inter, Roboto, sans-serif" font-size="10" font-weight="bold"
+        fill="#fbbf24" text-anchor="middle">withTransaction()</text>
+  <text x="632" y="208" font-family="Inter, Roboto, sans-serif" font-size="9"
+        fill="#94a3b8" text-anchor="middle">ACID multi-documento</text>
+  <text x="632" y="220" font-family="Inter, Roboto, sans-serif" font-size="9"
+        fill="#94a3b8" text-anchor="middle">retry automático</text>
+
+  <!-- Change Stream box -->
+  <rect x="556" y="240" width="153" height="50" rx="4" fill="#023430" stroke="#ef4444" stroke-width="1"/>
+  <text x="632" y="257" font-family="Inter, Roboto, sans-serif" font-size="10" font-weight="bold"
+        fill="#ef4444" text-anchor="middle">Change Streams</text>
+  <text x="632" y="273" font-family="Inter, Roboto, sans-serif" font-size="9"
+        fill="#94a3b8" text-anchor="middle">watch() en colección</text>
+  <text x="632" y="285" font-family="Inter, Roboto, sans-serif" font-size="9"
+        fill="#94a3b8" text-anchor="middle">insert / update / delete</text>
+
+  <!-- Leyenda -->
+  <rect x="540" y="355" width="185" height="55" rx="4" fill="#0d3349" stroke="#00684A" stroke-width="1"/>
+  <text x="632" y="371" font-family="Inter, Roboto, sans-serif" font-size="10" font-weight="bold"
+        fill="#94a3b8" text-anchor="middle">Leyenda</text>
+  <rect x="552" y="378" width="10" height="10" fill="#60a5fa"/>
+  <text x="568" y="388" font-family="Inter, Roboto, sans-serif" font-size="9" fill="#e2e8f0">Extended Reference</text>
+  <rect x="552" y="393" width="10" height="10" fill="#fbbf24"/>
+  <text x="568" y="403" font-family="Inter, Roboto, sans-serif" font-size="9" fill="#e2e8f0">Bucket / Computed</text>
+
+  <!-- flecha App → events -->
+  <line x1="540" y1="200" x2="505" y2="165" stroke="#00ED64" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="502,158 510,170 497,171" fill="#00ED64"/>
+</svg>
