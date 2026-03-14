@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <rect width="760" height="380" fill="#001E2B"/>
+  <text x="380" y="26" font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="700" fill="#00ED64" text-anchor="middle">Transacciones ACID Multi-Documento</text>
+
+  <!-- ACID boxes -->
+  <rect x="20" y="40" width="155" height="70" rx="4" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="97" y="57" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#00ED64" text-anchor="middle">Atomicity</text>
+  <text x="97" y="71" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0" text-anchor="middle">Todo o nada.</text>
+  <text x="97" y="83" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Rollback automático</text>
+  <text x="97" y="95" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">si alguna op. falla</text>
+
+  <rect x="195" y="40" width="155" height="70" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="2"/>
+  <text x="272" y="57" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">Consistency</text>
+  <text x="272" y="71" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0" text-anchor="middle">Estado válido</text>
+  <text x="272" y="83" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">antes y después.</text>
+  <text x="272" y="95" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Validators respetados</text>
+
+  <rect x="370" y="40" width="155" height="70" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="2"/>
+  <text x="447" y="57" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">Isolation</text>
+  <text x="447" y="71" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0" text-anchor="middle">Snapshot isolation.</text>
+  <text x="447" y="83" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Otras sesiones no ven</text>
+  <text x="447" y="95" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">cambios no commit</text>
+
+  <rect x="545" y="40" width="195" height="70" rx="4" fill="#023430" stroke="#00684A" stroke-width="2"/>
+  <text x="642" y="57" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#00ED64" text-anchor="middle">Durability</text>
+  <text x="642" y="71" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0" text-anchor="middle">Persistido tras confirmación.</text>
+  <text x="642" y="83" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">Write concern majority</text>
+  <text x="642" y="95" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">garantiza persistencia</text>
+
+  <!-- Transaction flow -->
+  <rect x="20" y="125" width="720" height="170" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="380" y="143" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#60a5fa" text-anchor="middle">Flujo de una Transacción: Transferencia entre cuentas</text>
+
+  <!-- Steps -->
+  <rect x="35" y="152" width="90" height="45" rx="3" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="80" y="167" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24" text-anchor="middle">startSession()</text>
+  <text x="80" y="181" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Nueva sesión</text>
+  <text x="80" y="191" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">aislada</text>
+
+  <line x1="125" y1="174" x2="145" y2="174" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arr16b)"/>
+
+  <rect x="145" y="152" width="90" height="45" rx="3" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="190" y="167" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24" text-anchor="middle">startTransaction</text>
+  <text x="190" y="181" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Inicia el</text>
+  <text x="190" y="191" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">contexto ACID</text>
+
+  <line x1="235" y1="174" x2="255" y2="174" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arr16c)"/>
+
+  <rect x="255" y="152" width="135" height="45" rx="3" fill="#001E2B" stroke="#60a5fa" stroke-width="1"/>
+  <text x="322" y="166" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#60a5fa" text-anchor="middle">updateOne acc-01</text>
+  <text x="322" y="178" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">$inc: { balance: -500 }</text>
+  <text x="322" y="190" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">{ session }</text>
+
+  <line x1="390" y1="174" x2="410" y2="174" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arr16d)"/>
+
+  <rect x="410" y="152" width="135" height="45" rx="3" fill="#001E2B" stroke="#60a5fa" stroke-width="1"/>
+  <text x="477" y="166" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#60a5fa" text-anchor="middle">updateOne acc-02</text>
+  <text x="477" y="178" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">$inc: { balance: +500 }</text>
+  <text x="477" y="190" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">{ session }</text>
+
+  <line x1="545" y1="174" x2="565" y2="174" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arr16e)"/>
+
+  <!-- commit / abort fork -->
+  <rect x="565" y="148" width="80" height="35" rx="3" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="605" y="162" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64" text-anchor="middle">commit</text>
+  <text x="605" y="176" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">persiste cambios</text>
+
+  <rect x="565" y="192" width="80" height="35" rx="3" fill="#001E2B" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="605" y="206" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444" text-anchor="middle">abort</text>
+  <text x="605" y="220" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">rollback todo</text>
+
+  <rect x="660" y="162" width="70" height="55" rx="3" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="695" y="181" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">endSession</text>
+  <text x="695" y="194" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">liberar</text>
+  <text x="695" y="206" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#94a3b8" text-anchor="middle">recursos</text>
+
+  <line x1="645" y1="165" x2="660" y2="182" stroke="#00ED64" stroke-width="1"/>
+  <line x1="645" y1="210" x2="660" y2="200" stroke="#ef4444" stroke-width="1"/>
+
+  <!-- Try/catch/finally structure -->
+  <text x="35" y="242" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#fbbf24">Estructura recomendada:</text>
+  <text x="35" y="256" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">try { ..operaciones.. ; session.commitTransaction() }</text>
+  <text x="35" y="270" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">catch(e) { session.abortTransaction() ; throw e }</text>
+  <text x="35" y="284" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">finally { session.endSession() }   // liberar siempre</text>
+
+  <!-- Bottom row: use cases -->
+  <rect x="20" y="308" width="720" height="62" rx="4" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="380" y="325" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#fbbf24" text-anchor="middle">¿Cuándo usar transacciones?</text>
+  <text x="55" y="342" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64">✅ Transferencia entre cuentas</text>
+  <text x="55" y="355" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64">✅ Orden + decremento de stock</text>
+  <text x="270" y="342" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64">✅ Pago + factura + saldo</text>
+  <text x="270" y="355" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64">✅ Registro + log de auditoría</text>
+  <text x="500" y="342" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">❌ Un solo documento (ya es atómico)</text>
+  <text x="500" y="355" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">❌ Lecturas simples (sin escritura)</text>
+
+  <defs>
+    <marker id="arr16b" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/></marker>
+    <marker id="arr16c" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/></marker>
+    <marker id="arr16d" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/></marker>
+    <marker id="arr16e" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/></marker>
+  </defs>
+</svg>
