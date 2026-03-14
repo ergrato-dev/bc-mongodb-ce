@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="300" fill="#001E2B"/>
+  <text x="390" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">$inc, $mul, $rename</text>
+
+  <!-- $inc -->
+  <rect x="30" y="58" width="220" height="115" rx="6" fill="#023430"/>
+  <text x="140" y="78" text-anchor="middle" font-size="13" font-weight="600" fill="#00ED64">$inc</text>
+  <text x="140" y="96" text-anchor="middle" font-size="11" fill="#94a3b8">Incremento atómico</text>
+  <text x="45" y="116" font-size="11" fill="#94a3b8">// stock: 12 → 22</text>
+  <rect x="40" y="120" width="200" height="22" rx="3" fill="#001E2B"/>
+  <text x="140" y="135" text-anchor="middle" font-size="11" fill="#e2e8f0">{ $inc: { stock: 10 } }</text>
+  <text x="45" y="156" font-size="11" fill="#94a3b8">// stock: 12 → 11</text>
+  <rect x="40" y="160" width="200" height="22" rx="3" fill="#001E2B"/>
+  <text x="140" y="175" text-anchor="middle" font-size="11" fill="#e2e8f0">{ $inc: { stock: -1 } }</text>
+
+  <!-- $mul -->
+  <rect x="278" y="58" width="220" height="115" rx="6" fill="#023430"/>
+  <text x="388" y="78" text-anchor="middle" font-size="13" font-weight="600" fill="#fbbf24">$mul</text>
+  <text x="388" y="96" text-anchor="middle" font-size="11" fill="#94a3b8">Multiplicación</text>
+  <text x="293" y="116" font-size="11" fill="#94a3b8">// price: 100 → 90</text>
+  <rect x="288" y="120" width="200" height="22" rx="3" fill="#001E2B"/>
+  <text x="388" y="135" text-anchor="middle" font-size="11" fill="#e2e8f0">{ $mul: { price: 0.9 } }</text>
+  <text x="293" y="156" font-size="11" fill="#94a3b8">// price: 100 → 120</text>
+  <rect x="288" y="160" width="200" height="22" rx="3" fill="#001E2B"/>
+  <text x="388" y="175" text-anchor="middle" font-size="11" fill="#e2e8f0">{ $mul: { price: 1.2 } }</text>
+
+  <!-- $rename -->
+  <rect x="526" y="58" width="220" height="115" rx="6" fill="#023430"/>
+  <text x="636" y="78" text-anchor="middle" font-size="13" font-weight="600" fill="#60a5fa">$rename</text>
+  <text x="636" y="96" text-anchor="middle" font-size="11" fill="#94a3b8">Renombra campo</text>
+  <text x="541" y="116" font-size="11" fill="#94a3b8">// qty → stock</text>
+  <rect x="536" y="120" width="200" height="35" rx="3" fill="#001E2B"/>
+  <text x="636" y="136" text-anchor="middle" font-size="11" fill="#e2e8f0">{ $rename:</text>
+  <text x="636" y="150" text-anchor="middle" font-size="11" fill="#e2e8f0">  { qty: "stock" } }</text>
+
+  <!-- Combined update -->
+  <rect x="30" y="195" width="720" height="90" rx="6" fill="#023430"/>
+  <text x="390" y="215" text-anchor="middle" font-size="12" font-weight="600" fill="#e2e8f0">Combinando operadores en un solo update</text>
+  <text x="390" y="235" text-anchor="middle" font-size="11" fill="#94a3b8">db.products.updateOne( { name: "Monitor" }, {</text>
+  <text x="390" y="252" text-anchor="middle" font-size="11" fill="#00ED64">  $set: { updatedAt: new Date() },</text>
+  <text x="390" y="269" text-anchor="middle" font-size="11" fill="#fbbf24">  $inc: { stock: -1 },</text>
+  <text x="390" y="283" text-anchor="middle" font-size="11" fill="#94a3b8">} )</text>
+</svg>
