@@ -1,0 +1,57 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="380" fill="#001E2B"/>
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="700">async/await con el Driver MongoDB</text>
+
+  <!-- Left: async/await pattern -->
+  <rect x="15" y="45" width="360" height="305" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.2"/>
+  <text x="195" y="67" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">Patrón async/await</text>
+
+  <text x="28" y="88" fill="#94a3b8" font-size="9" font-family="monospace">const { MongoClient } = require("mongodb")</text>
+  <text x="28" y="103" fill="#94a3b8" font-size="9" font-family="monospace">const uri = "mongodb://bootcamp:bootcamp123</text>
+  <text x="28" y="118" fill="#94a3b8" font-size="9" font-family="monospace">            @localhost:27017/bootcamp_db</text>
+  <text x="28" y="133" fill="#94a3b8" font-size="9" font-family="monospace">            ?authSource=admin"</text>
+  <text x="28" y="153" fill="#fbbf24" font-size="9" font-family="monospace">async function main() {</text>
+  <text x="28" y="168" fill="#e2e8f0" font-size="9" font-family="monospace">  const client = new MongoClient(uri)</text>
+  <text x="28" y="183" fill="#94a3b8" font-size="9" font-family="monospace">  try {</text>
+  <text x="28" y="198" fill="#00ED64" font-size="9" font-family="monospace">    await client.connect()</text>
+  <text x="28" y="213" fill="#e2e8f0" font-size="9" font-family="monospace">    const db = client.db("bootcamp_db")</text>
+  <text x="28" y="228" fill="#e2e8f0" font-size="9" font-family="monospace">    const col = db.collection("orders")</text>
+  <text x="28" y="248" fill="#60a5fa" font-size="9" font-family="monospace">    const result = await col.insertOne({</text>
+  <text x="28" y="263" fill="#94a3b8" font-size="9" font-family="monospace">      total: 250, status: "new"</text>
+  <text x="28" y="278" fill="#60a5fa" font-size="9" font-family="monospace">    })</text>
+  <text x="28" y="293" fill="#94a3b8" font-size="9" font-family="monospace">    console.log(result.insertedId)</text>
+  <text x="28" y="308" fill="#94a3b8" font-size="9" font-family="monospace">  } finally {</text>
+  <text x="28" y="323" fill="#ef4444" font-size="9" font-family="monospace">    await client.close()    // siempre</text>
+  <text x="28" y="338" fill="#94a3b8" font-size="9" font-family="monospace">  }</text>
+  <text x="28" y="348" fill="#fbbf24" font-size="9" font-family="monospace">}</text>
+
+  <!-- Right: method signatures -->
+  <rect x="390" y="45" width="355" height="305" rx="6" fill="#023430" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="567" y="67" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">Métodos Principales</text>
+
+  <text x="405" y="87" fill="#00ED64" font-size="9.5" font-weight="600">insertOne(doc, [options])</text>
+  <text x="405" y="101" fill="#94a3b8" font-size="8.5">→ { acknowledged, insertedId }</text>
+
+  <text x="405" y="121" fill="#00ED64" font-size="9.5" font-weight="600">insertMany(docs[], [options])</text>
+  <text x="405" y="135" fill="#94a3b8" font-size="8.5">→ { acknowledged, insertedIds: {0:id, 1:id} }</text>
+
+  <text x="405" y="155" fill="#60a5fa" font-size="9.5" font-weight="600">findOne(filter, [options])</text>
+  <text x="405" y="169" fill="#94a3b8" font-size="8.5">→ Document | null</text>
+
+  <text x="405" y="189" fill="#60a5fa" font-size="9.5" font-weight="600">find(filter, [options]).toArray()</text>
+  <text x="405" y="203" fill="#94a3b8" font-size="8.5">→ Document[]  (await el toArray)</text>
+
+  <text x="405" y="223" fill="#fbbf24" font-size="9.5" font-weight="600">updateOne(filter, update, [options])</text>
+  <text x="405" y="237" fill="#94a3b8" font-size="8.5">→ { matchedCount, modifiedCount, upsertedId }</text>
+
+  <text x="405" y="257" fill="#fbbf24" font-size="9.5" font-weight="600">updateMany(filter, update, [options])</text>
+  <text x="405" y="271" fill="#94a3b8" font-size="8.5">→ { matchedCount, modifiedCount }</text>
+
+  <text x="405" y="291" fill="#ef4444" font-size="9.5" font-weight="600">deleteOne(filter, [options])</text>
+  <text x="405" y="305" fill="#94a3b8" font-size="8.5">→ { acknowledged, deletedCount }</text>
+
+  <text x="405" y="325" fill="#e2e8f0" font-size="9.5" font-weight="600">aggregate(pipeline[])</text>
+  <text x="405" y="339" fill="#94a3b8" font-size="8.5">→ AggregationCursor → .toArray()</text>
+</svg>

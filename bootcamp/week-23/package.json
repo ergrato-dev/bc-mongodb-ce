@@ -1,0 +1,14 @@
+{
+  "name": "week-23-exercises",
+  "version": "1.0.0",
+  "description": "Ejercicios Semana 23 - MongoDB con Node.js",
+  "main": "index.js",
+  "scripts": {
+    "ejercicio01": "node 2-practicas/ejercicio-01/starter/ejercicio.js",
+    "ejercicio02": "node 2-practicas/ejercicio-02/starter/ejercicio.js",
+    "proyecto": "node 3-proyecto/starter/proyecto.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}
