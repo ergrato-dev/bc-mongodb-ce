@@ -1,0 +1,72 @@
+<svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="900" height="540" fill="#001E2B"/>
+
+  <!-- Título -->
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#00ED64">Semana 08 — Modelo de Datos Integrador (Etapa 0)</text>
+  <text x="450" y="60" text-anchor="middle" font-size="12" fill="#94a3b8">Esquema de referencia: colecciones, campos y relaciones</text>
+
+  <!-- Colección principal -->
+  <rect x="60" y="90" width="240" height="300" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="60" y="90" width="240" height="32" rx="6" fill="#00684A"/>
+  <text x="180" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#001E2B">entities</text>
+  <text x="80" y="148" font-size="11" fill="#00ED64">_id</text><text x="200" y="148" font-size="11" fill="#e2e8f0">ObjectId</text>
+  <text x="80" y="168" font-size="11" fill="#e2e8f0">name</text><text x="200" y="168" font-size="11" fill="#94a3b8">String</text>
+  <text x="80" y="188" font-size="11" fill="#e2e8f0">category</text><text x="200" y="188" font-size="11" fill="#94a3b8">String</text>
+  <text x="80" y="208" font-size="11" fill="#e2e8f0">status</text><text x="200" y="208" font-size="11" fill="#94a3b8">String</text>
+  <text x="80" y="228" font-size="11" fill="#e2e8f0">isActive</text><text x="200" y="228" font-size="11" fill="#94a3b8">Boolean</text>
+  <text x="80" y="248" font-size="11" fill="#e2e8f0">quantity</text><text x="200" y="248" font-size="11" fill="#94a3b8">NumberInt</text>
+  <text x="80" y="268" font-size="11" fill="#e2e8f0">price / amount</text><text x="200" y="268" font-size="11" fill="#94a3b8">Decimal128</text>
+  <text x="80" y="288" font-size="11" fill="#e2e8f0">createdAt</text><text x="200" y="288" font-size="11" fill="#94a3b8">Date</text>
+  <text x="80" y="308" font-size="11" fill="#60a5fa">tags / items</text><text x="200" y="308" font-size="11" fill="#94a3b8">Array</text>
+  <text x="80" y="328" font-size="11" fill="#fbbf24">details</text><text x="200" y="328" font-size="11" fill="#94a3b8">Subdoc</text>
+  <text x="80" y="348" font-size="11" fill="#60a5fa">relatedId</text><text x="200" y="348" font-size="11" fill="#94a3b8">ObjectId →</text>
+  <line x1="60" y1="358" x2="300" y2="358" stroke="#00684A" stroke-width="1"/>
+  <text x="80" y="375" font-size="10" fill="#94a3b8">Índices recomendados:</text>
+  <text x="80" y="391" font-size="10" fill="#00ED64">{ category: 1 }</text>
+  <text x="80" y="407" font-size="10" fill="#00ED64">{ status: 1, createdAt: -1 }</text>
+
+  <!-- Colección secundaria -->
+  <rect x="560" y="90" width="280" height="220" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="560" y="90" width="280" height="32" rx="6" fill="#00684A"/>
+  <text x="700" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#001E2B">related_items</text>
+  <text x="580" y="148" font-size="11" fill="#00ED64">_id</text><text x="740" y="148" font-size="11" fill="#e2e8f0">ObjectId</text>
+  <text x="580" y="168" font-size="11" fill="#e2e8f0">title</text><text x="740" y="168" font-size="11" fill="#94a3b8">String</text>
+  <text x="580" y="188" font-size="11" fill="#e2e8f0">type</text><text x="740" y="188" font-size="11" fill="#94a3b8">String</text>
+  <text x="580" y="208" font-size="11" fill="#e2e8f0">value</text><text x="740" y="208" font-size="11" fill="#94a3b8">Decimal128</text>
+  <text x="580" y="228" font-size="11" fill="#e2e8f0">createdAt</text><text x="740" y="228" font-size="11" fill="#94a3b8">Date</text>
+  <text x="580" y="248" font-size="11" fill="#fbbf24">owner</text><text x="740" y="248" font-size="11" fill="#94a3b8">Subdoc</text>
+  <line x1="560" y1="258" x2="840" y2="258" stroke="#00684A" stroke-width="1"/>
+  <text x="580" y="275" font-size="10" fill="#94a3b8">Índices recomendados:</text>
+  <text x="580" y="291" font-size="10" fill="#00ED64">{ type: 1 }</text>
+
+  <!-- Flecha de referencia -->
+  <line x1="300" y1="348" x2="500" y2="200" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <polygon points="497,193 507,203 494,207" fill="#60a5fa"/>
+  <text x="370" y="265" font-size="10" fill="#60a5fa" transform="rotate(-32, 370, 265)">relatedId → _id</text>
+
+  <!-- Colección de transacciones / eventos -->
+  <rect x="560" y="340" width="280" height="170" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="560" y="340" width="280" height="32" rx="6" fill="#00684A"/>
+  <text x="700" y="362" text-anchor="middle" font-size="13" font-weight="bold" fill="#001E2B">events</text>
+  <text x="580" y="398" font-size="11" fill="#00ED64">_id</text><text x="740" y="398" font-size="11" fill="#e2e8f0">ObjectId</text>
+  <text x="580" y="418" font-size="11" fill="#60a5fa">entityId</text><text x="740" y="418" font-size="11" fill="#94a3b8">ObjectId →</text>
+  <text x="580" y="438" font-size="11" fill="#e2e8f0">action</text><text x="740" y="438" font-size="11" fill="#94a3b8">String</text>
+  <text x="580" y="458" font-size="11" fill="#e2e8f0">amount</text><text x="740" y="458" font-size="11" fill="#94a3b8">Decimal128</text>
+  <text x="580" y="478" font-size="11" fill="#e2e8f0">occurredAt</text><text x="740" y="478" font-size="11" fill="#94a3b8">Date</text>
+  <text x="580" y="498" font-size="10" fill="#00ED64">{ entityId: 1, occurredAt: -1 }</text>
+
+  <!-- Flecha events → entities -->
+  <line x1="700" y1="340" x2="220" y2="395" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <polygon points="223,388 215,398 226,402" fill="#60a5fa"/>
+
+  <!-- Leyenda -->
+  <text x="60" y="480" font-size="11" font-weight="bold" fill="#e2e8f0">Leyenda:</text>
+  <rect x="60" y="490" width="12" height="12" fill="#00ED64" rx="2"/>
+  <text x="78" y="501" font-size="10" fill="#e2e8f0">_id (auto)</text>
+  <rect x="140" y="490" width="12" height="12" fill="#60a5fa" rx="2"/>
+  <text x="158" y="501" font-size="10" fill="#e2e8f0">Referencia (ObjectId)</text>
+  <rect x="280" y="490" width="12" height="12" fill="#fbbf24" rx="2"/>
+  <text x="298" y="501" font-size="10" fill="#e2e8f0">Subdocumento embebido</text>
+  <rect x="440" y="490" width="50" height="3" fill="#60a5fa" rx="1"/>
+  <text x="498" y="501" font-size="10" fill="#e2e8f0">Relación entre colecciones</text>
+</svg>
