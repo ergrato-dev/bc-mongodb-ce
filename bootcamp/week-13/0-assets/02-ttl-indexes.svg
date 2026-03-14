@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <rect width="760" height="380" fill="#001E2B"/>
+  <text x="380" y="28" font-family="Inter,Roboto,sans-serif" font-size="15" font-weight="700" fill="#00ED64" text-anchor="middle">Índice TTL — Expiración Automática de Documentos</text>
+
+  <!-- Timeline -->
+  <text x="30" y="60" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Ciclo de vida de un documento con TTL</text>
+
+  <!-- Timeline line -->
+  <line x1="30" y1="110" x2="730" y2="110" stroke="#00684A" stroke-width="2"/>
+  <polygon points="726,105 740,110 726,115" fill="#00684A"/>
+
+  <!-- Time points -->
+  <!-- t=0 insert -->
+  <line x1="80" y1="100" x2="80" y2="120" stroke="#00ED64" stroke-width="2"/>
+  <text x="80" y="90" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#00ED64" text-anchor="middle">t=0</text>
+  <text x="80" y="137" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Inserción</text>
+  <text x="80" y="149" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">createdAt: now</text>
+
+  <!-- t=30min -->
+  <line x1="280" y1="100" x2="280" y2="120" stroke="#fbbf24" stroke-width="2"/>
+  <text x="280" y="90" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#fbbf24" text-anchor="middle">t+30m</text>
+  <text x="280" y="137" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Expiración</text>
+  <text x="280" y="149" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">TTL: 1800s</text>
+
+  <!-- t=~31min → actually deleted -->
+  <line x1="430" y1="100" x2="430" y2="120" stroke="#ef4444" stroke-width="2"/>
+  <text x="430" y="90" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#ef4444" text-anchor="middle">t+31m</text>
+  <text x="430" y="137" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Eliminado</text>
+  <text x="430" y="149" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">proceso cada ~60s</text>
+
+  <!-- document active zone (green) -->
+  <rect x="80" y="95" width="200" height="30" rx="3" fill="#00684A" opacity="0.4"/>
+  <text x="180" y="113" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#00ED64" text-anchor="middle">Documento activo</text>
+
+  <!-- document expired zone (red) -->
+  <rect x="280" y="95" width="150" height="30" rx="3" fill="#ef4444" opacity="0.2"/>
+  <text x="355" y="113" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24" text-anchor="middle">Expirado (aún existe)</text>
+
+  <!-- Code examples -->
+  <!-- Left: expireAfterSeconds: N -->
+  <rect x="20" y="175" width="340" height="110" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="190" y="194" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#00ED64" text-anchor="middle">TTL relativo — secondos desde inserción</text>
+  <text x="35" y="213" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">db.sessions.createIndex(</text>
+  <text x="45" y="227" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0">{ createdAt: 1 },</text>
+  <text x="45" y="241" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24">{ expireAfterSeconds: 1800 }</text>
+  <text x="35" y="255" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">)</text>
+  <text x="35" y="272" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">Borra 30 minutos después de createdAt</text>
+
+  <!-- Right: expireAfterSeconds: 0 -->
+  <rect x="400" y="175" width="340" height="110" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="570" y="194" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">TTL absoluto — fecha exacta de expiración</text>
+  <text x="415" y="213" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">db.notifications.createIndex(</text>
+  <text x="425" y="227" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0">{ expiresAt: 1 },</text>
+  <text x="425" y="241" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24">{ expireAfterSeconds: 0 }</text>
+  <text x="415" y="255" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">)</text>
+  <text x="415" y="272" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">El campo expiresAt es la fecha de expiración</text>
+
+  <!-- Use cases -->
+  <text x="380" y="312" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">Casos de uso comunes</text>
+  <rect x="20" y="320" width="720" height="48" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="60" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#00ED64">Sessions</text>
+  <text x="130" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">|</text>
+  <text x="145" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#fbbf24">Auth tokens</text>
+  <text x="240" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">|</text>
+  <text x="255" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#60a5fa">Caché de datos</text>
+  <text x="380" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">|</text>
+  <text x="395" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#00ED64">Logs de auditoría</text>
+  <text x="520" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">|</text>
+  <text x="535" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#fbbf24">Notificaciones</text>
+  <text x="630" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">|</text>
+  <text x="645" y="338" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#60a5fa">OTPs</text>
+  <text x="380" y="358" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">⚠ Solo campo tipo Date · MongoDB limpia cada ~60 segundos · No combinable con unique</text>
+</svg>
