@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380">
+  <rect width="760" height="380" fill="#001E2B"/>
+  <text x="380" y="26" font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="700" fill="#00ED64" text-anchor="middle">Patrones: Extended Reference y Subset</text>
+
+  <!-- LEFT: Extended Reference -->
+  <text x="185" y="48" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">Extended Reference</text>
+
+  <!-- Authors collection -->
+  <rect x="20" y="55" width="155" height="90" rx="4" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="97" y="70" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">authors</text>
+  <text x="30" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#60a5fa">authorId:</text><text x="90" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">"auth-01"</text>
+  <text x="30" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">name:</text><text x="60" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">"Ana Torres"</text>
+  <text x="30" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">avatarUrl:</text><text x="85" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">"/avatars/..."</text>
+  <text x="30" y="124" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">bio, social, ...</text>
+  <line x1="97" y1="145" x2="97" y2="165" stroke="#00684A" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="97" y="162" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">(raramente cambia)</text>
+
+  <!-- Arrow -->
+  <line x1="175" y1="100" x2="210" y2="100" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arr15a)"/>
+  <text x="192" y="95" font-family="Inter,Roboto,sans-serif" font-size="7.5" fill="#fbbf24" text-anchor="middle">embed</text>
+
+  <!-- Posts collection with extended ref -->
+  <rect x="210" y="55" width="155" height="115" rx="4" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="287" y="70" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#94a3b8" text-anchor="middle">posts</text>
+  <text x="220" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">postId: "post-001"</text>
+  <text x="220" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">title: "Intro a MongoDB"</text>
+  <text x="220" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#60a5fa">authorId: "auth-01"</text>
+  <rect x="220" y="116" width="135" height="45" rx="3" fill="#001E2B"/>
+  <text x="228" y="129" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">authorInfo: {</text>
+  <text x="235" y="141" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0">name: "Ana Torres",</text>
+  <text x="235" y="152" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0">avatarUrl: "..."  }</text>
+
+  <text x="287" y="185" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#00ED64" text-anchor="middle">✅ Sin $lookup en lectura</text>
+
+  <!-- RIGHT: Subset Pattern -->
+  <text x="565" y="48" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">Subset Pattern</text>
+
+  <!-- product with full reviews -->
+  <rect x="390" y="55" width="165" height="130" rx="4" fill="#001E2B" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="472" y="70" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#ef4444" text-anchor="middle">❌ Sin Subset</text>
+  <text x="400" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">productId: "prod-001"</text>
+  <text x="400" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">name: "Laptop Pro"</text>
+  <text x="400" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">reviews: [</text>
+  <text x="408" y="122" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">// 1248 reseñas incrustadas</text>
+  <text x="408" y="133" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">// documento muy grande</text>
+  <text x="408" y="144" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">// lento en RAM</text>
+  <text x="400" y="156" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#ef4444">]</text>
+  <text x="400" y="169" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">Límite BSON: 16MB</text>
+
+  <!-- Arrow -->
+  <line x1="555" y1="115" x2="580" y2="115" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arr15b)"/>
+
+  <!-- product with subset -->
+  <rect x="580" y="55" width="160" height="130" rx="4" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="660" y="70" font-family="Inter,Roboto,sans-serif" font-size="9" font-weight="700" fill="#00ED64" text-anchor="middle">✅ Con Subset</text>
+  <text x="590" y="85" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">productId: "prod-001"</text>
+  <text x="590" y="98" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">name: "Laptop Pro"</text>
+  <text x="590" y="111" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#00ED64">topReviews: [ 3 items ]</text>
+  <text x="590" y="124" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">reviewCount: 1248</text>
+  <text x="590" y="137" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">avgRating: 4.7</text>
+  <text x="590" y="150" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8">Resto → colección reviews</text>
+  <line x1="650" y1="168" x2="650" y2="185" stroke="#00684A" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- reviews collection pointer -->
+  <rect x="580" y="186" width="160" height="28" rx="3" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="660" y="195" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8" text-anchor="middle">colección reviews</text>
+  <text x="660" y="207" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">(1248 docs separados)</text>
+
+  <!-- Bottom: code examples -->
+  <rect x="20" y="232" width="345" height="130" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="192" y="250" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#fbbf24" text-anchor="middle">Actualizar Extended Reference</text>
+  <text x="35" y="267" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">// Cuando el autor cambia nombre → propagar</text>
+  <text x="35" y="281" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">db.posts.updateMany(</text>
+  <text x="45" y="295" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">{ authorId: "auth-01" },</text>
+  <text x="45" y="309" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">{ $set: {</text>
+  <text x="55" y="323" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">"authorInfo.name": "Ana Torres Gómez"</text>
+  <text x="45" y="337" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">}}</text>
+  <text x="35" y="351" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">)</text>
+
+  <rect x="390" y="232" width="350" height="130" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="565" y="250" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#00ED64" text-anchor="middle">Mantener Subset actualizado</text>
+  <text x="405" y="267" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#94a3b8">// $push con $slice mantiene N más recientes</text>
+  <text x="405" y="281" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">db.products.updateOne(</text>
+  <text x="415" y="295" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">{ productId: "prod-001" },</text>
+  <text x="415" y="309" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">{ $push: { topReviews: {</text>
+  <text x="425" y="322" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#fbbf24">$each: [newReview], $slice: -3</text>
+  <text x="415" y="335" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">}}, $inc: { reviewCount: 1 }}</text>
+  <text x="405" y="349" font-family="Inter,Roboto,sans-serif" font-size="8.5" fill="#e2e8f0">)</text>
+
+  <defs>
+    <marker id="arr15a" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arr15b" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/>
+    </marker>
+  </defs>
+</svg>
