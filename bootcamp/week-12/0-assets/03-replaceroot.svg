@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360">
+  <rect width="760" height="360" fill="#001E2B"/>
+  <text x="380" y="30" font-family="Inter,Roboto,sans-serif" font-size="15" font-weight="700" fill="#00ED64" text-anchor="middle">$replaceRoot — Promover Subdocumento</text>
+
+  <!-- Original Document -->
+  <text x="130" y="60" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">Documento original</text>
+  <rect x="20" y="70" width="220" height="130" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="35" y="93" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">_id:</text>
+  <text x="90" y="93" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">ObjectId("...")</text>
+  <text x="35" y="110" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">orderId:</text>
+  <text x="100" y="110" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"ORD-01"</text>
+  <text x="35" y="127" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">status:</text>
+  <text x="100" y="127" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"completed"</text>
+  <!-- subdoc highlight -->
+  <rect x="30" y="133" width="200" height="55" rx="4" fill="#001E2B" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="40" y="150" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#fbbf24">customer: {</text>
+  <text x="55" y="165" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">name: "Ana", city: "Bogotá"</text>
+  <text x="40" y="180" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#fbbf24">}</text>
+
+  <!-- Stage: $replaceRoot -->
+  <rect x="270" y="100" width="160" height="70" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="350" y="126" font-family="Inter,Roboto,sans-serif" font-size="12" font-weight="700" fill="#00ED64" text-anchor="middle">$replaceRoot</text>
+  <text x="350" y="144" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">newRoot: "$customer"</text>
+
+  <!-- Arrow in -->
+  <line x1="240" y1="135" x2="268" y2="135" stroke="#00684A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Arrow out -->
+  <line x1="430" y1="135" x2="458" y2="135" stroke="#00684A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Result -->
+  <text x="600" y="60" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">Resultado</text>
+  <rect x="460" y="70" width="200" height="80" rx="6" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="475" y="95" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">name:</text>
+  <text x="520" y="95" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"Ana"</text>
+  <text x="475" y="112" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">city:</text>
+  <text x="520" y="112" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"Bogotá"</text>
+  <text x="475" y="138" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#ef4444">← _id, orderId, status: eliminados</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="225" x2="740" y2="225" stroke="#00684A" stroke-width="0.8" stroke-dasharray="4,3"/>
+
+  <!-- $mergeObjects example -->
+  <text x="380" y="248" font-family="Inter,Roboto,sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">$replaceRoot + $mergeObjects — Preservar campos del original</text>
+
+  <rect x="20" y="260" width="215" height="75" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="30" y="279" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#60a5fa">$replaceRoot: {</text>
+  <text x="38" y="294" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">newRoot: { $mergeObjects: [</text>
+  <text x="50" y="307" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24">"$customer",</text>
+  <text x="50" y="320" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0">{ orderId: "$orderId" }</text>
+  <text x="38" y="333" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">] }</text>
+
+  <line x1="237" y1="298" x2="268" y2="298" stroke="#00684A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="270" y="262" width="200" height="70" rx="6" fill="#001E2B" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="280" y="280" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">name:</text>
+  <text x="325" y="280" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"Ana"</text>
+  <text x="280" y="297" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8">city:</text>
+  <text x="325" y="297" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"Bogotá"</text>
+  <text x="280" y="314" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#60a5fa">orderId:</text>
+  <text x="340" y="314" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#e2e8f0">"ORD-01"</text>
+  <text x="280" y="326" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#00ED64">← campo original preservado</text>
+
+  <text x="520" y="280" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">$mergeObjects fusiona</text>
+  <text x="520" y="295" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">múltiples objetos.</text>
+  <text x="520" y="310" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Clave duplicada → el</text>
+  <text x="520" y="325" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#fbbf24" text-anchor="middle">último valor gana.</text>
+
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00684A"/>
+    </marker>
+  </defs>
+</svg>
