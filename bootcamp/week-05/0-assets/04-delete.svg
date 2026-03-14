@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 310" width="780" height="310" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="310" fill="#001E2B"/>
+  <text x="390" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">deleteOne(), deleteMany() y Soft Delete</text>
+
+  <!-- deleteOne -->
+  <rect x="30" y="55" width="220" height="90" rx="6" fill="#023430"/>
+  <text x="140" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#ef4444">deleteOne()</text>
+  <text x="140" y="93" text-anchor="middle" font-size="11" fill="#94a3b8">Elimina el PRIMER que coincide</text>
+  <rect x="40" y="100" width="200" height="35" rx="3" fill="#001E2B"/>
+  <text x="140" y="115" text-anchor="middle" font-size="11" fill="#e2e8f0">db.products.deleteOne(</text>
+  <text x="140" y="130" text-anchor="middle" font-size="11" fill="#e2e8f0">  { name: "Budget Mouse" })</text>
+
+  <!-- deleteMany -->
+  <rect x="278" y="55" width="220" height="90" rx="6" fill="#023430"/>
+  <text x="388" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#ef4444">deleteMany()</text>
+  <text x="388" y="93" text-anchor="middle" font-size="11" fill="#94a3b8">Elimina TODOS los que coinciden</text>
+  <rect x="288" y="100" width="200" height="35" rx="3" fill="#001E2B"/>
+  <text x="388" y="115" text-anchor="middle" font-size="11" fill="#e2e8f0">db.products.deleteMany(</text>
+  <text x="388" y="130" text-anchor="middle" font-size="11" fill="#e2e8f0">  { inStock: false })</text>
+
+  <!-- findOneAndUpdate -->
+  <rect x="526" y="55" width="220" height="90" rx="6" fill="#023430"/>
+  <text x="636" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#00ED64">findOneAndUpdate()</text>
+  <text x="636" y="90" text-anchor="middle" font-size="11" fill="#94a3b8">Atómico: busca + actualiza</text>
+  <rect x="536" y="100" width="200" height="35" rx="3" fill="#001E2B"/>
+  <text x="636" y="115" text-anchor="middle" font-size="11" fill="#e2e8f0">filtro, update,</text>
+  <text x="636" y="130" text-anchor="middle" font-size="11" fill="#e2e8f0">{ returnDocument: "after" }</text>
+
+  <!-- Soft delete pattern -->
+  <rect x="30" y="162" width="720" height="130" rx="6" fill="#023430"/>
+  <text x="390" y="182" text-anchor="middle" font-size="13" font-weight="600" fill="#fbbf24">Patrón: Soft Delete (recomendado en producción)</text>
+  <text x="390" y="200" text-anchor="middle" font-size="11" fill="#94a3b8">En lugar de eliminar permanentemente, marca el documento como eliminado:</text>
+
+  <rect x="45" y="208" width="340" height="70" rx="4" fill="#001E2B"/>
+  <text x="215" y="225" text-anchor="middle" font-size="11" fill="#94a3b8">// Marcar como eliminado</text>
+  <text x="215" y="242" text-anchor="middle" font-size="11" fill="#e2e8f0">db.products.updateOne(</text>
+  <text x="215" y="257" text-anchor="middle" font-size="11" fill="#e2e8f0">  { name: "Producto" },</text>
+  <text x="215" y="272" text-anchor="middle" font-size="11" fill="#00ED64">  { $set: { isDeleted: true } })</text>
+
+  <rect x="400" y="208" width="340" height="70" rx="4" fill="#001E2B"/>
+  <text x="570" y="225" text-anchor="middle" font-size="11" fill="#94a3b8">// Filtrar en queries</text>
+  <text x="570" y="242" text-anchor="middle" font-size="11" fill="#e2e8f0">db.products.find(</text>
+  <text x="570" y="257" text-anchor="middle" font-size="11" fill="#60a5fa">  { isDeleted: { $ne: true } }</text>
+  <text x="570" y="272" text-anchor="middle" font-size="11" fill="#e2e8f0">)</text>
+</svg>
