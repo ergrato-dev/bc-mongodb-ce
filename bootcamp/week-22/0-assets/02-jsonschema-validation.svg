@@ -1,0 +1,49 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="380" fill="#001E2B"/>
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="700">$jsonSchema — Validación del Lado Servidor</text>
+
+  <!-- Left: schema definition -->
+  <rect x="15" y="45" width="360" height="305" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.2"/>
+  <text x="195" y="67" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">Definición del Validador</text>
+
+  <text x="28" y="88" fill="#94a3b8" font-size="9" font-family="monospace">db.createCollection("products", {</text>
+  <text x="28" y="103" fill="#94a3b8" font-size="9" font-family="monospace">  validator: { $jsonSchema: {</text>
+  <text x="28" y="118" fill="#94a3b8" font-size="9" font-family="monospace">    bsonType: "object",</text>
+  <text x="28" y="133" fill="#fbbf24" font-size="9" font-family="monospace">    required: ["name","price","stock"],</text>
+  <text x="28" y="148" fill="#94a3b8" font-size="9" font-family="monospace">    properties: {</text>
+  <text x="28" y="163" fill="#e2e8f0" font-size="9" font-family="monospace">      name:  { bsonType:"string",</text>
+  <text x="28" y="178" fill="#e2e8f0" font-size="9" font-family="monospace">               minLength: 2 },</text>
+  <text x="28" y="193" fill="#00ED64" font-size="9" font-family="monospace">      price: { bsonType:"decimal",</text>
+  <text x="28" y="208" fill="#00ED64" font-size="9" font-family="monospace">               minimum: 0 },</text>
+  <text x="28" y="223" fill="#e2e8f0" font-size="9" font-family="monospace">      stock: { bsonType:"int",</text>
+  <text x="28" y="238" fill="#e2e8f0" font-size="9" font-family="monospace">               minimum: 0 },</text>
+  <text x="28" y="253" fill="#94a3b8" font-size="9" font-family="monospace">      category: { enum: [</text>
+  <text x="28" y="268" fill="#94a3b8" font-size="9" font-family="monospace">        "electronics","clothing","food"]}</text>
+  <text x="28" y="283" fill="#94a3b8" font-size="9" font-family="monospace">    }</text>
+  <text x="28" y="298" fill="#94a3b8" font-size="9" font-family="monospace">  }},</text>
+  <text x="28" y="313" fill="#94a3b8" font-size="9" font-family="monospace">  validationAction: "error"</text>
+  <text x="28" y="328" fill="#94a3b8" font-size="9" font-family="monospace">})</text>
+
+  <!-- Right: valid vs invalid -->
+  <rect x="390" y="45" width="355" height="140" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.2"/>
+  <text x="568" y="67" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="700">✅ Documento Válido</text>
+  <text x="405" y="85" fill="#94a3b8" font-size="9" font-family="monospace">db.products.insertOne({</text>
+  <text x="405" y="100" fill="#e2e8f0" font-size="9" font-family="monospace">  name: "Laptop Pro",</text>
+  <text x="405" y="115" fill="#00ED64" font-size="9" font-family="monospace">  price: Decimal128("999.99"),</text>
+  <text x="405" y="130" fill="#e2e8f0" font-size="9" font-family="monospace">  stock: NumberInt(10),</text>
+  <text x="405" y="145" fill="#94a3b8" font-size="9" font-family="monospace">  category: "electronics"</text>
+  <text x="405" y="160" fill="#94a3b8" font-size="9" font-family="monospace">})</text>
+  <text x="568" y="178" text-anchor="middle" fill="#00ED64" font-size="9">→ WriteResult OK</text>
+
+  <rect x="390" y="200" width="355" height="150" rx="6" fill="#023430" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="568" y="222" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700">❌ Documento Inválido</text>
+  <text x="405" y="240" fill="#94a3b8" font-size="9" font-family="monospace">db.products.insertOne({</text>
+  <text x="405" y="255" fill="#ef4444" font-size="9" font-family="monospace">  name: "X",       // minLength:2 falla</text>
+  <text x="405" y="270" fill="#ef4444" font-size="9" font-family="monospace">  price: -5,       // minimum:0 falla</text>
+  <text x="405" y="285" fill="#94a3b8" font-size="9" font-family="monospace">  // stock faltante // required falla</text>
+  <text x="405" y="300" fill="#94a3b8" font-size="9" font-family="monospace">})</text>
+  <text x="568" y="320" text-anchor="middle" fill="#ef4444" font-size="9">→ MongoServerError: Document failed</text>
+  <text x="568" y="336" text-anchor="middle" fill="#ef4444" font-size="9">    validation</text>
+</svg>
