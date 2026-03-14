@@ -1,0 +1,68 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="400" fill="#001E2B"/>
+  <text x="430" y="35" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">$group — Agrupación y Acumuladores</text>
+
+  <!-- Documentos entrada -->
+  <text x="90" y="68" text-anchor="middle" font-size="11" font-weight="bold" fill="#60a5fa">Documentos</text>
+  <rect x="20" y="78" width="140" height="40" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1"/>
+  <text x="30" y="93" font-size="9" fill="#fbbf24">category: "electronics"</text>
+  <text x="30" y="107" font-size="9" fill="#e2e8f0">amount: 1200</text>
+
+  <rect x="20" y="125" width="140" height="40" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1"/>
+  <text x="30" y="140" font-size="9" fill="#fbbf24">category: "furniture"</text>
+  <text x="30" y="154" font-size="9" fill="#e2e8f0">amount: 450</text>
+
+  <rect x="20" y="172" width="140" height="40" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1"/>
+  <text x="30" y="187" font-size="9" fill="#fbbf24">category: "electronics"</text>
+  <text x="30" y="201" font-size="9" fill="#e2e8f0">amount: 800</text>
+
+  <rect x="20" y="219" width="140" height="40" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1"/>
+  <text x="30" y="234" font-size="9" fill="#fbbf24">category: "furniture"</text>
+  <text x="30" y="248" font-size="9" fill="#e2e8f0">amount: 300</text>
+
+  <rect x="20" y="266" width="140" height="40" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1"/>
+  <text x="30" y="281" font-size="9" fill="#fbbf24">category: "clothing"</text>
+  <text x="30" y="295" font-size="9" fill="#e2e8f0">amount: 95</text>
+
+  <!-- Flecha → $group -->
+  <line x1="160" y1="190" x2="210" y2="190" stroke="#00ED64" stroke-width="2"/>
+  <polygon points="208,185 218,190 208,195" fill="#00ED64"/>
+
+  <!-- $group box -->
+  <rect x="218" y="130" width="210" height="120" rx="6" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <rect x="218" y="130" width="210" height="26" rx="6" fill="#00ED64"/>
+  <text x="323" y="147" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$group</text>
+  <text x="228" y="175" font-size="10" fill="#e2e8f0">{</text>
+  <text x="238" y="190" font-size="10" fill="#fbbf24">  _id: "$category",</text>
+  <text x="238" y="205" font-size="10" fill="#e2e8f0">  count: { $sum: 1 },</text>
+  <text x="238" y="220" font-size="10" fill="#e2e8f0">  total: { $sum: "$amount" }</text>
+  <text x="228" y="237" font-size="10" fill="#e2e8f0">}</text>
+
+  <!-- Flecha → Resultado -->
+  <line x1="428" y1="190" x2="478" y2="190" stroke="#00ED64" stroke-width="2"/>
+  <polygon points="476,185 486,190 476,195" fill="#00ED64"/>
+
+  <!-- Resultados -->
+  <text x="640" y="68" text-anchor="middle" font-size="11" font-weight="bold" fill="#00ED64">Resultado</text>
+
+  <rect x="486" y="78" width="200" height="60" rx="4" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="496" y="96" font-size="10" fill="#fbbf24">_id: "electronics"</text>
+  <text x="496" y="111" font-size="10" fill="#00ED64">count: 2, total: 2000</text>
+
+  <rect x="486" y="148" width="200" height="60" rx="4" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="496" y="166" font-size="10" fill="#fbbf24">_id: "furniture"</text>
+  <text x="496" y="181" font-size="10" fill="#00ED64">count: 2, total: 750</text>
+
+  <rect x="486" y="218" width="200" height="60" rx="4" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="496" y="236" font-size="10" fill="#fbbf24">_id: "clothing"</text>
+  <text x="496" y="251" font-size="10" fill="#00ED64">count: 1, total: 95</text>
+
+  <!-- Leyenda de acumuladores -->
+  <rect x="486" y="300" width="340" height="70" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="656" y="318" text-anchor="middle" font-size="11" font-weight="bold" fill="#e2e8f0">Acumuladores comunes</text>
+  <text x="500" y="336" font-size="10" fill="#94a3b8">{ $sum: 1 } — cuenta docs</text>
+  <text x="500" y="351" font-size="10" fill="#94a3b8">{ $sum: "$campo" } — suma valores</text>
+  <text x="650" y="336" font-size="10" fill="#94a3b8">{ $avg: "$campo" } — promedio</text>
+  <text x="650" y="351" font-size="10" fill="#94a3b8">{ $min/$max: "$campo" } — extremos</text>
+  <text x="656" y="366" text-anchor="middle" font-size="10" fill="#94a3b8">N → M docs (un doc por grupo)</text>
+</svg>
