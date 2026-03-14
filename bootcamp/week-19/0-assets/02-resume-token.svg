@@ -1,0 +1,82 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="760" height="380" fill="#001E2B"/>
+
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="bold">Resume Token y Pipeline Filtering</text>
+
+  <!-- LEFT: Pipeline Filtering -->
+  <text x="185" y="52" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">Pipeline Filtering</text>
+
+  <rect x="20" y="60" width="320" height="180" rx="6" fill="#023430" stroke="#00684A"/>
+  <text x="30" y="78" fill="#94a3b8" font-size="9">// Filtrar solo inserts de órdenes con amount > 500</text>
+  <text x="30" y="92" fill="#60a5fa" font-size="9">const pipeline = [</text>
+  <text x="40" y="106" fill="#60a5fa" font-size="9">{</text>
+  <text x="50" y="120" fill="#e2e8f0" font-size="9">$match: {</text>
+  <text x="60" y="134" fill="#e2e8f0" font-size="9">operationType: "insert",</text>
+  <text x="60" y="148" fill="#e2e8f0" font-size="9">"fullDocument.amount": { $gt: 500 }</text>
+  <text x="50" y="162" fill="#e2e8f0" font-size="9">}</text>
+  <text x="40" y="176" fill="#60a5fa" font-size="9">}</text>
+  <text x="30" y="190" fill="#60a5fa" font-size="9">]</text>
+  <text x="30" y="205" fill="#94a3b8" font-size="9">const cs = db.orders.watch(pipeline)</text>
+  <text x="30" y="220" fill="#94a3b8" font-size="9">// Solo recibe eventos que pasen el filtro</text>
+  <text x="30" y="234" fill="#94a3b8" font-size="9">// Soporta: $match, $project, $addFields, $replaceRoot</text>
+
+  <!-- Note -->
+  <rect x="20" y="250" width="320" height="40" rx="4" fill="#001E2B" stroke="#00684A"/>
+  <text x="180" y="267" text-anchor="middle" fill="#94a3b8" font-size="9">Operadores permitidos en pipeline de watch():</text>
+  <text x="180" y="281" text-anchor="middle" fill="#60a5fa" font-size="9">$match  $project  $addFields  $replaceRoot  $replaceWith</text>
+
+  <!-- RIGHT: Resume Token -->
+  <text x="565" y="52" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">Resume Token</text>
+
+  <rect x="400" y="60" width="340" height="230" rx="6" fill="#023430" stroke="#fbbf24"/>
+
+  <text x="410" y="78" fill="#94a3b8" font-size="9">// Guardar token en cada evento procesado</text>
+  <text x="410" y="92" fill="#60a5fa" font-size="9">let savedToken = null</text>
+  <text x="410" y="106" fill="#60a5fa" font-size="9">const cs = db.inventory.watch()</text>
+  <text x="410" y="120" fill="#60a5fa" font-size="9">while (cs.hasNext()) {</text>
+  <text x="420" y="134" fill="#e2e8f0" font-size="9">const evt = cs.next()</text>
+  <text x="420" y="148" fill="#fbbf24" font-size="9">savedToken = evt._id  // guardar token</text>
+  <text x="420" y="162" fill="#94a3b8" font-size="9">// procesar evento...</text>
+  <text x="410" y="176" fill="#60a5fa" font-size="9">}</text>
+
+  <text x="410" y="196" fill="#94a3b8" font-size="9">// Si el stream se interrumpe, reanudar:</text>
+  <text x="410" y="210" fill="#60a5fa" font-size="9">const cs2 = db.inventory.watch([], {</text>
+  <text x="420" y="224" fill="#fbbf24" font-size="9">resumeAfter: savedToken</text>
+  <text x="410" y="238" fill="#60a5fa" font-size="9">})</text>
+  <text x="410" y="254" fill="#94a3b8" font-size="9">// cs2 empieza desde el evento DESPUÉS del token guardado</text>
+  <text x="410" y="270" fill="#00ED64" font-size="9">→ No se pierden eventos durante reconexión</text>
+
+  <!-- Timeline diagram -->
+  <rect x="20" y="302" width="720" height="66" rx="6" fill="#023430" stroke="#00684A"/>
+  <text x="380" y="318" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">Flujo de eventos y reanudación</text>
+
+  <!-- Timeline line -->
+  <line x1="50" y1="345" x2="710" y2="345" stroke="#00684A" stroke-width="2" marker-end="url(#arrG2)"/>
+
+  <circle cx="120" cy="345" r="6" fill="#00ED64"/>
+  <text x="120" y="338" text-anchor="middle" fill="#e2e8f0" font-size="8">evt #1</text>
+  <text x="120" y="360" text-anchor="middle" fill="#94a3b8" font-size="8">token A</text>
+
+  <circle cx="240" cy="345" r="6" fill="#00ED64"/>
+  <text x="240" y="338" text-anchor="middle" fill="#e2e8f0" font-size="8">evt #2</text>
+  <text x="240" y="360" text-anchor="middle" fill="#94a3b8" font-size="8">token B</text>
+
+  <circle cx="360" cy="345" r="6" fill="#ef4444"/>
+  <text x="360" y="338" text-anchor="middle" fill="#ef4444" font-size="8">💥 crash</text>
+  <text x="360" y="360" text-anchor="middle" fill="#94a3b8" font-size="8">guardado B</text>
+
+  <circle cx="480" cy="345" r="6" fill="#fbbf24"/>
+  <text x="480" y="338" text-anchor="middle" fill="#fbbf24" font-size="8">resumeAfter B</text>
+  <text x="480" y="360" text-anchor="middle" fill="#94a3b8" font-size="8">reconexión</text>
+
+  <circle cx="600" cy="345" r="6" fill="#00ED64"/>
+  <text x="600" y="338" text-anchor="middle" fill="#e2e8f0" font-size="8">evt #3</text>
+  <text x="600" y="360" text-anchor="middle" fill="#94a3b8" font-size="8">no perdido</text>
+
+  <defs>
+    <marker id="arrG2" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#00684A"/>
+    </marker>
+  </defs>
+</svg>
