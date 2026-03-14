@@ -1,0 +1,68 @@
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="380" fill="#001E2B"/>
+  <text x="430" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">$cond e $ifNull — Expresiones Condicionales</text>
+
+  <!-- $cond section -->
+  <rect x="20" y="52" width="500" height="200" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="20" y="52" width="500" height="26" rx="5" fill="#00684A"/>
+  <text x="270" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$cond — ternario (if / then / else)</text>
+
+  <!-- $cond box -->
+  <rect x="40" y="90" width="460" height="52" rx="4" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="50" y="108" font-size="10" fill="#94a3b8">{ $cond: { if: &lt;expr&gt;, then: &lt;valorA&gt;, else: &lt;valorB&gt; } }</text>
+  <text x="50" y="126" font-size="10" fill="#94a3b8">Forma corta: { $cond: [ &lt;expr&gt;, &lt;valorA&gt;, &lt;valorB&gt; ] }</text>
+
+  <!-- decision tree -->
+  <rect x="155" y="158" width="190" height="28" rx="4" fill="#00684A"/>
+  <text x="250" y="177" text-anchor="middle" font-size="11" fill="#e2e8f0">amount &gt; 500 ?</text>
+
+  <!-- YES branch -->
+  <line x1="200" y1="186" x2="100" y2="222" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="130" y="210" font-size="10" fill="#00ED64">true</text>
+  <rect x="45" y="222" width="120" height="24" rx="3" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="105" y="238" text-anchor="middle" font-size="10" fill="#00ED64">"premium"</text>
+
+  <!-- NO branch -->
+  <line x1="300" y1="186" x2="395" y2="222" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="360" y="210" font-size="10" fill="#ef4444">false</text>
+  <rect x="330" y="222" width="120" height="24" rx="3" fill="#023430" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="390" y="238" text-anchor="middle" font-size="10" fill="#ef4444">"standard"</text>
+
+  <!-- $ifNull section -->
+  <rect x="540" y="52" width="300" height="200" rx="5" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="540" y="52" width="300" height="26" rx="5" fill="#60a5fa"/>
+  <text x="690" y="70" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$ifNull — valor por defecto</text>
+
+  <text x="550" y="100" font-size="10" fill="#94a3b8">Si el campo es null o no existe,</text>
+  <text x="550" y="116" font-size="10" fill="#94a3b8">devuelve el valor por defecto.</text>
+
+  <rect x="550" y="130" width="280" height="52" rx="4" fill="#001E2B" stroke="#60a5fa" stroke-width="1"/>
+  <text x="560" y="148" font-size="10" fill="#00ED64">{ $ifNull: [ "$category",</text>
+  <text x="560" y="163" font-size="10" fill="#00ED64">             "sin categoría" ] }</text>
+
+  <!-- null flow -->
+  <text x="550" y="206" font-size="10" fill="#94a3b8">$category = null</text>
+  <line x1="640" y1="208" x2="700" y2="208" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <text x="710" y="212" font-size="10" fill="#60a5fa">"sin categoría"</text>
+
+  <text x="550" y="232" font-size="10" fill="#94a3b8">$category = "books"</text>
+  <line x1="640" y1="234" x2="700" y2="234" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arrow4)"/>
+  <text x="710" y="238" font-size="10" fill="#00ED64">"books"</text>
+
+  <!-- Example pipeline -->
+  <rect x="20" y="270" width="820" height="90" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="430" y="289" text-anchor="middle" font-size="11" font-weight="bold" fill="#00ED64">Ejemplo combinado en $addFields</text>
+  <text x="30" y="307" font-size="10" fill="#e2e8f0">db.sales.aggregate([</text>
+  <text x="30" y="322" font-size="10" fill="#e2e8f0">  { $addFields: { tier:  { $cond: { if: { $gt: ["$amount", 500] }, then: "premium", else: "standard" } },</text>
+  <text x="30" y="337" font-size="10" fill="#e2e8f0">                  region: { $ifNull: ["$city", "sin ciudad"] } } }</text>
+  <text x="30" y="352" font-size="10" fill="#e2e8f0">])</text>
+
+  <defs>
+    <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ED64"/>
+    </marker>
+  </defs>
+</svg>
