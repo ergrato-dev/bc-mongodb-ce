@@ -1,0 +1,60 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="760" height="380" fill="#001E2B"/>
+
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="bold">Schema Versioning — Evolución de Esquema sin Downtime</text>
+
+  <!-- LEFT: Old schema -->
+  <text x="185" y="52" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">Versión 1 — esquema original</text>
+
+  <rect x="20" y="60" width="310" height="100" rx="5" fill="#023430" stroke="#fbbf24"/>
+  <text x="30" y="78" fill="#94a3b8" font-size="9">// Documentos existentes (sin schemaVersion)</text>
+  <text x="30" y="93" fill="#60a5fa" font-size="9">{</text>
+  <text x="40" y="106" fill="#e2e8f0" font-size="9">_id: ObjectId(), name: "Ana García",</text>
+  <text x="40" y="118" fill="#e2e8f0" font-size="9">phone: "555-1234",</text>
+  <text x="40" y="130" fill="#e2e8f0" font-size="9">address: "Calle 45 #12-30, Bogotá"</text>
+  <text x="30" y="152" fill="#60a5fa" font-size="9">}</text>
+
+  <!-- Arrow right -->
+  <line x1="330" y1="110" x2="380" y2="110" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="355" y="104" text-anchor="middle" fill="#94a3b8" font-size="8">migración</text>
+  <text x="355" y="116" text-anchor="middle" fill="#94a3b8" font-size="8">lazy</text>
+
+  <!-- RIGHT: New schema v2 -->
+  <text x="565" y="52" text-anchor="middle" fill="#00ED64" font-size="12" font-weight="bold">Versión 2 — esquema evolucionado</text>
+
+  <rect x="390" y="60" width="340" height="120" rx="5" fill="#023430" stroke="#00ED64"/>
+  <text x="400" y="78" fill="#94a3b8" font-size="9">// Documentos nuevos (con schemaVersion: 2)</text>
+  <text x="400" y="93" fill="#60a5fa" font-size="9">{</text>
+  <text x="410" y="106" fill="#00ED64" font-size="9">schemaVersion: 2,</text>
+  <text x="410" y="118" fill="#e2e8f0" font-size="9">name: "Luis Torres",</text>
+  <text x="410" y="130" fill="#e2e8f0" font-size="9">phones: ["555-5678", "555-9012"],</text>
+  <text x="410" y="142" fill="#e2e8f0" font-size="9">address: { street: "Av 80", city: "Medellín" }</text>
+  <text x="400" y="170" fill="#60a5fa" font-size="9">}</text>
+
+  <!-- Coexistence box -->
+  <rect x="20" y="186" width="720" height="60" rx="6" fill="#023430" stroke="#00684A"/>
+  <text x="380" y="204" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">Coexistencia de versiones — migración lazy</text>
+  <text x="380" y="220" text-anchor="middle" fill="#94a3b8" font-size="9">La aplicación detecta la versión al leer y normaliza on-the-fly. No hay script de migración masiva.</text>
+  <text x="380" y="234" text-anchor="middle" fill="#60a5fa" font-size="9">if (!doc.schemaVersion || doc.schemaVersion === 1) { /* transformar al leer */ }</text>
+
+  <!-- Document Versioning -->
+  <text x="380" y="270" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">Document Versioning — Historial de cambios</text>
+
+  <rect x="20" y="278" width="340" height="80" rx="5" fill="#023430" stroke="#60a5fa"/>
+  <text x="30" y="294" fill="#94a3b8" font-size="9">// Colección principal: products (versión actual)</text>
+  <text x="30" y="308" fill="#60a5fa" font-size="9">{ _id: "prod-1", name: "Widget Pro", price: 49.99, version: 3 }</text>
+
+  <rect x="390" y="278" width="340" height="80" rx="5" fill="#023430" stroke="#60a5fa"/>
+  <text x="400" y="294" fill="#94a3b8" font-size="9">// Colección historial: products_history</text>
+  <text x="400" y="308" fill="#60a5fa" font-size="9">{ productId: "prod-1", version: 2, name: "Widget",</text>
+  <text x="400" y="322" fill="#94a3b8" font-size="9">  price: 39.99, archivedAt: ISODate("2024-06-01") }</text>
+  <text x="400" y="338" fill="#60a5fa" font-size="9">{ productId: "prod-1", version: 1, name: "Proto",</text>
+  <text x="400" y="352" fill="#94a3b8" font-size="9">  price: 29.99, archivedAt: ISODate("2024-01-15") }</text>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>
