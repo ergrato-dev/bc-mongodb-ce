@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400">
+  <rect width="760" height="400" fill="#001E2B"/>
+  <text x="380" y="30" font-family="Inter,Roboto,sans-serif" font-size="15" font-weight="700" fill="#00ED64" text-anchor="middle">$bucket vs $bucketAuto</text>
+
+  <!-- LEFT: $bucket -->
+  <text x="185" y="58" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="700" fill="#fbbf24" text-anchor="middle">$bucket — Rangos manuales</text>
+
+  <!-- boundaries legend -->
+  <text x="30" y="82" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">boundaries: [0, 50, 150, 500]</text>
+
+  <!-- bucket bars -->
+  <!-- [0,50) -->
+  <rect x="30" y="95" width="50" height="220" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <rect x="30" y="205" width="50" height="110" rx="4" fill="#fbbf24" opacity="0.7"/>
+  <text x="55" y="112" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24" text-anchor="middle">[0</text>
+  <text x="55" y="323" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">50)</text>
+  <text x="55" y="295" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">3</text>
+  <text x="55" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <!-- [50,150) -->
+  <rect x="100" y="95" width="50" height="220" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <rect x="100" y="150" width="50" height="165" rx="4" fill="#fbbf24" opacity="0.7"/>
+  <text x="125" y="112" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24" text-anchor="middle">[50</text>
+  <text x="125" y="323" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">150)</text>
+  <text x="125" y="250" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">5</text>
+  <text x="125" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <!-- [150,500) -->
+  <rect x="170" y="95" width="50" height="220" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <rect x="170" y="185" width="50" height="130" rx="4" fill="#fbbf24" opacity="0.7"/>
+  <text x="195" y="112" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24" text-anchor="middle">[150</text>
+  <text x="195" y="323" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">500)</text>
+  <text x="195" y="270" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">4</text>
+  <text x="195" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <!-- default -->
+  <rect x="240" y="95" width="50" height="220" rx="4" fill="#023430" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="240" y="260" width="50" height="55" rx="4" fill="#ef4444" opacity="0.7"/>
+  <text x="265" y="112" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">default</text>
+  <text x="265" y="295" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">2</text>
+  <text x="265" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <!-- axis -->
+  <line x1="28" y1="316" x2="292" y2="316" stroke="#00684A" stroke-width="1"/>
+  <text x="155" y="360" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Rangos definidos por el desarrollador</text>
+  <text x="155" y="374" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Docs por bucket: variable</text>
+
+  <!-- Divider -->
+  <line x1="380" y1="50" x2="380" y2="390" stroke="#00684A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- RIGHT: $bucketAuto -->
+  <text x="570" y="58" font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="700" fill="#60a5fa" text-anchor="middle">$bucketAuto — Rangos automáticos</text>
+
+  <text x="405" y="82" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">buckets: 4  (MongoDB calcula los límites)</text>
+
+  <!-- 4 auto buckets — equal-ish height -->
+  <rect x="405" y="95" width="65" height="220" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="405" y="175" width="65" height="140" rx="4" fill="#60a5fa" opacity="0.7"/>
+  <text x="437" y="112" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">auto-1</text>
+  <text x="437" y="248" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">~3–4</text>
+  <text x="437" y="323" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">[min,x)</text>
+  <text x="437" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <rect x="483" y="95" width="65" height="220" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="483" y="180" width="65" height="135" rx="4" fill="#60a5fa" opacity="0.7"/>
+  <text x="515" y="112" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">auto-2</text>
+  <text x="515" y="248" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">~3–4</text>
+  <text x="515" y="323" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">[x,y)</text>
+  <text x="515" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <rect x="561" y="95" width="65" height="220" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="561" y="175" width="65" height="140" rx="4" fill="#60a5fa" opacity="0.7"/>
+  <text x="593" y="112" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">auto-3</text>
+  <text x="593" y="248" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">~3–4</text>
+  <text x="593" y="323" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">[y,z)</text>
+  <text x="593" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <rect x="639" y="95" width="65" height="220" rx="4" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="639" y="180" width="65" height="135" rx="4" fill="#60a5fa" opacity="0.7"/>
+  <text x="671" y="112" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">auto-4</text>
+  <text x="671" y="248" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#001E2B" text-anchor="middle">~3–4</text>
+  <text x="671" y="323" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">[z,max]</text>
+  <text x="671" y="340" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">docs</text>
+
+  <line x1="403" y1="316" x2="706" y2="316" stroke="#00684A" stroke-width="1"/>
+  <text x="555" y="360" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Rangos calculados automáticamente por MongoDB</text>
+  <text x="555" y="374" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Docs por bucket: ~uniform</text>
+</svg>

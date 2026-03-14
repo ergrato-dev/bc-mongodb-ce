@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <rect width="800" height="420" fill="#001E2B"/>
+  <!-- Title -->
+  <text x="400" y="32" font-family="Inter,Roboto,sans-serif" font-size="16" font-weight="700" fill="#00ED64" text-anchor="middle">$facet — Múltiples Pipelines en Paralelo</text>
+
+  <!-- Input documents -->
+  <rect x="20" y="55" width="140" height="90" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="90" y="75" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#00ED64" text-anchor="middle">Colección</text>
+  <text x="90" y="92" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">docs de entrada</text>
+  <rect x="35" y="100" width="110" height="14" rx="3" fill="#001E2B"/>
+  <text x="90" y="111" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">{ name, category, price }</text>
+  <rect x="35" y="117" width="110" height="14" rx="3" fill="#001E2B"/>
+  <text x="90" y="128" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">{ name, category, price }</text>
+
+  <!-- $match stage -->
+  <rect x="195" y="70" width="100" height="55" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="245" y="91" font-family="Inter,Roboto,sans-serif" font-size="12" font-weight="700" fill="#00ED64" text-anchor="middle">$match</text>
+  <text x="245" y="107" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">isActive: true</text>
+
+  <!-- Arrow: docs → $match -->
+  <line x1="160" y1="100" x2="193" y2="98" stroke="#00684A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- $facet box -->
+  <rect x="330" y="45" width="340" height="330" rx="8" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="500" y="68" font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="700" fill="#00ED64" text-anchor="middle">$facet</text>
+
+  <!-- Arrow: $match → $facet -->
+  <line x1="295" y1="98" x2="328" y2="210" stroke="#00684A" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Sub-pipeline 1: byCategory -->
+  <rect x="345" y="80" width="140" height="80" rx="5" fill="#001E2B" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="415" y="98" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">byCategory</text>
+  <text x="415" y="113" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">$group: _id: "$category"</text>
+  <text x="415" y="126" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">count: { $sum: 1 }</text>
+  <text x="415" y="148" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">→ [{_id:"electronics",count:5},...]</text>
+
+  <!-- Sub-pipeline 2: priceStats -->
+  <rect x="345" y="175" width="140" height="80" rx="5" fill="#001E2B" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="415" y="193" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">priceStats</text>
+  <text x="415" y="208" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">$group: _id: null</text>
+  <text x="415" y="221" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">avgPrice, maxPrice</text>
+  <text x="415" y="243" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">→ [{avgPrice:145.5,max:980}]</text>
+
+  <!-- Sub-pipeline 3: top3 -->
+  <rect x="345" y="270" width="140" height="90" rx="5" fill="#001E2B" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="415" y="288" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#00ED64" text-anchor="middle">top3</text>
+  <text x="415" y="303" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">$sort: { price:-1 }</text>
+  <text x="415" y="316" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">$limit: 3</text>
+  <text x="415" y="329" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">$project: name, price</text>
+  <text x="415" y="348" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">→ [{name:"X",price:980},...]</text>
+
+  <!-- Result doc -->
+  <rect x="505" y="80" width="150" height="280" rx="6" fill="#001E2B" stroke="#00684A" stroke-width="1.5"/>
+  <text x="580" y="100" font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="700" fill="#00ED64" text-anchor="middle">Resultado</text>
+  <text x="580" y="118" font-family="Inter,Roboto,sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Un solo documento</text>
+  <line x1="515" y1="127" x2="645" y2="127" stroke="#00684A" stroke-width="0.8"/>
+  <text x="515" y="143" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#60a5fa">byCategory: [...]</text>
+  <text x="515" y="158" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">  array de grupos</text>
+  <line x1="515" y1="168" x2="645" y2="168" stroke="#00684A" stroke-width="0.8"/>
+  <text x="515" y="183" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#fbbf24">priceStats: [...]</text>
+  <text x="515" y="198" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">  estadísticas</text>
+  <line x1="515" y1="209" x2="645" y2="209" stroke="#00684A" stroke-width="0.8"/>
+  <text x="515" y="224" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#00ED64">top3: [...]</text>
+  <text x="515" y="239" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">  top 3 items</text>
+
+  <!-- arrows from sub-pipelines to result -->
+  <line x1="485" y1="120" x2="503" y2="145" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrb)"/>
+  <line x1="485" y1="215" x2="503" y2="195" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arry)"/>
+  <line x1="485" y1="315" x2="503" y2="230" stroke="#00ED64" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrg)"/>
+
+  <!-- Note -->
+  <text x="400" y="400" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Los sub-pipelines reciben los mismos documentos de entrada y se ejecutan de forma independiente</text>
+
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00684A"/>
+    </marker>
+    <marker id="arrb" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arry" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrg" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#00ED64"/>
+    </marker>
+  </defs>
+</svg>
