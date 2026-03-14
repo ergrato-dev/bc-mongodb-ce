@@ -1,5 +1,5 @@
-<svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
-  <rect width="900" height="540" fill="#001E2B"/>
+<svg viewBox="0 0 900 590" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="900" height="590" fill="#001E2B"/>
 
   <!-- Título -->
   <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="bold" fill="#00ED64">Semana 08 — Modelo de Datos Integrador (Etapa 0)</text>
@@ -60,13 +60,13 @@
   <polygon points="223,388 215,398 226,402" fill="#60a5fa"/>
 
   <!-- Leyenda -->
-  <text x="60" y="480" font-size="11" font-weight="bold" fill="#e2e8f0">Leyenda:</text>
-  <rect x="60" y="490" width="12" height="12" fill="#00ED64" rx="2"/>
-  <text x="78" y="501" font-size="10" fill="#e2e8f0">_id (auto)</text>
-  <rect x="140" y="490" width="12" height="12" fill="#60a5fa" rx="2"/>
-  <text x="158" y="501" font-size="10" fill="#e2e8f0">Referencia (ObjectId)</text>
-  <rect x="280" y="490" width="12" height="12" fill="#fbbf24" rx="2"/>
-  <text x="298" y="501" font-size="10" fill="#e2e8f0">Subdocumento embebido</text>
-  <rect x="440" y="490" width="50" height="3" fill="#60a5fa" rx="1"/>
-  <text x="498" y="501" font-size="10" fill="#e2e8f0">Relación entre colecciones</text>
+  <text x="60" y="528" font-size="11" font-weight="bold" fill="#e2e8f0">Leyenda:</text>
+  <rect x="60" y="538" width="12" height="12" fill="#00ED64" rx="2"/>
+  <text x="78" y="549" font-size="10" fill="#e2e8f0">_id (auto)</text>
+  <rect x="160" y="538" width="12" height="12" fill="#60a5fa" rx="2"/>
+  <text x="178" y="549" font-size="10" fill="#e2e8f0">Referencia (ObjectId)</text>
+  <rect x="320" y="538" width="12" height="12" fill="#fbbf24" rx="2"/>
+  <text x="338" y="549" font-size="10" fill="#e2e8f0">Subdocumento embebido</text>
+  <rect x="490" y="541" width="50" height="3" fill="#60a5fa" rx="1"/>
+  <text x="548" y="549" font-size="10" fill="#e2e8f0">Relación entre colecciones</text>
 </svg>
