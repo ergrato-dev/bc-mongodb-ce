@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 310" width="780" height="310" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="310" fill="#001E2B"/>
+  <text x="390" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">Dot Notation — Acceso a Campos Anidados</text>
+
+  <!-- Level 1 -->
+  <rect x="24" y="52" width="226" height="60" rx="6" fill="#023430"/>
+  <text x="137" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#fbbf24">1 nivel</text>
+  <rect x="32" y="80" width="210" height="22" rx="3" fill="#001E2B"/>
+  <text x="137" y="95" text-anchor="middle" font-size="11" fill="#60a5fa">"address.city"</text>
+
+  <!-- Level 2 -->
+  <rect x="272" y="52" width="226" height="60" rx="6" fill="#023430"/>
+  <text x="385" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#fbbf24">2 niveles</text>
+  <rect x="280" y="80" width="210" height="22" rx="3" fill="#001E2B"/>
+  <text x="385" y="95" text-anchor="middle" font-size="11" fill="#60a5fa">"contact.phone.mobile"</text>
+
+  <!-- Level 3  -->
+  <rect x="520" y="52" width="236" height="60" rx="6" fill="#023430"/>
+  <text x="638" y="72" text-anchor="middle" font-size="12" font-weight="600" fill="#fbbf24">Con operador</text>
+  <rect x="528" y="80" width="220" height="22" rx="3" fill="#001E2B"/>
+  <text x="638" y="95" text-anchor="middle" font-size="11" fill="#60a5fa">"salary.amount": { $gte: 3000 }</text>
+
+  <!-- $elemMatch box -->
+  <rect x="24" y="130" width="732" height="120" rx="6" fill="#023430"/>
+  <text x="390" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#00ED64">$elemMatch — Arrays de Subdocumentos</text>
+
+  <rect x="36" y="158" width="340" height="82" rx="4" fill="#001E2B"/>
+  <text x="206" y="175" text-anchor="middle" font-size="11" fill="#ef4444">❌ Sin $elemMatch (falso positivo)</text>
+  <text x="46" y="192" font-size="11" fill="#e2e8f0">db.employees.find({</text>
+  <text x="60" y="207" font-size="11" fill="#94a3b8">  "projects.status": "active",</text>
+  <text x="60" y="221" font-size="11" fill="#94a3b8">  "projects.hours": { $gt: 100 }</text>
+  <text x="46" y="235" font-size="11" fill="#e2e8f0">})</text>
+
+  <rect x="392" y="158" width="352" height="82" rx="4" fill="#001E2B"/>
+  <text x="568" y="175" text-anchor="middle" font-size="11" fill="#00ED64">✅ Con $elemMatch (correcto)</text>
+  <text x="402" y="192" font-size="11" fill="#e2e8f0">db.employees.find({ projects: {</text>
+  <text x="416" y="207" font-size="11" fill="#60a5fa">  $elemMatch: {</text>
+  <text x="430" y="221" font-size="11" fill="#60a5fa">    status: "active", hours: { $gt: 100 }</text>
+  <text x="416" y="235" font-size="11" fill="#60a5fa">  }</text>
+
+  <!-- Note -->
+  <rect x="24" y="263" width="732" height="35" rx="5" fill="#00684A" opacity="0.2"/>
+  <rect x="24" y="263" width="732" height="35" rx="5" fill="none" stroke="#00684A" stroke-width="1.2"/>
+  <text x="390" y="278" text-anchor="middle" font-size="11" fill="#00ED64">Sin $elemMatch, cada condición aplica independientemente al array completo</text>
+  <text x="390" y="292" text-anchor="middle" font-size="11" fill="#94a3b8">Con $elemMatch, todas las condiciones deben cumplirse en el MISMO elemento</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 310" width="780" height="310" font-family="Inter, Roboto, sans-serif">
+  <rect width="780" height="310" fill="#001E2B"/>
+  <text x="390" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#00ED64">Modelo Plano vs Modelo con Subdocumentos</text>
+
+  <!-- Flat model -->
+  <text x="175" y="58" text-anchor="middle" font-size="12" font-weight="600" fill="#94a3b8">Modelo Plano (flat)</text>
+  <rect x="22" y="65" width="306" height="190" rx="6" fill="#023430"/>
+  <text x="42" y="85" font-size="11" fill="#94a3b8">_id: ObjectId(...)</text>
+  <text x="42" y="103" font-size="11" fill="#e2e8f0">employeeName: "Ana Torres"</text>
+  <text x="42" y="120" font-size="11" fill="#e2e8f0">addressStreet: "Calle 10 #23"</text>
+  <text x="42" y="137" font-size="11" fill="#e2e8f0">addressCity: "Medellín"</text>
+  <text x="42" y="154" font-size="11" fill="#e2e8f0">addressCountry: "Colombia"</text>
+  <text x="42" y="171" font-size="11" fill="#e2e8f0">phoneHome: "234-5678"</text>
+  <text x="42" y="188" font-size="11" fill="#e2e8f0">phoneMobile: "+57 300 ..."</text>
+  <text x="42" y="205" font-size="11" fill="#e2e8f0">deptName: "Engineering"</text>
+  <text x="42" y="222" font-size="11" fill="#e2e8f0">deptManager: "Luis Mora"</text>
+  <!-- cons -->
+  <rect x="22" y="263" width="306" height="32" rx="4" fill="#ef4444" opacity="0.15"/>
+  <text x="175" y="278" text-anchor="middle" font-size="11" fill="#ef4444">❌ Difícil de escalar · nombres de campo largos</text>
+  <text x="175" y="292" text-anchor="middle" font-size="11" fill="#ef4444">No agrupa lógicamente los datos relacionados</text>
+
+  <!-- Arrow -->
+  <text x="390" y="165" text-anchor="middle" font-size="24" fill="#00684A">→</text>
+
+  <!-- Nested model -->
+  <text x="610" y="58" text-anchor="middle" font-size="12" font-weight="600" fill="#00ED64">Modelo con Subdocumentos</text>
+  <rect x="455" y="65" width="306" height="190" rx="6" fill="#023430"/>
+  <text x="475" y="85" font-size="11" fill="#94a3b8">_id: ObjectId(...)</text>
+  <text x="475" y="103" font-size="11" fill="#e2e8f0">name: "Ana Torres"</text>
+  <rect x="468" y="108" width="285" height="60" rx="3" fill="#001E2B"/>
+  <text x="482" y="124" font-size="11" fill="#e2e8f0">address: <tspan fill="#00ED64">{</tspan></text>
+  <text x="496" y="139" font-size="11" fill="#fbbf24">  street, city, country</text>
+  <text x="482" y="154" font-size="11" fill="#00ED64">}</text>
+  <rect x="468" y="172" width="285" height="60" rx="3" fill="#001E2B"/>
+  <text x="482" y="188" font-size="11" fill="#e2e8f0">phone: <tspan fill="#00ED64">{</tspan></text>
+  <text x="496" y="203" font-size="11" fill="#fbbf24">  home, mobile</text>
+  <text x="482" y="218" font-size="11" fill="#00ED64">}</text>
+  <text x="475" y="245" font-size="11" fill="#e2e8f0">department: "Engineering"</text>
+
+  <!-- pros -->
+  <rect x="455" y="263" width="306" height="32" rx="4" fill="#00684A" opacity="0.2"/>
+  <text x="608" y="278" text-anchor="middle" font-size="11" fill="#00ED64">✅ Lógica agrupada · dot notation limpia</text>
+  <text x="608" y="292" text-anchor="middle" font-size="11" fill="#00ED64">Queries legibles · estructura escalable</text>
+</svg>
