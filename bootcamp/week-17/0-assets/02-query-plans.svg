@@ -1,79 +1,84 @@
-<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
-  <rect width="760" height="380" fill="#001E2B"/>
+<svg viewBox="0 0 940 390" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="940" height="390" fill="#001E2B"/>
 
   <!-- Title -->
-  <text x="380" y="30" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="bold">Planes de Ejecución — hint() y Covered Queries</text>
+  <text x="470" y="30" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="bold">Planes de Ejecución — hint() y Covered Queries</text>
 
-  <!-- LEFT: Winning Plan vs Rejected -->
-  <text x="185" y="54" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">Winning Plan vs Rejected Plans</text>
+  <!-- ═══════════════════════════════════ -->
+  <!-- LEFT: Winning Plan vs Rejected      x=20..305 -->
+  <!-- ═══════════════════════════════════ -->
+  <text x="162" y="54" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">Winning Plan vs Rejected Plans</text>
 
-  <rect x="30" y="62" width="310" height="130" rx="6" fill="#023430" stroke="#00684A"/>
-  <text x="50" y="80" fill="#94a3b8" font-size="9">winningPlan:</text>
-  <rect x="50" y="86" width="270" height="36" rx="4" fill="#001E2B" stroke="#00ED64"/>
-  <text x="60" y="100" fill="#00ED64" font-size="9" font-weight="bold">stage: "IXSCAN"</text>
-  <text x="60" y="112" fill="#94a3b8" font-size="9">indexName: "status_1_region_1"</text>
+  <rect x="20" y="62" width="285" height="130" rx="6" fill="#023430" stroke="#00684A"/>
+  <text x="40" y="80" fill="#94a3b8" font-size="9">winningPlan:</text>
+  <rect x="40" y="86" width="250" height="36" rx="4" fill="#001E2B" stroke="#00ED64"/>
+  <text x="52" y="100" fill="#00ED64" font-size="9" font-weight="bold">stage: "IXSCAN"</text>
+  <text x="52" y="113" fill="#94a3b8" font-size="9">indexName: "status_1_region_1"</text>
 
-  <text x="50" y="136" fill="#94a3b8" font-size="9">rejectedPlans:</text>
-  <rect x="50" y="142" width="270" height="36" rx="4" fill="#001E2B" stroke="#ef4444"/>
-  <text x="60" y="156" fill="#ef4444" font-size="9">stage: "COLLSCAN"</text>
-  <text x="60" y="168" fill="#94a3b8" font-size="9">(sin índice disponible para este filtro)</text>
+  <text x="40" y="137" fill="#94a3b8" font-size="9">rejectedPlans:</text>
+  <rect x="40" y="143" width="250" height="36" rx="4" fill="#001E2B" stroke="#ef4444"/>
+  <text x="52" y="157" fill="#ef4444" font-size="9">stage: "COLLSCAN"</text>
+  <text x="52" y="170" fill="#94a3b8" font-size="9">(sin índice disponible para este filtro)</text>
 
   <!-- Note -->
-  <text x="185" y="208" text-anchor="middle" fill="#94a3b8" font-size="9">MongoDB elige el plan con menor costo estimado</text>
-  <text x="185" y="220" text-anchor="middle" fill="#94a3b8" font-size="9">(menor docsExamined + keysExamined)</text>
+  <text x="162" y="212" text-anchor="middle" fill="#94a3b8" font-size="9">MongoDB elige el plan con menor costo estimado</text>
+  <text x="162" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">(menor docsExamined + keysExamined)</text>
 
-  <!-- CENTER: hint() -->
-  <text x="380" y="54" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">hint() — Forzar índice</text>
+  <!-- ═══════════════════════════════════ -->
+  <!-- CENTER: hint()                       x=325..505 -->
+  <!-- ═══════════════════════════════════ -->
+  <text x="415" y="54" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">hint() — Forzar índice</text>
 
-  <rect x="300" y="62" width="160" height="76" rx="6" fill="#023430" stroke="#fbbf24"/>
-  <text x="380" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Sin hint: MongoDB elige</text>
-  <text x="380" y="94" text-anchor="middle" fill="#94a3b8" font-size="9">índice subóptimo</text>
-  <rect x="315" y="100" width="130" height="24" rx="4" fill="#001E2B" stroke="#fbbf24"/>
-  <text x="380" y="117" text-anchor="middle" fill="#fbbf24" font-size="9">indexName: "status_1"</text>
+  <rect x="330" y="62" width="170" height="76" rx="6" fill="#023430" stroke="#fbbf24"/>
+  <text x="415" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Sin hint: MongoDB elige</text>
+  <text x="415" y="94" text-anchor="middle" fill="#94a3b8" font-size="9">índice subóptimo</text>
+  <rect x="345" y="100" width="140" height="24" rx="4" fill="#001E2B" stroke="#fbbf24"/>
+  <text x="415" y="117" text-anchor="middle" fill="#fbbf24" font-size="9">indexName: "status_1"</text>
 
-  <!-- Arrow right into hint box -->
-  <line x1="380" y1="138" x2="380" y2="158" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrY)"/>
+  <line x1="415" y1="138" x2="415" y2="158" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrY)"/>
 
-  <rect x="300" y="158" width="160" height="50" rx="6" fill="#001E2B" stroke="#fbbf24"/>
-  <text x="380" y="174" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">.hint({ status: 1, region: 1,</text>
-  <text x="380" y="186" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">amount: 1 })</text>
-  <text x="380" y="198" text-anchor="middle" fill="#94a3b8" font-size="9">→ fuerza el índice elegido</text>
+  <rect x="330" y="158" width="170" height="50" rx="6" fill="#001E2B" stroke="#fbbf24"/>
+  <text x="415" y="174" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">.hint({ status: 1, region: 1,</text>
+  <text x="415" y="187" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="bold">amount: 1 })</text>
+  <text x="415" y="200" text-anchor="middle" fill="#94a3b8" font-size="9">→ fuerza el índice elegido</text>
 
-  <!-- RIGHT: Covered Query -->
-  <text x="565" y="54" text-anchor="middle" fill="#00ED64" font-size="12" font-weight="bold">Covered Query</text>
+  <!-- ═══════════════════════════════════ -->
+  <!-- RIGHT: Covered Query                 x=530..910 -->
+  <!-- ═══════════════════════════════════ -->
+  <text x="720" y="54" text-anchor="middle" fill="#00ED64" font-size="12" font-weight="bold">Covered Query</text>
 
-  <rect x="430" y="62" width="300" height="100" rx="6" fill="#023430" stroke="#00ED64"/>
-  <text x="450" y="80" fill="#94a3b8" font-size="9">// Índice: { status:1, region:1, amount:1 }</text>
-  <text x="450" y="94" fill="#94a3b8" font-size="9">// Proyección: mismos campos + _id:0</text>
-  <text x="450" y="110" fill="#60a5fa" font-size="9">db.sales.find(</text>
-  <text x="460" y="122" fill="#e2e8f0" font-size="9">{ status: "completed" },</text>
-  <text x="460" y="134" fill="#e2e8f0" font-size="9">{ status:1, region:1, amount:1, _id:0 }</text>
-  <text x="450" y="146" fill="#60a5fa" font-size="9">)</text>
+  <rect x="530" y="62" width="380" height="100" rx="6" fill="#023430" stroke="#00ED64"/>
+  <text x="550" y="80" fill="#94a3b8" font-size="9">// Índice: { status:1, region:1, amount:1 }</text>
+  <text x="550" y="94" fill="#94a3b8" font-size="9">// Proyección: mismos campos + _id:0</text>
+  <text x="550" y="110" fill="#60a5fa" font-size="9">db.sales.find(</text>
+  <text x="562" y="122" fill="#e2e8f0" font-size="9">{ status: "completed" },</text>
+  <text x="562" y="134" fill="#e2e8f0" font-size="9">{ status:1, region:1, amount:1, _id:0 }</text>
+  <text x="550" y="147" fill="#60a5fa" font-size="9">)</text>
 
-  <!-- Arrow -->
-  <line x1="565" y1="162" x2="565" y2="182" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="720" y1="162" x2="720" y2="182" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
 
-  <rect x="430" y="182" width="300" height="55" rx="6" fill="#001E2B" stroke="#00ED64"/>
-  <text x="450" y="200" fill="#94a3b8" font-size="9">totalKeysExamined:</text>
-  <text x="570" y="200" fill="#00ED64" font-size="9">47</text>
-  <text x="450" y="216" fill="#94a3b8" font-size="9">totalDocsExamined:</text>
-  <text x="570" y="216" fill="#00ED64" font-size="9" font-weight="bold">0  ← sin acceso al documento</text>
-  <text x="450" y="232" fill="#94a3b8" font-size="9">nReturned:</text>
-  <text x="570" y="232" fill="#e2e8f0" font-size="9">47</text>
+  <rect x="530" y="182" width="380" height="55" rx="6" fill="#001E2B" stroke="#00ED64"/>
+  <text x="550" y="200" fill="#94a3b8" font-size="9">totalKeysExamined:</text>
+  <text x="690" y="200" fill="#00ED64" font-size="9">47</text>
+  <text x="550" y="216" fill="#94a3b8" font-size="9">totalDocsExamined:</text>
+  <text x="690" y="216" fill="#00ED64" font-size="9" font-weight="bold">0  ← sin acceso al documento</text>
+  <text x="550" y="232" fill="#94a3b8" font-size="9">nReturned:</text>
+  <text x="690" y="232" fill="#e2e8f0" font-size="9">47</text>
 
-  <!-- Covered note -->
-  <rect x="430" y="248" width="300" height="26" rx="4" fill="#00191f" stroke="#00ED64"/>
-  <text x="580" y="266" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="bold">El índice satisface query + proyección</text>
+  <rect x="530" y="248" width="380" height="26" rx="4" fill="#00191f" stroke="#00ED64"/>
+  <text x="720" y="266" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="bold">El índice satisface query + proyección</text>
 
-  <!-- Bottom rule bar -->
-  <rect x="30" y="290" width="700" height="70" rx="6" fill="#023430" stroke="#00684A"/>
-  <text x="380" y="308" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">Reglas para Covered Query</text>
-  <text x="50" y="325" fill="#94a3b8" font-size="9">1. Todos los campos de $match deben estar en el índice</text>
-  <text x="50" y="340" fill="#94a3b8" font-size="9">2. La proyección solo incluye campos del índice</text>
-  <text x="50" y="355" fill="#94a3b8" font-size="9">3. Excluir _id explícitamente si no está en el índice: { _id: 0 }</text>
-  <text x="440" y="325" fill="#94a3b8" font-size="9">4. Resultado: totalDocsExamined = 0</text>
-  <text x="440" y="340" fill="#94a3b8" font-size="9">5. Máxima eficiencia: solo lectura de índice</text>
-  <text x="440" y="355" fill="#94a3b8" font-size="9">6. Verificar con explain("executionStats")</text>
+  <!-- ═══════════════════════════════════ -->
+  <!-- Bottom: Reglas                                   -->
+  <!-- ═══════════════════════════════════ -->
+  <rect x="20" y="296" width="900" height="74" rx="6" fill="#023430" stroke="#00684A"/>
+  <text x="470" y="314" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">Reglas para Covered Query</text>
+  <text x="38" y="330" fill="#94a3b8" font-size="9">1. Todos los campos de $match deben estar en el índice</text>
+  <text x="38" y="346" fill="#94a3b8" font-size="9">2. La proyección solo incluye campos del índice</text>
+  <text x="38" y="362" fill="#94a3b8" font-size="9">3. Excluir _id explícitamente si no está en el índice: { _id: 0 }</text>
+  <text x="490" y="330" fill="#94a3b8" font-size="9">4. Resultado: totalDocsExamined = 0</text>
+  <text x="490" y="346" fill="#94a3b8" font-size="9">5. Máxima eficiencia: solo lectura de índice</text>
+  <text x="490" y="362" fill="#94a3b8" font-size="9">6. Verificar con explain("executionStats")</text>
 
   <defs>
     <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
