@@ -1,0 +1,48 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="380" fill="#001E2B"/>
+  <!-- Title -->
+  <text x="380" y="30" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="700">Time Series Collections — Estructura y Consulta</text>
+
+  <!-- Left: Create command -->
+  <rect x="20" y="50" width="340" height="155" rx="6" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <text x="190" y="72" text-anchor="middle" fill="#00ED64" font-size="11" font-weight="700">Crear Time Series Collection</text>
+  <text x="36" y="93" fill="#94a3b8" font-size="9.5" font-family="monospace">db.createCollection("sensor_data", {</text>
+  <text x="36" y="110" fill="#94a3b8" font-size="9.5" font-family="monospace">  timeseries: {</text>
+  <text x="36" y="127" fill="#60a5fa" font-size="9.5" font-family="monospace">    timeField: "recordedAt",   // Date</text>
+  <text x="36" y="144" fill="#fbbf24" font-size="9.5" font-family="monospace">    metaField: "metadata",     // etiqueta</text>
+  <text x="36" y="161" fill="#e2e8f0" font-size="9.5" font-family="monospace">    granularity: "seconds"</text>
+  <text x="36" y="178" fill="#94a3b8" font-size="9.5" font-family="monospace">  },</text>
+  <text x="36" y="195" fill="#94a3b8" font-size="9.5" font-family="monospace">  expireAfterSeconds: 2592000  // 30d</text>
+
+  <!-- Right: Document structure -->
+  <rect x="390" y="50" width="350" height="155" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="565" y="72" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">Documento en sensor_data</text>
+  <text x="406" y="93" fill="#94a3b8" font-size="9.5" font-family="monospace">{</text>
+  <text x="406" y="110" fill="#60a5fa" font-size="9.5" font-family="monospace">  recordedAt: ISODate("2025-04-01T10:00:00Z"),</text>
+  <text x="406" y="127" fill="#fbbf24" font-size="9.5" font-family="monospace">  metadata: { sensorId: "sen-01", loc: "A" },</text>
+  <text x="406" y="144" fill="#e2e8f0" font-size="9.5" font-family="monospace">  temperature: 22.5,</text>
+  <text x="406" y="161" fill="#e2e8f0" font-size="9.5" font-family="monospace">  humidity: 45.0,</text>
+  <text x="406" y="178" fill="#e2e8f0" font-size="9.5" font-family="monospace">  pressurePa: 101325</text>
+  <text x="406" y="195" fill="#94a3b8" font-size="9.5" font-family="monospace">}</text>
+
+  <!-- Granularity legend -->
+  <rect x="20" y="220" width="340" height="80" rx="5" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="190" y="238" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="600">granularity — guía de selección</text>
+  <text x="36" y="255" fill="#e2e8f0" font-size="9">"seconds"  → datos cada segundos (sensores IoT, tráfico)</text>
+  <text x="36" y="271" fill="#e2e8f0" font-size="9">"minutes"  → datos cada minutos (métricas de servidor)</text>
+  <text x="36" y="287" fill="#e2e8f0" font-size="9">"hours"    → datos cada horas (temperatura ambiente, ventas)</text>
+
+  <!-- Aggregate pipeline -->
+  <rect x="390" y="220" width="350" height="100" rx="5" fill="#001E2B" stroke="#fbbf24" stroke-width="1"/>
+  <text x="565" y="238" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="600">Aggregate — promedio por hora</text>
+  <text x="406" y="256" fill="#94a3b8" font-size="8.5" font-family="monospace">db.sensor_data.aggregate([</text>
+  <text x="406" y="271" fill="#94a3b8" font-size="8.5" font-family="monospace">  { $match: { recordedAt: { $gte: ISODate("...") } } },</text>
+  <text x="406" y="286" fill="#94a3b8" font-size="8.5" font-family="monospace">  { $group: { _id: { $dateToString: {</text>
+  <text x="406" y="301" fill="#94a3b8" font-size="8.5" font-family="monospace">    format: "%Y-%m-%dT%H", date: "$recordedAt" } },</text>
+  <text x="406" y="316" fill="#94a3b8" font-size="8.5" font-family="monospace">    avgTemp: { $avg: "$temperature" } } }</text>
+
+  <!-- Bottom bar -->
+  <rect x="20" y="338" width="720" height="32" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="380" y="357" text-anchor="middle" fill="#e2e8f0" font-size="10">Optimizaciones internas: compresión columnar · bucketing automático · índices por timeField</text>
+</svg>
