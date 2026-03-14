@@ -41,5 +41,8 @@ Abre un [Issue](https://github.com/ergrato-dev/bc-mongodb-ce/issues) con:
 
 ## Código de Conducta
 
-Este proyecto sigue el estándar [Contributor Covenant v2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
-Sé respetuoso y constructivo en todos los comentarios e interacciones.
+Este proyecto sigue el [Código de Conducta](CODE_OF_CONDUCT.md) de Contributor
+Convenant v2.1. Revisa el archivo completo antes de contribuir.
+
+Reporta violaciones a través de los canales indicados en
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

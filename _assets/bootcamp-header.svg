@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 178" width="900" height="178">
+  <!-- Fondo -->
+  <rect width="900" height="178" fill="#001E2B"/>
+  <!-- Barra superior decorativa -->
+  <rect width="900" height="3" fill="#00ED64"/>
+
+  <!-- Ícono: hoja MongoDB (estilizada) -->
+  <path d="M 80 36 C 93 40 112 62 112 84 C 112 109 97 128 80 136 C 63 128 48 109 48 84 C 48 62 67 40 80 36 Z"
+        fill="#00ED64"/>
+  <!-- Vena central -->
+  <line x1="80" y1="44" x2="80" y2="129" stroke="#001E2B" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Tallo -->
+  <line x1="80" y1="133" x2="80" y2="151" stroke="#00684A" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Etiqueta BOOTCAMP -->
+  <text x="128" y="50"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="11" font-weight="600"
+        fill="#00ED64" letter-spacing="4">BOOTCAMP</text>
+
+  <!-- Título principal -->
+  <text x="124" y="101"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="48" font-weight="800"
+        fill="#e2e8f0">MongoDB CE</text>
+
+  <!-- Subtítulo -->
+  <text x="128" y="127"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="19"
+        fill="#94a3b8">De Cero a Héroe</text>
+
+  <!-- Línea de tecnologías -->
+  <text x="130" y="149"
+        font-family="monospace" font-size="10.5"
+        fill="#00684A">MongoDB 7.0 CE · Docker · mongosh · Node.js</text>
+
+  <!-- Divisor vertical -->
+  <line x1="598" y1="24" x2="598" y2="158" stroke="#00684A" stroke-width="1"/>
+
+  <!-- Caja de estadísticas -->
+  <rect x="612" y="26" width="277" height="126" rx="8"
+        fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <!-- Divisores internos -->
+  <line x1="704" y1="32" x2="704" y2="146" stroke="#00684A" stroke-width="1"/>
+  <line x1="796" y1="32" x2="796" y2="146" stroke="#00684A" stroke-width="1"/>
+
+  <!-- Stat 1: 24 SEMANAS -->
+  <text x="658" y="97"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="34" font-weight="700"
+        fill="#00ED64" text-anchor="middle">24</text>
+  <text x="658" y="118"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="9.5" letter-spacing="1.5"
+        fill="#94a3b8" text-anchor="middle">SEMANAS</text>
+
+  <!-- Stat 2: 192 HORAS -->
+  <text x="750" y="97"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="34" font-weight="700"
+        fill="#00ED64" text-anchor="middle">192</text>
+  <text x="750" y="118"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="9.5" letter-spacing="1.5"
+        fill="#94a3b8" text-anchor="middle">HORAS</text>
+
+  <!-- Stat 3: Junior Developer -->
+  <text x="842" y="89"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="22" font-weight="700"
+        fill="#00ED64" text-anchor="middle">Junior</text>
+  <text x="842" y="112"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="14"
+        fill="#e2e8f0" text-anchor="middle">Developer</text>
+  <text x="842" y="133"
+        font-family="Inter, Roboto, sans-serif"
+        font-size="9" letter-spacing="1"
+        fill="#94a3b8" text-anchor="middle">NIVEL SALIDA</text>
+</svg>
