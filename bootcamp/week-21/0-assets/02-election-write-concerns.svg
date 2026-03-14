@@ -1,0 +1,78 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <!-- Background -->
+  <rect width="760" height="380" fill="#001E2B"/>
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="700">writeConcern, readConcern y Elecciones</text>
+
+  <!-- Left panel: writeConcern -->
+  <rect x="15" y="45" width="350" height="185" rx="6" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="190" y="67" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="700">writeConcern</text>
+  <!-- w:1 -->
+  <text x="30" y="88" fill="#e2e8f0" font-size="9.5" font-family="monospace">{ w: 1 }  ← default</text>
+  <text x="30" y="103" fill="#94a3b8" font-size="9">Confirma solo el Primary — más rápido, riesgo si Primary cae</text>
+  <!-- w:majority -->
+  <text x="30" y="122" fill="#00ED64" font-size="9.5" font-family="monospace">{ w: "majority" }  ← recomendado</text>
+  <text x="30" y="137" fill="#94a3b8" font-size="9">Espera confirmación de mayoría de nodos — más seguro</text>
+  <!-- w:0 -->
+  <text x="30" y="156" fill="#ef4444" font-size="9.5" font-family="monospace">{ w: 0 }  ← fire and forget</text>
+  <text x="30" y="171" fill="#94a3b8" font-size="9">Sin confirmación — máxima velocidad, sin durabilidad</text>
+  <!-- j:true -->
+  <text x="30" y="190" fill="#e2e8f0" font-size="9.5" font-family="monospace">{ w: "majority", j: true }</text>
+  <text x="30" y="205" fill="#94a3b8" font-size="9">j:true → esperar que el journal sea escrito en disco</text>
+  <text x="30" y="220" fill="#94a3b8" font-size="9">Máxima durabilidad ante caídas de servidor</text>
+
+  <!-- Right panel: readConcern -->
+  <rect x="395" y="45" width="350" height="185" rx="6" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="570" y="67" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="700">readConcern</text>
+  <text x="410" y="88" fill="#e2e8f0" font-size="9.5" font-family="monospace">"local"  ← default</text>
+  <text x="410" y="103" fill="#94a3b8" font-size="9">Lee la versión más reciente del Primary, puede no estar en secundarios</text>
+  <text x="410" y="122" fill="#00ED64" font-size="9.5" font-family="monospace">"majority"</text>
+  <text x="410" y="137" fill="#94a3b8" font-size="9">Solo lee datos confirmados por la mayoría — más consistente</text>
+  <text x="410" y="156" fill="#fbbf24" font-size="9.5" font-family="monospace">"linearizable"</text>
+  <text x="410" y="171" fill="#94a3b8" font-size="9">Garantía más fuerte: espera que todos los writes anteriores</text>
+  <text x="410" y="186" fill="#94a3b8" font-size="9">sean visibles — alta latencia, uso muy específico</text>
+  <text x="410" y="205" fill="#e2e8f0" font-size="9.5" font-family="monospace">"snapshot"  (transacciones)</text>
+  <text x="410" y="220" fill="#94a3b8" font-size="9">Vista consistente al inicio de la transacción</text>
+
+  <!-- Bottom: Election process -->
+  <rect x="15" y="247" width="730" height="120" rx="6" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="380" y="267" text-anchor="middle" fill="#00ED64" font-size="11" font-weight="700">Proceso de Elección cuando cae el Primary</text>
+  <!-- Steps -->
+  <rect x="25" y="278" width="130" height="72" rx="4" fill="#001E2B" stroke="#ef4444" stroke-width="1"/>
+  <text x="90" y="295" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">1. Primary cae</text>
+  <text x="90" y="310" text-anchor="middle" fill="#94a3b8" font-size="8">Heartbeat falla</text>
+  <text x="90" y="324" text-anchor="middle" fill="#94a3b8" font-size="8">después de 10s</text>
+  <text x="90" y="340" text-anchor="middle" fill="#94a3b8" font-size="8">sin respuesta</text>
+
+  <text x="170" y="315" fill="#fbbf24" font-size="16">→</text>
+
+  <rect x="185" y="278" width="130" height="72" rx="4" fill="#001E2B" stroke="#fbbf24" stroke-width="1"/>
+  <text x="250" y="295" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600">2. Candidato</text>
+  <text x="250" y="310" text-anchor="middle" fill="#94a3b8" font-size="8">Secondary con mayor</text>
+  <text x="250" y="324" text-anchor="middle" fill="#94a3b8" font-size="8">priority se postula</text>
+  <text x="250" y="340" text-anchor="middle" fill="#94a3b8" font-size="8">e incrementa term</text>
+
+  <text x="330" y="315" fill="#fbbf24" font-size="16">→</text>
+
+  <rect x="345" y="278" width="130" height="72" rx="4" fill="#001E2B" stroke="#60a5fa" stroke-width="1"/>
+  <text x="410" y="295" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="600">3. Votación</text>
+  <text x="410" y="310" text-anchor="middle" fill="#94a3b8" font-size="8">Cada miembro vota</text>
+  <text x="410" y="324" text-anchor="middle" fill="#94a3b8" font-size="8">una vez por term</text>
+  <text x="410" y="340" text-anchor="middle" fill="#94a3b8" font-size="8">Necesita mayoría</text>
+
+  <text x="490" y="315" fill="#fbbf24" font-size="16">→</text>
+
+  <rect x="505" y="278" width="130" height="72" rx="4" fill="#001E2B" stroke="#00ED64" stroke-width="1"/>
+  <text x="570" y="295" text-anchor="middle" fill="#00ED64" font-size="9" font-weight="600">4. Nuevo Primary</text>
+  <text x="570" y="310" text-anchor="middle" fill="#94a3b8" font-size="8">Electo en ~10-30s</text>
+  <text x="570" y="324" text-anchor="middle" fill="#94a3b8" font-size="8">Operaciones de</text>
+  <text x="570" y="340" text-anchor="middle" fill="#94a3b8" font-size="8">escritura retoman</text>
+
+  <text x="650" y="315" fill="#fbbf24" font-size="16">→</text>
+
+  <rect x="665" y="278" width="70" height="72" rx="4" fill="#001E2B" stroke="#00684A" stroke-width="1"/>
+  <text x="700" y="298" text-anchor="middle" fill="#94a3b8" font-size="8">Old Primary</text>
+  <text x="700" y="313" text-anchor="middle" fill="#94a3b8" font-size="8">se convierte</text>
+  <text x="700" y="328" text-anchor="middle" fill="#60a5fa" font-size="8">en Secondary</text>
+  <text x="700" y="343" text-anchor="middle" fill="#94a3b8" font-size="8">al volver</text>
+</svg>
