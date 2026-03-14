@@ -1,0 +1,78 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="760" height="380" fill="#001E2B"/>
+
+  <!-- Title -->
+  <text x="380" y="28" text-anchor="middle" fill="#00ED64" font-size="15" font-weight="bold">Polymorphic Pattern — Entidades Heterogéneas en una Colección</text>
+
+  <!-- LEFT: WITHOUT Polymorphic — separate collections -->
+  <text x="185" y="52" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">❌ Sin patrón — 3 colecciones</text>
+
+  <rect x="20" y="60" width="160" height="76" rx="5" fill="#023430" stroke="#ef4444"/>
+  <text x="100" y="75" text-anchor="middle" fill="#60a5fa" font-size="10" font-weight="bold">vehicles_cars</text>
+  <text x="30" y="92" fill="#94a3b8" font-size="9">make, model, numDoors</text>
+  <text x="30" y="106" fill="#94a3b8" font-size="9">engineCC, transmission</text>
+  <text x="30" y="120" fill="#94a3b8" font-size="9">price: Decimal128</text>
+  <text x="30" y="130" fill="#94a3b8" font-size="9" font-style="italic">→ $lookup entre colecciones</text>
+
+  <rect x="190" y="60" width="160" height="76" rx="5" fill="#023430" stroke="#ef4444"/>
+  <text x="270" y="75" text-anchor="middle" fill="#60a5fa" font-size="10" font-weight="bold">vehicles_trucks</text>
+  <text x="200" y="92" fill="#94a3b8" font-size="9">make, model, payloadTons</text>
+  <text x="200" y="106" fill="#94a3b8" font-size="9">axles, hasColdStorage</text>
+  <text x="200" y="120" fill="#94a3b8" font-size="9">price: Decimal128</text>
+  <text x="200" y="130" fill="#94a3b8" font-size="9" font-style="italic">→ queries distintos</text>
+
+  <text x="185" y="150" text-anchor="middle" fill="#ef4444" font-size="9">3 colecciones, código duplicado, $lookup costoso</text>
+
+
+  <!-- RIGHT: WITH Polymorphic -->
+  <text x="565" y="52" text-anchor="middle" fill="#00ED64" font-size="12" font-weight="bold">✓ Polymorphic — 1 colección</text>
+
+  <rect x="390" y="60" width="340" height="206" rx="6" fill="#023430" stroke="#00ED64"/>
+
+  <!-- Doc 1: car -->
+  <rect x="400" y="70" width="150" height="86" rx="4" fill="#001E2B" stroke="#00684A"/>
+  <text x="410" y="85" fill="#fbbf24" font-size="9" font-weight="bold">vehicleType: "car"</text>
+  <text x="410" y="99" fill="#94a3b8" font-size="9">make: "Toyota"</text>
+  <text x="410" y="111" fill="#94a3b8" font-size="9">model: "Corolla"</text>
+  <text x="410" y="123" fill="#94a3b8" font-size="9">numDoors: 4</text>
+  <text x="410" y="135" fill="#94a3b8" font-size="9">transmission: "auto"</text>
+  <text x="410" y="147" fill="#94a3b8" font-size="9">price: Decimal128("22000")</text>
+
+  <!-- Doc 2: truck -->
+  <rect x="560" y="70" width="160" height="86" rx="4" fill="#001E2B" stroke="#00684A"/>
+  <text x="570" y="85" fill="#fbbf24" font-size="9" font-weight="bold">vehicleType: "truck"</text>
+  <text x="570" y="99" fill="#94a3b8" font-size="9">make: "Volvo"</text>
+  <text x="570" y="111" fill="#94a3b8" font-size="9">model: "FH16"</text>
+  <text x="570" y="123" fill="#94a3b8" font-size="9">payloadTons: 20</text>
+  <text x="570" y="135" fill="#94a3b8" font-size="9">axles: 3</text>
+  <text x="570" y="147" fill="#94a3b8" font-size="9">price: Decimal128("95000")</text>
+
+  <!-- Doc 3: motorcycle -->
+  <rect x="400" y="166" width="150" height="86" rx="4" fill="#001E2B" stroke="#00684A"/>
+  <text x="410" y="181" fill="#fbbf24" font-size="9" font-weight="bold">vehicleType: "motorcycle"</text>
+  <text x="410" y="195" fill="#94a3b8" font-size="9">make: "Honda"</text>
+  <text x="410" y="207" fill="#94a3b8" font-size="9">model: "CB500"</text>
+  <text x="410" y="219" fill="#94a3b8" font-size="9">engineCC: 471</text>
+  <text x="410" y="231" fill="#94a3b8" font-size="9">hasSidecar: false</text>
+  <text x="410" y="243" fill="#94a3b8" font-size="9">price: Decimal128("8500")</text>
+
+  <text x="560" y="186" fill="#94a3b8" font-size="9">Campos comunes:</text>
+  <text x="560" y="200" fill="#00ED64" font-size="9">vehicleType (discriminador)</text>
+  <text x="560" y="214" fill="#e2e8f0" font-size="9">make, model, price</text>
+  <text x="560" y="228" fill="#94a3b8" font-size="9">Campos específicos</text>
+  <text x="560" y="240" fill="#94a3b8" font-size="9">por tipo de entidad</text>
+
+  <!-- Query example -->
+  <rect x="390" y="274" width="340" height="36" rx="4" fill="#001E2B" stroke="#00684A"/>
+  <text x="400" y="290" fill="#94a3b8" font-size="9">// Query unificada para todos los tipos</text>
+  <text x="400" y="303" fill="#60a5fa" font-size="9">db.vehicles.find({ vehicleType: "car", price: { $lt: Decimal128("30000") } })</text>
+
+  <!-- Divider -->
+  <line x1="380" y1="45" x2="380" y2="335" stroke="#00684A" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <!-- Bottom note row -->
+  <rect x="20" y="316" width="720" height="50" rx="6" fill="#023430" stroke="#00684A"/>
+  <text x="380" y="331" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">Campo discriminador: clave del patrón Polymorphic</text>
+  <text x="380" y="347" text-anchor="middle" fill="#94a3b8" font-size="9">El campo "type" o "kind" identifica el subtipo. Permite filtrar por tipo o hacer queries sobre todos los tipos a la vez.</text>
+  <text x="380" y="360" text-anchor="middle" fill="#94a3b8" font-size="9">Índice recomendado: db.vehicles.createIndex({ vehicleType: 1, price: 1 })</text>
+</svg>
