@@ -38,13 +38,13 @@
   <!-- ═══════════════════════════════════ -->
   <!-- BLOQUE 2: Docker Engine             -->
   <!-- ═══════════════════════════════════ -->
-  <rect x="250" y="68" width="250" height="280" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="250" y="68" width="250" height="300" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
   <rect x="250" y="68" width="250" height="28" rx="8" fill="#1e3a5f"/>
   <rect x="250" y="88" width="250" height="8" fill="#1e3a5f"/>
   <text x="375" y="87" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">🐳 Docker Engine</text>
 
   <!-- SubBloque contenedor -->
-  <rect x="268" y="110" width="214" height="198" rx="6" fill="#001E2B" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="268" y="110" width="214" height="218" rx="6" fill="#001E2B" stroke="#00684A" stroke-width="1.5"/>
   <rect x="268" y="110" width="214" height="24" rx="6" fill="#00684A"/>
   <rect x="268" y="126" width="214" height="8" fill="#00684A"/>
   <text x="375" y="126" text-anchor="middle" fill="#001E2B" font-size="10" font-weight="700">📦 Contenedor: mongodb</text>
@@ -54,20 +54,20 @@
   <text x="375" y="170" text-anchor="middle" fill="#00ED64" font-size="10" font-weight="700">mongo:7.0</text>
 
   <text x="284" y="194" fill="#94a3b8" font-size="9" font-weight="600">Variables de entorno:</text>
-  <rect x="284" y="199" width="182" height="62" rx="3" fill="#023430" stroke="#00684A" stroke-width="1"/>
-  <text x="294" y="215" fill="#fbbf24" font-size="9">MONGO_INITDB_ROOT_USERNAME</text>
-  <text x="450" y="215" fill="#e2e8f0" font-size="9"> = bootcamp</text>
-  <text x="294" y="230" fill="#fbbf24" font-size="9">MONGO_INITDB_ROOT_PASSWORD</text>
-  <text x="450" y="230" fill="#e2e8f0" font-size="9"> = bootcamp123</text>
-  <text x="294" y="245" fill="#fbbf24" font-size="9">MONGO_INITDB_DATABASE</text>
-  <text x="418" y="245" fill="#e2e8f0" font-size="9"> = bootcamp_db</text>
+  <rect x="284" y="199" width="182" height="82" rx="3" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="294" y="212" fill="#fbbf24" font-size="7.5">MONGO_INITDB_ROOT_USERNAME</text>
+  <text x="302" y="224" fill="#e2e8f0" font-size="9">= bootcamp</text>
+  <text x="294" y="238" fill="#fbbf24" font-size="7.5">MONGO_INITDB_ROOT_PASSWORD</text>
+  <text x="302" y="250" fill="#e2e8f0" font-size="9">= bootcamp123</text>
+  <text x="294" y="264" fill="#fbbf24" font-size="7.5">MONGO_INITDB_DATABASE</text>
+  <text x="302" y="276" fill="#e2e8f0" font-size="9">= bootcamp_db</text>
 
-  <text x="284" y="282" fill="#94a3b8" font-size="9" font-weight="600">Volumen persistente:</text>
-  <text x="284" y="296" fill="#60a5fa" font-size="9">mongodb_data:/data/db</text>
+  <text x="284" y="302" fill="#94a3b8" font-size="9" font-weight="600">Volumen persistente:</text>
+  <text x="284" y="316" fill="#60a5fa" font-size="9">mongodb_data:/data/db</text>
 
   <!-- Puerto -->
-  <rect x="268" y="318" width="214" height="24" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="375" y="334" text-anchor="middle" fill="#fbbf24" font-size="10">Puerto host: 27017 → contenedor: 27017</text>
+  <rect x="268" y="338" width="214" height="24" rx="4" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="375" y="354" text-anchor="middle" fill="#fbbf24" font-size="10">Puerto host: 27017 → contenedor: 27017</text>
 
   <!-- Flecha 2→3 -->
   <line x1="501" y1="133" x2="552" y2="133" stroke="#00ED64" stroke-width="2" marker-end="url(#arrow)"/>
@@ -76,7 +76,7 @@
   <!-- ═══════════════════════════ -->
   <!-- BLOQUE 3: mongosh           -->
   <!-- ═══════════════════════════ -->
-  <rect x="554" y="68" width="178" height="280" rx="8" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <rect x="554" y="68" width="178" height="300" rx="8" fill="#023430" stroke="#00ED64" stroke-width="2"/>
   <rect x="554" y="68" width="178" height="28" rx="8" fill="#00ED64"/>
   <rect x="554" y="88" width="178" height="8" fill="#00ED64"/>
   <text x="643" y="87" text-anchor="middle" fill="#001E2B" font-size="12" font-weight="700">mongosh</text>
@@ -104,9 +104,9 @@
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- SECCIÓN INFERIOR: comando completo docker-compose       -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <rect x="28" y="368" width="704" height="52" rx="6" fill="#0f172a" stroke="#00684A" stroke-width="1"/>
-  <text x="44" y="387" fill="#94a3b8" font-size="9" font-weight="600">Comando de conexión:</text>
-  <text x="44" y="407" fill="#00ED64" font-size="9">docker compose -f _scripts/docker-compose.yml exec mongodb \</text>
-  <text x="44" y="419" fill="#e2e8f0" font-size="9">  mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db</text>
+  <rect x="28" y="388" width="704" height="52" rx="6" fill="#0f172a" stroke="#00684A" stroke-width="1"/>
+  <text x="44" y="407" fill="#94a3b8" font-size="9" font-weight="600">Comando de conexión:</text>
+  <text x="44" y="427" fill="#00ED64" font-size="9">docker compose -f _scripts/docker-compose.yml exec mongodb \</text>
+  <text x="44" y="439" fill="#e2e8f0" font-size="9">  mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db</text>
 
 </svg>
