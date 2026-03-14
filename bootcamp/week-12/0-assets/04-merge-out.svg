@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360">
-  <rect width="760" height="360" fill="#001E2B"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 410" width="920" height="410">
+  <rect width="920" height="410" fill="#001E2B"/>
   <text x="380" y="28" font-family="Inter,Roboto,sans-serif" font-size="15" font-weight="700" fill="#00ED64" text-anchor="middle">$out vs $merge — Persistir Resultados</text>
 
   <!-- LEFT: $out -->
@@ -44,7 +44,7 @@
   <text x="315" y="254" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">la colección completa</text>
 
   <!-- Divider -->
-  <line x1="380" y1="45" x2="380" y2="350" stroke="#00684A" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="380" y1="45" x2="380" y2="405" stroke="#00684A" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- RIGHT: $merge -->
   <text x="570" y="54" font-family="Inter,Roboto,sans-serif" font-size="12" font-weight="700" fill="#00ED64" text-anchor="middle">$merge — Actualiza selectivamente</text>
@@ -60,32 +60,32 @@
 
   <line x1="525" y1="92" x2="548" y2="92" stroke="#00684A" stroke-width="1.5" marker-end="url(#arr)"/>
 
-  <rect x="648" y="45" width="90" height="200" rx="5" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
-  <text x="693" y="65" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#00ED64" text-anchor="middle">stats</text>
+  <rect x="775" y="45" width="110" height="200" rx="5" fill="#023430" stroke="#00ED64" stroke-width="1.5"/>
+  <text x="830" y="65" font-family="Inter,Roboto,sans-serif" font-size="10" font-weight="700" fill="#00ED64" text-anchor="middle">stats</text>
 
   <!-- existing docs (kept) -->
-  <rect x="655" y="72" width="76" height="14" rx="3" fill="#023430" stroke="#00684A" stroke-width="1"/>
-  <text x="693" y="83" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">historical 1 ✓</text>
-  <rect x="655" y="89" width="76" height="14" rx="3" fill="#023430" stroke="#00684A" stroke-width="1"/>
-  <text x="693" y="100" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">historical 2 ✓</text>
+  <rect x="782" y="72" width="96" height="14" rx="3" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="830" y="83" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">historical 1 ✓</text>
+  <rect x="782" y="89" width="96" height="14" rx="3" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="830" y="100" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">historical 2 ✓</text>
 
   <!-- updated docs -->
-  <rect x="655" y="108" width="76" height="14" rx="3" fill="#00684A"/>
-  <text x="693" y="119" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">updated doc ↺</text>
-  <rect x="655" y="125" width="76" height="14" rx="3" fill="#00684A"/>
-  <text x="693" y="136" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">updated doc ↺</text>
+  <rect x="782" y="108" width="96" height="14" rx="3" fill="#00684A"/>
+  <text x="830" y="119" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">updated doc ↺</text>
+  <rect x="782" y="125" width="96" height="14" rx="3" fill="#00684A"/>
+  <text x="830" y="136" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">updated doc ↺</text>
 
   <!-- inserted docs -->
-  <rect x="655" y="143" width="76" height="14" rx="3" fill="#00684A" opacity="0.7"/>
-  <text x="693" y="154" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">new insert +</text>
-  <rect x="655" y="160" width="76" height="14" rx="3" fill="#00684A" opacity="0.7"/>
-  <text x="693" y="171" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">new insert +</text>
+  <rect x="782" y="143" width="96" height="14" rx="3" fill="#00684A" opacity="0.7"/>
+  <text x="830" y="154" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">new insert +</text>
+  <rect x="782" y="160" width="96" height="14" rx="3" fill="#00684A" opacity="0.7"/>
+  <text x="830" y="171" font-family="Inter,Roboto,sans-serif" font-size="8" fill="#e2e8f0" text-anchor="middle">new insert +</text>
 
-  <line x1="630" y1="92" x2="646" y2="130" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arrg)"/>
+  <line x1="630" y1="92" x2="773" y2="120" stroke="#00ED64" stroke-width="1.5" marker-end="url(#arrg)"/>
 
-  <text x="560" y="186" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">whenMatched: "merge"</text>
-  <text x="560" y="200" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">whenNotMatched: "insert"</text>
-  <text x="560" y="220" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#00ED64">✅ Docs históricos: se conservan</text>
+  <text x="395" y="265" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">whenMatched: "merge"</text>
+  <text x="395" y="280" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#94a3b8">whenNotMatched: "insert"</text>
+  <text x="395" y="298" font-family="Inter,Roboto,sans-serif" font-size="9" fill="#00ED64">✅ Docs históricos: se conservan</text>
 
   <!-- Bottom comparison -->
   <rect x="20" y="280" width="340" height="55" rx="5" fill="#023430" stroke="#00684A" stroke-width="1"/>
