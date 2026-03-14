@@ -1,0 +1,77 @@
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="340" fill="#001E2B"/>
+  <text x="430" y="33" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">$lookup — Join entre Colecciones</text>
+
+  <!-- Left collection: orders -->
+  <rect x="20" y="55" width="220" height="185" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="20" y="55" width="220" height="26" rx="5" fill="#00684A"/>
+  <text x="130" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">Colección: orders</text>
+  <!-- doc 1 -->
+  <rect x="30" y="90" width="200" height="42" rx="3" fill="#001E2B"/>
+  <text x="40" y="106" font-size="10" fill="#e2e8f0">{ orderId: "ORD-001"</text>
+  <text x="40" y="121" font-size="10" fill="#60a5fa">  productId: ObjectId("p1") }</text>
+  <!-- doc 2 -->
+  <rect x="30" y="138" width="200" height="42" rx="3" fill="#001E2B"/>
+  <text x="40" y="154" font-size="10" fill="#e2e8f0">{ orderId: "ORD-002"</text>
+  <text x="40" y="169" font-size="10" fill="#60a5fa">  productId: ObjectId("p2") }</text>
+  <!-- doc 3 -->
+  <rect x="30" y="186" width="200" height="42" rx="3" fill="#001E2B"/>
+  <text x="40" y="202" font-size="10" fill="#e2e8f0">{ orderId: "ORD-003"</text>
+  <text x="40" y="217" font-size="10" fill="#60a5fa">  productId: ObjectId("p1") }</text>
+
+  <!-- $lookup box -->
+  <rect x="268" y="100" width="185" height="95" rx="5" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <text x="360" y="120" text-anchor="middle" font-size="12" font-weight="bold" fill="#00ED64">$lookup</text>
+  <text x="278" y="140" font-size="9" fill="#94a3b8">from: "products"</text>
+  <text x="278" y="155" font-size="9" fill="#60a5fa">localField: "productId"</text>
+  <text x="278" y="170" font-size="9" fill="#fbbf24">foreignField: "_id"</text>
+  <text x="278" y="185" font-size="9" fill="#00ED64">as: "productInfo"</text>
+
+  <!-- arrows from orders to $lookup -->
+  <line x1="240" y1="150" x2="268" y2="148" stroke="#00ED64" stroke-width="1.5" marker-end="url(#la1)"/>
+
+  <!-- Right collection: products -->
+  <rect x="480" y="55" width="200" height="185" rx="5" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <rect x="480" y="55" width="200" height="26" rx="5" fill="#fbbf24"/>
+  <text x="580" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">Colección: products</text>
+  <!-- prod 1 -->
+  <rect x="490" y="90" width="180" height="42" rx="3" fill="#001E2B"/>
+  <text x="500" y="106" font-size="10" fill="#fbbf24">{ _id: ObjectId("p1")</text>
+  <text x="500" y="121" font-size="10" fill="#e2e8f0">  name: "Laptop" }</text>
+  <!-- prod 2 -->
+  <rect x="490" y="138" width="180" height="42" rx="3" fill="#001E2B"/>
+  <text x="500" y="154" font-size="10" fill="#fbbf24">{ _id: ObjectId("p2")</text>
+  <text x="500" y="169" font-size="10" fill="#e2e8f0">  name: "Mouse" }</text>
+  <!-- prod 3 -->
+  <rect x="490" y="186" width="180" height="42" rx="3" fill="#001E2B"/>
+  <text x="500" y="202" font-size="10" fill="#fbbf24">{ _id: ObjectId("p3")</text>
+  <text x="500" y="217" font-size="10" fill="#e2e8f0">  name: "Monitor" }</text>
+
+  <!-- arrow from $lookup to products -->
+  <line x1="453" y1="148" x2="480" y2="148" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#la2)"/>
+
+  <!-- Output collection -->
+  <rect x="700" y="55" width="145" height="185" rx="5" fill="#023430" stroke="#60a5fa" stroke-width="2"/>
+  <rect x="700" y="55" width="145" height="26" rx="5" fill="#60a5fa"/>
+  <text x="772" y="73" text-anchor="middle" font-size="11" font-weight="bold" fill="#001E2B">Resultado</text>
+  <rect x="710" y="90" width="125" height="65" rx="3" fill="#001E2B"/>
+  <text x="718" y="106" font-size="9" fill="#e2e8f0">orderId: "ORD-001"</text>
+  <text x="718" y="121" font-size="9" fill="#60a5fa">productId: ObjectId</text>
+  <text x="718" y="136" font-size="9" fill="#00ED64">productInfo: [</text>
+  <text x="718" y="150" font-size="9" fill="#00ED64">  { name:"Laptop" }]</text>
+
+  <!-- arrow from $lookup to output -->
+  <line x1="680" y1="148" x2="700" y2="148" stroke="#60a5fa" stroke-width="2" marker-end="url(#la3)"/>
+
+  <!-- Note -->
+  <rect x="20" y="258" width="820" height="60" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="430" y="278" text-anchor="middle" font-size="11" font-weight="bold" fill="#00ED64">Clave de $lookup</text>
+  <text x="430" y="296" text-anchor="middle" font-size="10" fill="#e2e8f0">localField (en orders) debe coincidir con foreignField (en products)</text>
+  <text x="430" y="312" text-anchor="middle" font-size="10" fill="#94a3b8">El resultado "as" siempre es un array — usar $unwind para aplanar</text>
+
+  <defs>
+    <marker id="la1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#00ED64"/></marker>
+    <marker id="la2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"/></marker>
+    <marker id="la3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#60a5fa"/></marker>
+  </defs>
+</svg>

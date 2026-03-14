@@ -1,0 +1,42 @@
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="340" fill="#001E2B"/>
+  <text x="430" y="33" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">Embed vs Reference — Estrategias de Modelado</text>
+
+  <!-- EMBED column -->
+  <rect x="20" y="56" width="390" height="225" rx="5" fill="#023430" stroke="#00ED64" stroke-width="2"/>
+  <rect x="20" y="56" width="390" height="26" rx="5" fill="#00ED64"/>
+  <text x="215" y="74" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">EMBED — Datos Embebidos</text>
+  <text x="30" y="100" font-size="10" fill="#94a3b8">{ _id: ObjectId("…"),</text>
+  <text x="30" y="116" font-size="10" fill="#e2e8f0">  orderId: "ORD-001",</text>
+  <text x="30" y="132" font-size="10" fill="#00ED64">  address: { street: "Calle 100",  ← embebido</text>
+  <text x="30" y="148" font-size="10" fill="#00ED64">    city: "Bogotá", zip: "110111" },</text>
+  <text x="30" y="164" font-size="10" fill="#60a5fa">  items: [                           ← array embebido</text>
+  <text x="30" y="180" font-size="10" fill="#60a5fa">    { product: "Laptop", qty: 1 }]</text>
+  <text x="30" y="196" font-size="10" fill="#94a3b8">}</text>
+  <text x="30" y="220" font-size="10" fill="#00ED64">✅ Una sola query</text>
+  <text x="30" y="236" font-size="10" fill="#00ED64">✅ Sin $lookup</text>
+  <text x="30" y="252" font-size="10" fill="#ef4444">⚠ Datos difíciles de actualizar si están duplicados</text>
+  <text x="30" y="268" font-size="10" fill="#94a3b8">Usar cuando: datos se leen siempre juntos, N pequeño</text>
+
+  <!-- REFERENCE column -->
+  <rect x="450" y="56" width="390" height="225" rx="5" fill="#023430" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="450" y="56" width="390" height="26" rx="5" fill="#fbbf24"/>
+  <text x="645" y="74" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">REFERENCE — Por ObjectId</text>
+  <!-- orders doc -->
+  <text x="460" y="100" font-size="10" fill="#94a3b8">// Colección: orders</text>
+  <text x="460" y="116" font-size="10" fill="#e2e8f0">{ orderId: "ORD-001",</text>
+  <text x="460" y="132" font-size="10" fill="#fbbf24">  customerId: ObjectId("abc") }  ← referencia</text>
+  <!-- spacer -->
+  <text x="460" y="156" font-size="10" fill="#94a3b8">// Colección: customers</text>
+  <text x="460" y="172" font-size="10" fill="#e2e8f0">{ _id: ObjectId("abc"),</text>
+  <text x="460" y="188" font-size="10" fill="#60a5fa">  name: "Juan Gómez",</text>
+  <text x="460" y="204" font-size="10" fill="#60a5fa">  email: "juan@mail.com" }</text>
+  <text x="460" y="224" font-size="10" fill="#00ED64">✅ Una sola fuente de verdad</text>
+  <text x="460" y="240" font-size="10" fill="#00ED64">✅ Actualización centralizada</text>
+  <text x="460" y="256" font-size="10" fill="#ef4444">⚠ Requiere $lookup para leer datos relacionados</text>
+  <text x="460" y="272" font-size="10" fill="#94a3b8">Usar cuando: entidad con vida propia, N grande o creciente</text>
+
+  <!-- Decision note -->
+  <rect x="20" y="296" width="820" height="30" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="430" y="315" text-anchor="middle" font-size="10" fill="#e2e8f0">Regla: Embed si los datos cambian juntos · Reference si la entidad tiene vida propia y se consulta/actualiza de forma independiente</text>
+</svg>

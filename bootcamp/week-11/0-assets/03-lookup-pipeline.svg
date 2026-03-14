@@ -1,0 +1,36 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="320" fill="#001E2B"/>
+  <text x="430" y="33" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">$lookup con pipeline — Join Avanzado</text>
+
+  <!-- Simple $lookup -->
+  <rect x="20" y="55" width="385" height="165" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="20" y="55" width="385" height="26" rx="5" fill="#00684A"/>
+  <text x="213" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$lookup simple</text>
+  <text x="30" y="100" font-size="10" fill="#94a3b8">Solo por igualdad de campos</text>
+  <text x="30" y="120" font-size="10" fill="#00ED64">{ $lookup: {</text>
+  <text x="30" y="135" font-size="10" fill="#00ED64">    from: "products",</text>
+  <text x="30" y="150" font-size="10" fill="#60a5fa">    localField: "productId",</text>
+  <text x="30" y="165" font-size="10" fill="#fbbf24">    foreignField: "_id",</text>
+  <text x="30" y="180" font-size="10" fill="#00ED64">    as: "product"</text>
+  <text x="30" y="195" font-size="10" fill="#00ED64">} }</text>
+  <text x="30" y="213" font-size="10" fill="#94a3b8">→ Une todos los productos coincidentes</text>
+
+  <!-- Pipeline $lookup -->
+  <rect x="455" y="55" width="385" height="165" rx="5" fill="#023430" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="455" y="55" width="385" height="26" rx="5" fill="#fbbf24"/>
+  <text x="647" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$lookup con pipeline</text>
+  <text x="465" y="100" font-size="10" fill="#94a3b8">Condiciones complejas + proyecciones</text>
+  <text x="465" y="120" font-size="10" fill="#00ED64">{ $lookup: {</text>
+  <text x="465" y="135" font-size="10" fill="#00ED64">    from: "products",</text>
+  <text x="465" y="150" font-size="10" fill="#60a5fa">    let: { pid: "$productId" },</text>
+  <text x="465" y="165" font-size="10" fill="#fbbf24">    pipeline: [ { $match: { $expr: {</text>
+  <text x="465" y="180" font-size="10" fill="#fbbf24">      $and:[{ $eq:["$$pid","$_id"] },</text>
+  <text x="465" y="195" font-size="10" fill="#fbbf24">            { $eq:["$isActive",true] }]}}}],</text>
+  <text x="465" y="210" font-size="10" fill="#00ED64">    as: "product" } }</text>
+
+  <!-- Note row -->
+  <rect x="20" y="238" width="820" height="60" rx="4" fill="#023430" stroke="#00684A" stroke-width="1"/>
+  <text x="430" y="258" text-anchor="middle" font-size="11" font-weight="bold" fill="#00ED64">$ vs $$ en el pipeline de $lookup</text>
+  <text x="430" y="276" text-anchor="middle" font-size="10" fill="#e2e8f0">$campo  →  accede al campo de la colección remota (products)</text>
+  <text x="430" y="294" text-anchor="middle" font-size="10" fill="#60a5fa">$$variable  →  accede a la variable definida en "let" (de la colección origen)</text>
+</svg>
