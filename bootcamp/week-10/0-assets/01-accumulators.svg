@@ -1,0 +1,66 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Roboto, sans-serif">
+  <rect width="860" height="400" fill="#001E2B"/>
+  <text x="430" y="35" text-anchor="middle" font-size="17" font-weight="bold" fill="#00ED64">Acumuladores de $group</text>
+
+  <!-- Grid: 2x3 panels -->
+
+  <!-- Panel $sum -->
+  <rect x="20" y="55" width="263" height="140" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="20" y="55" width="263" height="26" rx="5" fill="#00684A"/>
+  <text x="151" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$sum</text>
+  <text x="30" y="100" font-size="10" fill="#94a3b8">{ $sum: 1 } — cuenta docs</text>
+  <text x="30" y="116" font-size="10" fill="#94a3b8">{ $sum: "$campo" } — suma valores</text>
+  <text x="30" y="138" font-size="10" fill="#00ED64">totalSales: { $sum: 1 }</text>
+  <text x="30" y="153" font-size="10" fill="#00ED64">revenue: { $sum: "$amount" }</text>
+  <text x="30" y="183" font-size="10" fill="#fbbf24">→ número (total)</text>
+
+  <!-- Panel $avg -->
+  <rect x="299" y="55" width="263" height="140" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="299" y="55" width="263" height="26" rx="5" fill="#00684A"/>
+  <text x="430" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$avg / $min / $max</text>
+  <text x="309" y="100" font-size="10" fill="#94a3b8">{ $avg: "$rating" } — promedio</text>
+  <text x="309" y="116" font-size="10" fill="#94a3b8">{ $min: "$price" } — mínimo</text>
+  <text x="309" y="132" font-size="10" fill="#94a3b8">{ $max: "$price" } — máximo</text>
+  <text x="309" y="153" font-size="10" fill="#00ED64">avgScore: { $avg: "$rating" }</text>
+  <text x="309" y="183" font-size="10" fill="#fbbf24">→ número (estadístico)</text>
+
+  <!-- Panel $first/$last -->
+  <rect x="578" y="55" width="262" height="140" rx="5" fill="#023430" stroke="#00684A" stroke-width="1.5"/>
+  <rect x="578" y="55" width="262" height="26" rx="5" fill="#00684A"/>
+  <text x="709" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$first / $last</text>
+  <text x="588" y="100" font-size="10" fill="#94a3b8">Primer/último valor del grupo</text>
+  <text x="588" y="116" font-size="10" fill="#94a3b8">Usa $sort antes para control</text>
+  <text x="588" y="138" font-size="10" fill="#00ED64">first: { $first: "$product" }</text>
+  <text x="588" y="153" font-size="10" fill="#00ED64">last: { $last: "$product" }</text>
+  <text x="588" y="183" font-size="10" fill="#fbbf24">→ valor escalar (string,num…)</text>
+
+  <!-- Panel $push -->
+  <rect x="20" y="215" width="263" height="155" rx="5" fill="#023430" stroke="#60a5fa" stroke-width="1.5"/>
+  <rect x="20" y="215" width="263" height="26" rx="5" fill="#60a5fa"/>
+  <text x="151" y="233" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$push</text>
+  <text x="30" y="260" font-size="10" fill="#94a3b8">Recopila todos los valores</text>
+  <text x="30" y="276" font-size="10" fill="#94a3b8">Incluye duplicados</text>
+  <text x="30" y="298" font-size="10" fill="#00ED64">products: { $push: "$product" }</text>
+  <text x="30" y="316" font-size="10" fill="#94a3b8">→ ["Laptop","Mouse","Laptop"]</text>
+  <text x="30" y="355" font-size="10" fill="#fbbf24">→ Array con todos los valores</text>
+
+  <!-- Panel $addToSet -->
+  <rect x="299" y="215" width="263" height="155" rx="5" fill="#023430" stroke="#fbbf24" stroke-width="1.5"/>
+  <rect x="299" y="215" width="263" height="26" rx="5" fill="#fbbf24"/>
+  <text x="430" y="233" text-anchor="middle" font-size="12" font-weight="bold" fill="#001E2B">$addToSet</text>
+  <text x="309" y="260" font-size="10" fill="#94a3b8">Recopila valores únicos</text>
+  <text x="309" y="276" font-size="10" fill="#94a3b8">Elimina duplicados automáticamente</text>
+  <text x="309" y="298" font-size="10" fill="#00ED64">cats: { $addToSet: "$category" }</text>
+  <text x="309" y="316" font-size="10" fill="#94a3b8">→ ["electronics","furniture"]</text>
+  <text x="309" y="355" font-size="10" fill="#fbbf24">→ Array sin duplicados</text>
+
+  <!-- Panel _id: null -->
+  <rect x="578" y="215" width="262" height="155" rx="5" fill="#023430" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="578" y="215" width="262" height="26" rx="5" fill="#ef4444"/>
+  <text x="709" y="233" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">_id: null (total global)</text>
+  <text x="588" y="260" font-size="10" fill="#94a3b8">Agrupa TODOS los docs</text>
+  <text x="588" y="276" font-size="10" fill="#94a3b8">Retorna un único documento</text>
+  <text x="588" y="298" font-size="10" fill="#00ED64">{ $group: { _id: null,</text>
+  <text x="588" y="313" font-size="10" fill="#00ED64">  total: { $sum: 1 } } }</text>
+  <text x="588" y="355" font-size="10" fill="#fbbf24">→ { _id: null, total: 15 }</text>
+</svg>
