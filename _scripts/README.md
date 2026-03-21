@@ -67,7 +67,7 @@ docker compose -f _scripts/docker-compose.yml exec mongodb \
 ```bash
 docker compose -f _scripts/docker-compose.yml exec -T mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
-  bootcamp_db --file /dev/stdin < bootcamp/week-01/2-practicas/ejercicio-01/starter/setup.js
+  bootcamp_db --file /dev/stdin < bootcamp/week-01-introduccion_a_mongodb_y_nosql/2-practicas/ejercicio-01/starter/setup.js
 ```
 
 ### Ver logs del contenedor
@@ -119,7 +119,7 @@ const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri)
 ```
 
-Crea un `.env` en la carpeta del ejercicio (`bootcamp/week-23/...`):
+Crea un `.env` en la carpeta del ejercicio (`bootcamp/week-23-mongodb_con_nodejs/...`):
 
 ```
 MONGODB_URI=mongodb://bootcamp:bootcamp123@localhost:27017/bootcamp_db?authSource=admin

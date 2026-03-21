@@ -18,9 +18,9 @@ Abre un [Issue](https://github.com/ergrato-dev/bc-mongodb-ce/issues) con:
 1. Haz fork del repositorio
 2. Crea una rama descriptiva:
    ```bash
-   git checkout -b fix/week-05-typo-query
+   git checkout -b fix/week-05-crud_iii_actualizacion_y_eliminacion-typo-query
    # o
-   git checkout -b feat/week-10-new-exercise
+   git checkout -b feat/week-10-aggregation_pipeline_ii_acumuladores_avanzados-new-exercise
    ```
 3. Realiza tus cambios siguiendo las convenciones del proyecto
 4. Abre un Pull Request hacia `main`

@@ -69,7 +69,7 @@ Para vulnerabilidades críticas o sensibles:
 **Incluye en tu reporte:**
 
 - Descripción de la vulnerabilidad
-- Semana y archivo afectado (ej: `bootcamp/week-22/2-practicas/ejercicio-01`)
+- Semana y archivo afectado (ej: `bootcamp/week-22-seguridad_y_administracion/2-practicas/ejercicio-01`)
 - Pasos para reproducirla
 - Impacto potencial sobre los estudiantes
 - Sugerencia de corrección (opcional)
@@ -170,7 +170,7 @@ El proyecto usa MongoDB driver `^6.0.0` para Node.js (semanas 23–24).
 Para revisar vulnerabilidades en las semanas que usan Node.js:
 
 ```bash
-cd bootcamp/week-23   # o week-24
+cd bootcamp/week-23-mongodb_con_nodejs   # o week-24-proyecto_final_capstone
 npm audit
 ```
 

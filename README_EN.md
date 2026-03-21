@@ -144,7 +144,7 @@ docker compose -f _scripts/docker-compose.yml exec mongodb \
 ```bash
 docker compose -f _scripts/docker-compose.yml exec -T mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
-  bootcamp_db --file /dev/stdin < bootcamp/week-01/2-practicas/ejercicio-01/starter/setup.js
+  bootcamp_db --file /dev/stdin < bootcamp/week-01-introduccion_a_mongodb_y_nosql/2-practicas/ejercicio-01/starter/setup.js
 ```
 
 ---
@@ -241,7 +241,7 @@ This project is under the MIT License — see [LICENSE](LICENSE) for details.
 </p>
 
 <p align="center">
-  <a href="bootcamp/week-01">Start Week 1</a> •
+  <a href="bootcamp/week-01-introduccion_a_mongodb_y_nosql">Start Week 1</a> •
   <a href="_docs/plan-curricular.md">View Curriculum</a> •
   <a href="https://github.com/ergrato-dev/bc-mongodb-ce/issues">Report Issue</a> •
   <a href="CONTRIBUTING.md">Contribute</a>
