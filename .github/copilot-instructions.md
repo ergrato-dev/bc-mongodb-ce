@@ -669,7 +669,7 @@ Cada semana incluye **tres tipos de evidencias**:
 
 - **Repositorio**: https://github.com/ergrato-dev/bc-mongodb-ce
 - **Documentación general**: [\_docs/README.md](_docs/README.md)
-- **Primera semana**: [bootcamp/week-01/README.md](bootcamp/week-01/README.md)
+- **Primera semana**: [bootcamp/week-01-introduccion_a_mongodb_y_nosql/README.md](bootcamp/week-01-introduccion_a_mongodb_y_nosql/README.md)
 
 ---
 
