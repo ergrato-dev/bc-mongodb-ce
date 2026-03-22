@@ -235,6 +235,19 @@ This project is under the MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
+## ⚠️ Disclaimer
+
+This repository and all its contents are provided **for educational purposes only**, without warranty of any kind, express or implied.
+
+- All material, scripts, and code examples are provided "as-is", with no guarantee of fitness for any particular purpose.
+- Use of content from this repository in production environments or systems with real data is the **sole responsibility of the user**.
+- The authors and contributors shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this material.
+- Sample credentials included in the scripts (`bootcamp` / `bootcamp123`) are **intended exclusively for local learning environments** and must never be used in production.
+- This project is not affiliated with, sponsored by, or endorsed by **MongoDB, Inc.**
+- Third-party product names, trademarks, and logos are the property of their respective owners.
+
+---
+
 <p align="center">
   <strong>🎓 Bootcamp MongoDB CE — From Zero to Hero</strong><br>
   <em>From zero to MongoDB Junior Developer in ~6 months</em>
