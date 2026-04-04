@@ -534,6 +534,27 @@ Al generar contenido para cualquier semana:
 
 ## 🔐 Mejores Prácticas
 
+### ⚠️ Gestión de Dependencias Node.js — Regla de Oro
+
+> Ver documento completo: [`_docs/gestion-dependencias.md`](_docs/gestion-dependencias.md)
+
+**PROHIBIDO usar rangos de versión en cualquier `package.json` del proyecto:**
+
+```jsonc
+// ❌ PROHIBIDO
+"mongodb": "^7.1.1"
+"mongodb": ">=6.0.0"
+"mongodb": "~7.1.0"
+
+// ✅ OBLIGATORIO — versión exacta
+"mongodb": "7.1.1"
+```
+
+- Versión actual pinnada: `mongodb@7.1.1` (auditada 2026-04-04, 0 CVEs)
+- Siempre incluir `"engines": {"node": ">=18.0.0"}` en cada `package.json`
+- Al actualizar una dependencia: ejecutar `npm audit` y documentar en
+  `_docs/gestion-dependencias.md` antes de hacer commit
+
 ### Seguridad en MongoDB
 
 - **NUNCA** construir queries con concatenación de strings (prevención de NoSQL Injection)
