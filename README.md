@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-22c55e.svg" alt="Licencia MIT"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-CC%20BY--NC--SA%204.0-00ED64.svg" alt="Licencia CC BY-NC-SA 4.0"></a>
   <a href="#"><img src="https://img.shields.io/badge/semanas-24-f59e0b.svg" alt="24 Semanas"></a>
   <a href="#"><img src="https://img.shields.io/badge/horas-192-f97316.svg" alt="192 Horas"></a>
   <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-7.0-00ED64?logo=mongodb&logoColor=white" alt="MongoDB 7.0"></a>
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-required-2496ED?logo=docker&logoColor=white" alt="Docker"></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-≥18-339933?logo=nodedotjs&logoColor=white" alt="Node.js"></a>
-  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/uso%20comercial-prohibido-red?style=flat-square" alt="Uso comercial prohibido"></a>
 </p>
 
 <p align="center">
@@ -180,17 +180,16 @@ Cada semana incluye tres tipos de evidencias:
 
 ## 🤝 Contribuir
 
-¡Las contribuciones son bienvenidas! Este es un proyecto educativo de código abierto.
+Este proyecto está bajo licencia **CC BY-NC-SA 4.0**: puedes compartirlo y adaptarlo
+con atribución, de forma no comercial, y manteniendo la misma licencia.
 
-### Cómo Contribuir
+### Cómo contribuir
 
-1. Lee la [Guía de Contribución](CONTRIBUTING.md)
-2. Revisa el [Código de Conducta](CODE_OF_CONDUCT.md)
-3. Haz fork del repositorio
-4. Crea tu rama (`git checkout -b feat/nueva-funcionalidad`)
-5. Haz commit con [Conventional Commits](https://www.conventionalcommits.org/) (`git commit -m 'feat: add exercise'`)
-6. Haz push (`git push origin feat/nueva-funcionalidad`)
-7. Abre un Pull Request
+1. Haz fork del repositorio
+2. Crea tu rama (`git checkout -b feat/nueva-funcionalidad`)
+3. Haz commit con [Conventional Commits](https://www.conventionalcommits.org/) (`git commit -m 'feat: add exercise'`)
+4. Haz push (`git push origin feat/nueva-funcionalidad`)
+5. Abre un Pull Request
 
 ### 📋 Áreas de Contribución
 
@@ -213,7 +212,14 @@ Cada semana incluye tres tipos de evidencias:
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT — ver [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la licencia **CC BY-NC-SA 4.0** (Creative Commons
+Atribución-NoComercial-CompartirIgual 4.0 Internacional).
+
+- ✅ Puedes compartir y adaptar el material con atribución
+- ✅ Forks educativos permitidos bajo la misma licencia
+- ❌ Uso comercial no permitido
+
+Ver [LICENSE](LICENSE) o https://creativecommons.org/licenses/by-nc-sa/4.0/ para más detalles.
 
 ---
 
@@ -229,8 +235,6 @@ Este proyecto está bajo la Licencia MIT — ver [LICENSE](LICENSE) para más de
 ## 📚 Documentación Adicional
 
 - [🤖 Instrucciones de Copilot](.github/copilot-instructions.md)
-- [🤝 Guía de Contribución](CONTRIBUTING.md)
-- [📜 Código de Conducta](CODE_OF_CONDUCT.md)
 - [🔒 Política de Seguridad](SECURITY.md)
 - [📋 Plan Curricular](_docs/plan-curricular.md)
 
@@ -258,7 +262,7 @@ Este repositorio y todo su contenido se proporcionan **solo con fines educativos
   <a href="bootcamp/week-01-introduccion_a_mongodb_y_nosql">Comenzar Semana 1</a> •
   <a href="_docs/plan-curricular.md">Ver Plan Curricular</a> •
   <a href="https://github.com/ergrato-dev/bc-mongodb-ce/issues">Reportar Issue</a> •
-  <a href="CONTRIBUTING.md">Contribuir</a>
+  <a href="LICENSE">Licencia CC BY-NC-SA 4.0</a>
 </p>
 
 <p align="center">

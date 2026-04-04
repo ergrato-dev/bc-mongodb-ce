@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22c55e.svg" alt="MIT License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-00ED64.svg" alt="License CC BY-NC-SA 4.0"></a>
   <a href="#"><img src="https://img.shields.io/badge/weeks-24-f59e0b.svg" alt="24 Weeks"></a>
   <a href="#"><img src="https://img.shields.io/badge/hours-192-f97316.svg" alt="192 Hours"></a>
   <a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/MongoDB-7.0-00ED64?logo=mongodb&logoColor=white" alt="MongoDB 7.0"></a>
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-required-2496ED?logo=docker&logoColor=white" alt="Docker"></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-≥18-339933?logo=nodedotjs&logoColor=white" alt="Node.js"></a>
-  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs Welcome"></a>
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/commercial%20use-prohibited-red?style=flat-square" alt="Commercial use prohibited"></a>
 </p>
 
 <p align="center">
@@ -179,17 +179,16 @@ Each week includes three types of evidence:
 
 ## 🤝 Contributing
 
-Contributions are welcome! This is an open-source educational project.
+This project is licensed under **CC BY-NC-SA 4.0**: you can share and adapt it
+with attribution, non-commercially, and under the same license.
 
 ### How to Contribute
 
-1. Read the [Contributing Guide](CONTRIBUTING.md)
-2. Review the [Code of Conduct](CODE_OF_CONDUCT.md)
-3. Fork the repository
-4. Create your branch (`git checkout -b feat/new-feature`)
-5. Commit with [Conventional Commits](https://www.conventionalcommits.org/) (`git commit -m 'feat: add exercise'`)
-6. Push to the branch (`git push origin feat/new-feature`)
-7. Open a Pull Request
+1. Fork the repository
+2. Create your branch (`git checkout -b feat/new-feature`)
+3. Commit with [Conventional Commits](https://www.conventionalcommits.org/) (`git commit -m 'feat: add exercise'`)
+4. Push to the branch (`git push origin feat/new-feature`)
+5. Open a Pull Request
 
 ### 📋 Contribution Areas
 
@@ -212,7 +211,14 @@ Contributions are welcome! This is an open-source educational project.
 
 ## 📄 License
 
-This project is under the MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under **CC BY-NC-SA 4.0** (Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International).
+
+- ✅ You can share and adapt the material with attribution
+- ✅ Educational forks allowed under the same license
+- ❌ Commercial use not permitted
+
+See [LICENSE](LICENSE) or https://creativecommons.org/licenses/by-nc-sa/4.0/ for details.
 
 ---
 
@@ -228,8 +234,6 @@ This project is under the MIT License — see [LICENSE](LICENSE) for details.
 ## 📚 Additional Documentation
 
 - [🤖 Copilot Instructions](.github/copilot-instructions.md)
-- [🤝 Contributing Guide](CONTRIBUTING.md)
-- [📜 Code of Conduct](CODE_OF_CONDUCT.md)
 - [🔒 Security Policy](SECURITY.md)
 - [📋 Curriculum Plan](_docs/plan-curricular.md)
 
@@ -257,7 +261,7 @@ This repository and all its contents are provided **for educational purposes onl
   <a href="bootcamp/week-01-introduccion_a_mongodb_y_nosql">Start Week 1</a> •
   <a href="_docs/plan-curricular.md">View Curriculum</a> •
   <a href="https://github.com/ergrato-dev/bc-mongodb-ce/issues">Report Issue</a> •
-  <a href="CONTRIBUTING.md">Contribute</a>
+  <a href="LICENSE">License CC BY-NC-SA 4.0</a>
 </p>
 
 <p align="center">
