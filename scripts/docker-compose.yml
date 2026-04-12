@@ -1,45 +1,108 @@
 # ============================================
 # docker-compose.yml — Bootcamp MongoDB CE
 # ============================================
-# Levanta MongoDB 7.0 Community Edition para el entorno local de aprendizaje.
 #
-# Comandos principales:
+# Propósito:
+#   Levanta MongoDB 7.0 Community Edition en un contenedor Docker para el
+#   entorno local de aprendizaje. Garantiza que todos los aprendices trabajen
+#   con la misma versión y configuración, sin importar su sistema operativo.
 #
-#   Levantar en background:
-#     docker compose -f scripts/docker-compose.yml up -d
+# Por qué Docker y no instalación directa:
+#   - Versión idéntica en Linux, macOS y Windows
+#   - Reset fácil del entorno con un solo comando (down -v)
+#   - Sin conflictos con otras instancias de MongoDB en el sistema
+#   - Reproducibilidad total: los ejercicios siempre parten del mismo estado
 #
-#   Conectar con mongosh:
-#     docker compose -f scripts/docker-compose.yml exec mongodb \
-#       mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
+# Requisitos:
+#   - Docker Desktop (o Docker Engine en Linux) instalado y corriendo
+#   - Puerto 27017 disponible en el host (configurable en .env)
 #
-#   Ejecutar un script .js:
-#     docker compose -f scripts/docker-compose.yml exec -T mongodb \
-#       mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
-#       bootcamp_db --file /dev/stdin < ruta/al/archivo.js
+# ──────────────────────────────────────────
+# COMANDOS DE USO FRECUENTE
+# ──────────────────────────────────────────
 #
-#   Detener (conserva datos):
-#     docker compose -f scripts/docker-compose.yml down
+#   1. Levantar MongoDB en background (primer uso o tras un reset):
+#        docker compose -f scripts/docker-compose.yml up -d
 #
-#   Reset completo (elimina datos):
-#     docker compose -f scripts/docker-compose.yml down -v
+#   2. Verificar que el contenedor está sano:
+#        docker compose -f scripts/docker-compose.yml ps
 #
-# ⚠️  Solo para entorno local de aprendizaje.
-#     Nunca usar estas credenciales en producción.
+#   3. Abrir mongosh interactivo para practicar queries:
+#        docker compose -f scripts/docker-compose.yml exec mongodb \
+#          mongosh -u bootcamp -p bootcamp123 \
+#          --authenticationDatabase admin bootcamp_db
+#
+#   4. Cargar datos de prueba desde un archivo .js (setup.js):
+#        docker compose -f scripts/docker-compose.yml exec -T mongodb \
+#          mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
+#          bootcamp_db --file /dev/stdin < ruta/al/setup.js
+#
+#   5. Ver logs del contenedor (útil para diagnosticar errores):
+#        docker compose -f scripts/docker-compose.yml logs -f mongodb
+#
+#   6. Detener el contenedor conservando los datos:
+#        docker compose -f scripts/docker-compose.yml down
+#
+#   7. Reset completo — elimina todos los datos (útil entre semanas):
+#        docker compose -f scripts/docker-compose.yml down -v
+#
+# ⚠️  ADVERTENCIA: estas credenciales son exclusivas para el entorno local
+#     de aprendizaje. NUNCA las uses en producción.
 # ============================================
 
 services:
+
+  # ── Servicio principal: MongoDB 7.0 ──────────────────────────────────────
   mongodb:
+
+    # Imagen oficial de MongoDB 7.0 — versión fija para reproducibilidad.
+    # Usar "latest" está prohibido: podría romper ejercicios en futuras versiones.
     image: mongo:7.0
+
+    # Nombre del contenedor visible en "docker ps". Usar un nombre descriptivo
+    # facilita identificarlo cuando hay múltiples contenedores corriendo.
     container_name: bc-mongodb-ce
+
+    # Reiniciar automáticamente si el contenedor cae por error, pero no si el
+    # usuario lo detiene manualmente con "docker compose down".
     restart: unless-stopped
+
+    # Exponer el puerto de MongoDB al host para conectarse desde mongosh,
+    # MongoDB Compass u otras herramientas. El valor se lee de .env; si no
+    # existe .env, usa 27017 como valor por defecto (sintaxis: ${VAR:-default}).
+    #
+    # Concepto clave — Mapeo de puertos: HOST:CONTENEDOR
+    #   - Puerto izquierdo (host): el que abres en tu navegador/herramienta
+    #   - Puerto derecho (contenedor): el que escucha MongoDB internamente
     ports:
       - "${MONGO_PORT:-27017}:27017"
+
+    # Variables de entorno que MongoDB lee al iniciarse por primera vez para
+    # crear el usuario administrador y la base de datos inicial.
+    #
+    # Seguridad: los valores reales vienen de .env (nunca hardcodeados aquí).
+    # El archivo .env está en .gitignore para no exponer credenciales en Git.
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:-bootcamp}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-bootcamp123}
       MONGO_INITDB_DATABASE: ${MONGO_DATABASE:-bootcamp_db}
+
+    # Volumen nombrado para persistir los datos de MongoDB entre reinicios.
+    #
+    # Concepto clave — Volúmenes Docker:
+    #   Sin volumen: los datos desaparecen cada vez que el contenedor se elimina.
+    #   Con volumen: los datos sobreviven a "docker compose down" (pero no a "down -v").
+    #
+    # /data/db es la ruta donde MongoDB almacena sus archivos internamente.
     volumes:
       - mongodb_data:/data/db
+
+    # Health check: Docker verifica cada 10s que MongoDB responde correctamente.
+    # Mientras el servicio no esté "healthy", otros servicios que dependan de
+    # él (en proyectos con Node.js + MongoDB) esperarán antes de arrancar.
+    #
+    # El comando ejecuta db.adminCommand('ping') — la forma estándar de
+    # verificar conectividad en MongoDB.
     healthcheck:
       test:
         - CMD
@@ -53,11 +116,16 @@ services:
         - admin
         - --eval
         - "db.adminCommand('ping').ok"
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 15s
+      interval: 10s    # verificar cada 10 segundos
+      timeout: 5s      # fallo si no responde en 5 segundos
+      retries: 5       # marcar como "unhealthy" tras 5 fallos consecutivos
+      start_period: 15s # esperar 15s antes del primer check (tiempo de arranque)
 
+# ── Volúmenes nombrados ───────────────────────────────────────────────────
+# Los volúmenes nombrados son gestionados por Docker y persisten entre
+# ejecuciones de "docker compose down". Para eliminarlos usar "down -v".
 volumes:
   mongodb_data:
+    # Nombre explícito para identificar el volumen en "docker volume ls".
+    # Sin esto, Docker genera un nombre con prefijo del directorio del proyecto.
     name: bc-mongodb-ce-data
