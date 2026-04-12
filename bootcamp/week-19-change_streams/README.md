@@ -50,7 +50,7 @@ Change Streams requiere **Replica Set** o **Sharded Cluster**.
 Para la práctica, usa el entorno Docker configurado con replica set:
 
 ```bash
-docker compose -f _scripts/docker-compose.yml up -d
+docker compose -f scripts/docker-compose.yml up -d
 ```
 
 > El `docker-compose.yml` del bootcamp inicia MongoDB con `--replSet rs0`.

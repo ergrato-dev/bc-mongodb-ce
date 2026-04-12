@@ -41,7 +41,7 @@ Semana final del bootcamp. Integras todos los conocimientos adquiridos en
 
 1. Asegúrate de tener Docker corriendo:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 2. Instala dependencias Node.js:
    ```bash
@@ -49,13 +49,13 @@ Semana final del bootcamp. Integras todos los conocimientos adquiridos en
    ```
 3. Carga los datos de prueba:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < 2-practicas/ejercicio-01/starter/setup.js
    ```
 4. Conecta e interactúa:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 
@@ -68,4 +68,4 @@ Semana final del bootcamp. Integras todos los conocimientos adquiridos en
 ## Navegación
 
 - ← [Semana 23: MongoDB con Node.js](../week-23-mongodb_con_nodejs/README.md)
-- ↑ [Índice del Bootcamp](../../_docs/README.md)
+- ↑ [Índice del Bootcamp](../../docs/README.md)

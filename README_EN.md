@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="_assets/bootcamp-header.svg" alt="Bootcamp MongoDB CE — From Zero to Hero" width="900">
+  <img src="assets/bootcamp-header.svg" alt="Bootcamp MongoDB CE — From Zero to Hero" width="900">
 </p>
 
 <p align="center">
@@ -129,20 +129,20 @@ cd bc-mongodb-ce
 ### 2. Start MongoDB 7.0
 
 ```bash
-docker compose -f _scripts/docker-compose.yml up -d
+docker compose -f scripts/docker-compose.yml up -d
 ```
 
 ### 3. Connect with mongosh
 
 ```bash
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
 ```
 
 ### 4. Load Sample Data (Week 01)
 
 ```bash
-docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+docker compose -f scripts/docker-compose.yml exec -T mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
   bootcamp_db --file /dev/stdin < bootcamp/week-01-introduccion_a_mongodb_y_nosql/2-practicas/ejercicio-01/starter/setup.js
 ```
@@ -235,7 +235,7 @@ See [LICENSE](LICENSE) or https://creativecommons.org/licenses/by-nc-sa/4.0/ for
 
 - [🤖 Copilot Instructions](.github/copilot-instructions.md)
 - [🔒 Security Policy](SECURITY.md)
-- [📋 Curriculum Plan](_docs/plan-curricular.md)
+- [📋 Curriculum Plan](docs/plan-curricular.md)
 
 ---
 
@@ -259,7 +259,7 @@ This repository and all its contents are provided **for educational purposes onl
 
 <p align="center">
   <a href="bootcamp/week-01-introduccion_a_mongodb_y_nosql">Start Week 1</a> •
-  <a href="_docs/plan-curricular.md">View Curriculum</a> •
+  <a href="docs/plan-curricular.md">View Curriculum</a> •
   <a href="https://github.com/ergrato-dev/bc-mongodb-ce/issues">Report Issue</a> •
   <a href="LICENSE">License CC BY-NC-SA 4.0</a>
 </p>

@@ -16,7 +16,7 @@
 
 ```bash
 # Exportar toda la base de datos bootcamp_db
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongodump \
   -u bootcamp -p bootcamp123 \
   --authenticationDatabase admin \
@@ -24,7 +24,7 @@ docker compose -f _scripts/docker-compose.yml exec mongodb \
   --out /tmp/backup_$(date +%Y%m%d)
 
 # Exportar solo una colección
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongodump \
   -u bootcamp -p bootcamp123 \
   --authenticationDatabase admin \
@@ -41,7 +41,7 @@ El resultado es una carpeta con archivos `.bson` (datos) y `.metadata.json` (ín
 
 ```bash
 # Restaurar la base de datos completa
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongorestore \
   -u bootcamp -p bootcamp123 \
   --authenticationDatabase admin \

@@ -10,13 +10,13 @@ Practicar proyecciones para seleccionar campos y encadenar `.sort()`, `.limit()`
 
 1. Si no cargaste el setup del ejercicio anterior, ejecútalo ahora:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < ../ejercicio-01/starter/setup.js
    ```
 2. Conecta e interactúa:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 

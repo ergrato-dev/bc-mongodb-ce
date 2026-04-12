@@ -72,11 +72,11 @@ week-20-gridfs_y_time_series/
 
 1. Asegúrate de tener Docker corriendo:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 2. Conecta a `mongosh`:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 

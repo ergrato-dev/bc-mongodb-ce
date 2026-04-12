@@ -11,17 +11,17 @@ consultas de lectura con proyecciones y métodos de cursor.
 
 1. Levanta el contenedor:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 2. Carga tu esquema:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < starter/setup.js
    ```
 3. Ejecuta tu proyecto:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < starter/proyecto.js
    ```

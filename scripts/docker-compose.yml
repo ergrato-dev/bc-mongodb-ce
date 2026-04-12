@@ -6,22 +6,22 @@
 # Comandos principales:
 #
 #   Levantar en background:
-#     docker compose -f _scripts/docker-compose.yml up -d
+#     docker compose -f scripts/docker-compose.yml up -d
 #
 #   Conectar con mongosh:
-#     docker compose -f _scripts/docker-compose.yml exec mongodb \
+#     docker compose -f scripts/docker-compose.yml exec mongodb \
 #       mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
 #
 #   Ejecutar un script .js:
-#     docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+#     docker compose -f scripts/docker-compose.yml exec -T mongodb \
 #       mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
 #       bootcamp_db --file /dev/stdin < ruta/al/archivo.js
 #
 #   Detener (conserva datos):
-#     docker compose -f _scripts/docker-compose.yml down
+#     docker compose -f scripts/docker-compose.yml down
 #
 #   Reset completo (elimina datos):
-#     docker compose -f _scripts/docker-compose.yml down -v
+#     docker compose -f scripts/docker-compose.yml down -v
 #
 # ⚠️  Solo para entorno local de aprendizaje.
 #     Nunca usar estas credenciales en producción.

@@ -17,8 +17,8 @@ LICENSE
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 SECURITY.md
-_docs/
-_assets/
+docs/
+assets/
 
 # Contenido del bootcamp (el contenedor solo necesita recibir
 # los archivos .js que se montan o pasan por stdin a mongosh)
@@ -35,6 +35,6 @@ node_modules/
 venv/
 
 # Scripts de pausa/restauración (no van en el contenedor)
-_scripts/pause.sh
-_scripts/resume.sh
-_scripts/restore.sh
+scripts/pause.sh
+scripts/resume.sh
+scripts/restore.sh

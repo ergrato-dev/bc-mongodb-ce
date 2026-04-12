@@ -29,11 +29,11 @@ Implementa en `starter/proyecto.js` las siguientes funciones:
 
 1. Levanta Docker:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 2. Carga los datos de prueba:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < 3-proyecto/starter/setup.js
    ```
