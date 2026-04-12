@@ -11,13 +11,13 @@ Crea un diagrama SVG siguiendo los estándares visuales del bootcamp.
 
 ## Estándares visuales obligatorios
 
-| Propiedad          | Valor                                              |
-| ------------------ | -------------------------------------------------- |
-| Tema               | Dark (sin opción light)                            |
-| Fondo              | `#001E2B`                                          |
-| Sin degradés       | Colores sólidos únicamente                         |
-| Fuente principal   | `system-ui, -apple-system, sans-serif`             |
-| Lenguaje de labels | Inglés (código) / Español (conceptos pedagógicos)  |
+| Propiedad          | Valor                                             |
+| ------------------ | ------------------------------------------------- |
+| Tema               | Dark (sin opción light)                           |
+| Fondo              | `#001E2B`                                         |
+| Sin degradés       | Colores sólidos únicamente                        |
+| Fuente principal   | `system-ui, -apple-system, sans-serif`            |
+| Lenguaje de labels | Inglés (código) / Español (conceptos pedagógicos) |
 
 ## Paleta de colores
 

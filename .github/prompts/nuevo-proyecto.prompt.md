@@ -12,13 +12,13 @@ a cualquier dominio.
 
 ## Diferencia clave vs ejercicios
 
-| Ejercicio (`2-practicas/`)         | Proyecto (`3-proyecto/`)                  |
-| ---------------------------------- | ----------------------------------------- |
-| Código comentado para descomentar  | TODOs para implementar                    |
-| Concepto único y guiado            | Integra múltiples conceptos               |
-| Sin `solution/`                    | Con `solution/` (oculto en `.gitignore`)  |
-| 30-60 minutos                      | 2-3 horas                                 |
-| El código completo ya existe       | El estudiante lo implementa               |
+| Ejercicio (`2-practicas/`)        | Proyecto (`3-proyecto/`)                 |
+| --------------------------------- | ---------------------------------------- |
+| Código comentado para descomentar | TODOs para implementar                   |
+| Concepto único y guiado           | Integra múltiples conceptos              |
+| Sin `solution/`                   | Con `solution/` (oculto en `.gitignore`) |
+| 30-60 minutos                     | 2-3 horas                                |
+| El código completo ya existe      | El estudiante lo implementa              |
 
 ## Estructura de carpetas del proyecto
 
@@ -42,7 +42,7 @@ Los ejemplos de código NO deben usar los dominios de la lista de la clase.
 
 ## Formato del README.md del proyecto
 
-```markdown
+````markdown
 # Proyecto Semana XX — [Título Genérico]
 
 ## 🎯 Objetivo
@@ -82,6 +82,8 @@ El código starter usa `items` y `records` como colecciones genéricas. Reemplaz
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < starter/setup.js
    ```
+````
+
 2. Conecta e implementa:
    ```bash
    docker compose -f scripts/docker-compose.yml exec mongodb \
@@ -103,7 +105,8 @@ Para aprobar necesitas mínimo **70%** en cada criterio.
 1. `proyecto.js` adaptado a tu dominio con todos los TODOs implementados
 2. Screenshots o output de las queries en mongosh
 3. `setup.js` adaptado con datos de tu dominio (mínimo 10 documentos por colección)
-```
+
+````
 
 ## Formato del starter/setup.js
 
@@ -154,7 +157,7 @@ db.records.insertMany([
 print("✅ Datos de prueba cargados")
 print(`   items: ${db.items.countDocuments()} documentos`)
 print(`   records: ${db.records.countDocuments()} documentos`)
-```
+````
 
 ## Formato del starter/proyecto.js con TODOs
 
@@ -176,7 +179,6 @@ print(`   records: ${db.records.countDocuments()} documentos`)
 // Debe incluir: [operadores o stages requeridos]
 // Colección: items (o la de tu dominio)
 
-
 // ============================================
 // PARTE 2: [Segundo requisito]
 // ============================================
@@ -184,7 +186,6 @@ print(`   records: ${db.records.countDocuments()} documentos`)
 // TODO: Implementar la query que [descripción del requisito 2]
 // Debe incluir: [operadores o stages requeridos]
 // Colección: records (o la de tu dominio)
-
 
 // ============================================
 // PARTE 3: [Tercer requisito — integrador]

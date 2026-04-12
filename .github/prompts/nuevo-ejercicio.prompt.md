@@ -23,9 +23,9 @@ Los ejercicios son **tutoriales guiados**, NO tareas con TODOs.
 
 // ❌ INCORRECTO — esto es para PROYECTOS, no ejercicios
 db.orders.aggregate([
-  { $match: { status: "completed" } }
+  { $match: { status: "completed" } },
   // TODO: Agregar $group para sumar por cliente
-])
+]);
 ```
 
 ## Estructura de carpetas del ejercicio
@@ -43,7 +43,7 @@ db.orders.aggregate([
 
 ## Formato del README.md del ejercicio
 
-```markdown
+````markdown
 # Ejercicio XX — [Título del Ejercicio]
 
 ## 🎯 Objetivo
@@ -65,6 +65,8 @@ Aprender [concepto específico] de MongoDB 7.0.
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < starter/setup.js
    ```
+````
+
 2. Conéctate a mongosh:
    ```bash
    docker compose -f scripts/docker-compose.yml exec mongodb \
@@ -82,8 +84,8 @@ Explicación del concepto con ejemplo:
 // Descripción de lo que hace esta query
 db.products.find(
   { category: "electronics", price: { $lt: 500 } },
-  { name: 1, price: 1, _id: 0 }
-)
+  { name: 1, price: 1, _id: 0 },
+);
 ```
 
 **Abre `starter/ejercicio.js`** y descomenta la sección del Paso 1.
@@ -95,7 +97,8 @@ Deberías ver documentos con los campos `name` y `price` de la categoría electr
 ### Paso 2: [Siguiente Concepto]
 
 ...
-```
+
+````
 
 ## Formato del starter/setup.js
 
@@ -128,7 +131,7 @@ db.products.insertMany([
 
 print("✅ Datos de prueba cargados correctamente")
 print(`   products: ${db.products.countDocuments()} documentos`)
-```
+````
 
 ## Formato del starter/ejercicio.js
 

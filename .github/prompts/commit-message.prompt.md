@@ -24,33 +24,33 @@ El cuerpo (`For:` / `Impact:`) puede estar en inglés o español.
 
 ## Tipos permitidos
 
-| Tipo       | Cuándo usarlo                                             |
-| ---------- | --------------------------------------------------------- |
-| `feat`     | Nuevo contenido o funcionalidad de semana                 |
-| `fix`      | Corrección de queries, typos o instrucciones erróneas     |
-| `docs`     | Solo cambios de documentación (README, teoría)            |
-| `style`    | Formato, espacios (sin cambio de lógica)                  |
-| `refactor` | Reestructuración de contenido sin cambiar aprendizaje     |
-| `test`     | Agregar o corregir ejercicios/proyectos con verificación  |
-| `chore`    | Mantenimiento, configuración, assets                      |
-| `ci`       | Cambios en GitHub Actions / workflows                     |
-| `perf`     | Mejoras de rendimiento en queries de ejemplos             |
+| Tipo       | Cuándo usarlo                                            |
+| ---------- | -------------------------------------------------------- |
+| `feat`     | Nuevo contenido o funcionalidad de semana                |
+| `fix`      | Corrección de queries, typos o instrucciones erróneas    |
+| `docs`     | Solo cambios de documentación (README, teoría)           |
+| `style`    | Formato, espacios (sin cambio de lógica)                 |
+| `refactor` | Reestructuración de contenido sin cambiar aprendizaje    |
+| `test`     | Agregar o corregir ejercicios/proyectos con verificación |
+| `chore`    | Mantenimiento, configuración, assets                     |
+| `ci`       | Cambios en GitHub Actions / workflows                    |
+| `perf`     | Mejoras de rendimiento en queries de ejemplos            |
 
 ## Scopes del proyecto
 
-| Scope      | Uso                                                    |
-| ---------- | ------------------------------------------------------ |
-| `week-XX`  | Contenido de una semana específica (ej. `week-05`)     |
-| `teoria`   | Archivos de teoría (1-teoria/)                         |
-| `practica` | Ejercicios guiados (2-practicas/)                      |
-| `proyecto` | Proyecto semanal (3-proyecto/)                         |
-| `recursos` | Recursos adicionales (4-recursos/)                     |
-| `glosario` | Glosario de términos (5-glosario/)                     |
-| `assets`   | Recursos visuales (SVG, imágenes)                      |
-| `github`   | Configuración de .github/ (prompts, workflows)         |
-| `scripts`  | Docker compose y scripts de entorno                    |
-| `docs`     | Documentación general (docs/)                          |
-| `rubrica`  | Rúbricas de evaluación                                 |
+| Scope      | Uso                                                |
+| ---------- | -------------------------------------------------- |
+| `week-XX`  | Contenido de una semana específica (ej. `week-05`) |
+| `teoria`   | Archivos de teoría (1-teoria/)                     |
+| `practica` | Ejercicios guiados (2-practicas/)                  |
+| `proyecto` | Proyecto semanal (3-proyecto/)                     |
+| `recursos` | Recursos adicionales (4-recursos/)                 |
+| `glosario` | Glosario de términos (5-glosario/)                 |
+| `assets`   | Recursos visuales (SVG, imágenes)                  |
+| `github`   | Configuración de .github/ (prompts, workflows)     |
+| `scripts`  | Docker compose y scripts de entorno                |
+| `docs`     | Documentación general (docs/)                      |
+| `rubrica`  | Rúbricas de evaluación                             |
 
 ## Ejemplos del proyecto
 
