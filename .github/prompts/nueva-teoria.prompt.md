@@ -28,7 +28,7 @@ Crea un archivo de teoría para `1-teoria/` siguiendo los estándares del bootca
 
 ## Estructura requerida del archivo
 
-```markdown
+````markdown
 # [Título del Tema]
 
 ## 🎯 Objetivos
@@ -48,9 +48,10 @@ Explicación en español...
 // Colecciones y campos siempre en inglés
 db.orders.aggregate([
   { $match: { status: "completed" } },
-  { $group: { _id: "$customerId", total: { $sum: "$amount" } } }
-])
+  { $group: { _id: "$customerId", total: { $sum: "$amount" } } },
+]);
 ```
+````
 
 ## 2. [Segundo concepto]
 
@@ -87,7 +88,8 @@ Antes de continuar a las prácticas, verifica que puedes responder:
 - [ ] ¿Cuándo usarías [concepto 2]?
 - [ ] ¿Qué diferencia hay entre [A] y [B]?
 - [ ] ¿Cómo afecta [concepto] al rendimiento?
-```
+
+````
 
 ## Estilo de los ejemplos de código
 
@@ -107,11 +109,11 @@ db.orders.aggregate([
     }
   }
 ])
-```
+````
 
 ```js
 // ❌ INCORRECTO — sin comentarios educativos
-db.orders.aggregate([{ $group: { _id: "$status", count: { $sum: 1 } } }])
+db.orders.aggregate([{ $group: { _id: "$status", count: { $sum: 1 } } }]);
 ```
 
 ## Cómo referenciar assets SVG

@@ -57,7 +57,7 @@ bootcamp/week-XX-tema_principal/
 
 Debe seguir esta estructura:
 
-```markdown
+````markdown
 # Semana XX — [Título del Tema]
 
 > Descripción breve de la semana en 1-2 líneas.
@@ -114,6 +114,8 @@ Al finalizar esta semana, el estudiante será capaz de:
    ```bash
    docker compose -f scripts/docker-compose.yml up -d
    ```
+````
+
 3. Carga los datos de prueba:
    ```bash
    docker compose -f scripts/docker-compose.yml exec -T mongodb \
@@ -129,7 +131,8 @@ Al finalizar esta semana, el estudiante será capaz de:
 ## 🔗 Navegación
 
 ← [Semana XX-1](../week-XX-tema-anterior/README.md) | [Semana XX+1](../week-XX-tema-siguiente/README.md) →
-```
+
+````
 
 ## rubrica-evaluacion.md
 
@@ -166,7 +169,7 @@ Usar esta estructura base con el desglose 30/40/30:
 - ✅ Sin copia de implementaciones de otros aprendices
 - ✅ Scripts funcionales ejecutados correctamente en mongosh
 - ✅ Queries bien indentadas y comentadas en español
-```
+````
 
 ## 5-glosario/README.md
 

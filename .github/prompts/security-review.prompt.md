@@ -56,10 +56,10 @@ mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
 
 ```js
 // ❌ Contraseña en texto plano
-db.users.insertOne({ email: "user@example.com", password: "secret123" })
+db.users.insertOne({ email: "user@example.com", password: "secret123" });
 
 // ✅ Hash de contraseña (bcrypt en producción)
-db.users.insertOne({ email: "user@example.com", passwordHash: "$2b$10$..." })
+db.users.insertOne({ email: "user@example.com", passwordHash: "$2b$10$..." });
 ```
 
 ---
@@ -83,17 +83,17 @@ db.users.insertOne({ email: "user@example.com", passwordHash: "$2b$10$..." })
 
 ```js
 // ❌ NoSQL Injection — input del usuario concatenado
-const userInput = '{ $gt: "" }'  // input malicioso
-db.users.find({ password: JSON.parse(userInput) })  // bypass de auth
+const userInput = '{ $gt: "" }'; // input malicioso
+db.users.find({ password: JSON.parse(userInput) }); // bypass de auth
 
 // ✅ Validar tipo y usar valores literales
-db.users.find({ email: "user@example.com" })
+db.users.find({ email: "user@example.com" });
 
 // ❌ $where con input del usuario
-db.products.find({ $where: `this.price > ${userPrice}` })
+db.products.find({ $where: `this.price > ${userPrice}` });
 
 // ✅ Usar operadores nativos
-db.products.find({ price: { $gt: NumberInt(100) } })
+db.products.find({ price: { $gt: NumberInt(100) } });
 ```
 
 ---
