@@ -3,7 +3,7 @@
 // SETUP — Carga de datos de prueba
 // ============================================
 // Ejecutar con:
-// docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+// docker compose -f scripts/docker-compose.yml exec -T mongodb \
 //   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
 //   bootcamp_db --file /dev/stdin < starter/setup.js
 // ============================================

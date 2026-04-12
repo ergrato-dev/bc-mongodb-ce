@@ -33,7 +33,7 @@ docker compose version
 ### 1. (Opcional) Crear archivo `.env`
 
 ```bash
-cp _scripts/.env.example _scripts/.env
+cp scripts/.env.example scripts/.env
 ```
 
 Si no creates el `.env`, se usan los valores por defecto definidos en
@@ -42,19 +42,19 @@ Si no creates el `.env`, se usan los valores por defecto definidos en
 ### 2. Levantar MongoDB en background
 
 ```bash
-docker compose -f _scripts/docker-compose.yml up -d
+docker compose -f scripts/docker-compose.yml up -d
 ```
 
 ### 3. Verificar que el contenedor está corriendo
 
 ```bash
-docker compose -f _scripts/docker-compose.yml ps
+docker compose -f scripts/docker-compose.yml ps
 ```
 
 ### 4. Conectar con `mongosh`
 
 ```bash
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
 ```
 
@@ -65,7 +65,7 @@ docker compose -f _scripts/docker-compose.yml exec mongodb \
 ### Ejecutar un archivo `.js` del bootcamp
 
 ```bash
-docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+docker compose -f scripts/docker-compose.yml exec -T mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
   bootcamp_db --file /dev/stdin < bootcamp/week-01-introduccion_a_mongodb_y_nosql/2-practicas/ejercicio-01/starter/setup.js
 ```
@@ -73,19 +73,19 @@ docker compose -f _scripts/docker-compose.yml exec -T mongodb \
 ### Ver logs del contenedor
 
 ```bash
-docker compose -f _scripts/docker-compose.yml logs -f mongodb
+docker compose -f scripts/docker-compose.yml logs -f mongodb
 ```
 
 ### Detener el contenedor (conserva los datos)
 
 ```bash
-docker compose -f _scripts/docker-compose.yml down
+docker compose -f scripts/docker-compose.yml down
 ```
 
 ### Reset completo — elimina el volumen de datos
 
 ```bash
-docker compose -f _scripts/docker-compose.yml down -v
+docker compose -f scripts/docker-compose.yml down -v
 ```
 
 > ⚠️ `down -v` elimina **todos los datos** almacenados en MongoDB.
@@ -131,7 +131,7 @@ MONGODB_URI=mongodb://bootcamp:bootcamp123@localhost:27017/bootcamp_db?authSourc
 
 ### Puerto 27017 en uso
 
-Edita `_scripts/.env` y cambia `MONGO_PORT`:
+Edita `scripts/.env` y cambia `MONGO_PORT`:
 
 ```
 MONGO_PORT=27018
@@ -143,11 +143,11 @@ Luego actualiza `MONGODB_URI` en los ejercicios de Node.js con el nuevo puerto.
 
 ```bash
 # Revisar logs de inicio
-docker compose -f _scripts/docker-compose.yml logs mongodb
+docker compose -f scripts/docker-compose.yml logs mongodb
 
 # Forzar reconstrucción
-docker compose -f _scripts/docker-compose.yml down -v
-docker compose -f _scripts/docker-compose.yml up -d
+docker compose -f scripts/docker-compose.yml down -v
+docker compose -f scripts/docker-compose.yml up -d
 ```
 
 ### Versión de Docker Compose obsoleta

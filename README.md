@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="_assets/bootcamp-header.svg" alt="Bootcamp MongoDB CE — De Cero a Héroe" width="900">
+  <img src="assets/bootcamp-header.svg" alt="Bootcamp MongoDB CE — De Cero a Héroe" width="900">
 </p>
 
 <p align="center">
@@ -130,20 +130,20 @@ cd bc-mongodb-ce
 ### 2. Levantar MongoDB 7.0
 
 ```bash
-docker compose -f _scripts/docker-compose.yml up -d
+docker compose -f scripts/docker-compose.yml up -d
 ```
 
 ### 3. Conectar con mongosh
 
 ```bash
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
 ```
 
 ### 4. Cargar datos de prueba (Semana 01)
 
 ```bash
-docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+docker compose -f scripts/docker-compose.yml exec -T mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
   bootcamp_db --file /dev/stdin < bootcamp/week-01-introduccion_a_mongodb_y_nosql/2-practicas/ejercicio-01/starter/setup.js
 ```
@@ -236,7 +236,7 @@ Ver [LICENSE](LICENSE) o https://creativecommons.org/licenses/by-nc-sa/4.0/ para
 
 - [🤖 Instrucciones de Copilot](.github/copilot-instructions.md)
 - [🔒 Política de Seguridad](SECURITY.md)
-- [📋 Plan Curricular](_docs/plan-curricular.md)
+- [📋 Plan Curricular](docs/plan-curricular.md)
 
 ---
 
@@ -260,7 +260,7 @@ Este repositorio y todo su contenido se proporcionan **solo con fines educativos
 
 <p align="center">
   <a href="bootcamp/week-01-introduccion_a_mongodb_y_nosql">Comenzar Semana 1</a> •
-  <a href="_docs/plan-curricular.md">Ver Plan Curricular</a> •
+  <a href="docs/plan-curricular.md">Ver Plan Curricular</a> •
   <a href="https://github.com/ergrato-dev/bc-mongodb-ce/issues">Reportar Issue</a> •
   <a href="LICENSE">Licencia CC BY-NC-SA 4.0</a>
 </p>

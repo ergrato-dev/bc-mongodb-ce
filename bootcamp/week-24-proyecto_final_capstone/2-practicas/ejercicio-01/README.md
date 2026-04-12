@@ -4,14 +4,14 @@
 
 1. Levanta Docker y carga los datos:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < 2-practicas/ejercicio-01/starter/setup.js
    ```
 2. Conecta a `mongosh` y ejecuta el ejercicio:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 3. Dentro de `mongosh`, carga el archivo:

@@ -119,9 +119,9 @@ bootcamp/week-XX/
 
 ### 📁 Carpetas Raíz
 
-- **`_assets/`**: Recursos visuales globales (logos, headers, banners)
-- **`_docs/`**: Documentación general del bootcamp
-- **`_scripts/`**: Scripts de automatización, docker-compose y utilidades
+- **`assets/`**: Recursos visuales globales (logos, headers, banners)
+- **`docs/`**: Documentación general del bootcamp
+- **`scripts/`**: Scripts de automatización, docker-compose y utilidades
 - **`bootcamp/`**: Contenido semanal del bootcamp
 
 ### 🗂️ Orden de Creación de Cada Semana
@@ -465,27 +465,27 @@ mongo:7.0
 
 ### docker-compose.yml
 
-El archivo `_scripts/docker-compose.yml` incluye la configuración lista para usar.
+El archivo `scripts/docker-compose.yml` incluye la configuración lista para usar.
 Comandos principales:
 
 ```bash
 # Levantar MongoDB en background
-docker compose -f _scripts/docker-compose.yml up -d
+docker compose -f scripts/docker-compose.yml up -d
 
 # Abrir mongosh interactivo
-docker compose -f _scripts/docker-compose.yml exec mongodb \
+docker compose -f scripts/docker-compose.yml exec mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
 
 # Ejecutar un archivo .js contra el contenedor
-docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+docker compose -f scripts/docker-compose.yml exec -T mongodb \
   mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
   bootcamp_db --file /dev/stdin < ruta/al/setup.js
 
 # Detener el contenedor (conserva datos)
-docker compose -f _scripts/docker-compose.yml down
+docker compose -f scripts/docker-compose.yml down
 
 # Reset completo — elimina volumen de datos
-docker compose -f _scripts/docker-compose.yml down -v
+docker compose -f scripts/docker-compose.yml down -v
 ```
 
 ### Credenciales de desarrollo
@@ -515,17 +515,17 @@ Al generar contenido para cualquier semana:
 1. Asegúrate de tener Docker corriendo
 2. Levanta el contenedor:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 3. Carga los datos de prueba:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < starter/setup.js
    ```
 4. Conecta e interactúa:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 ````
@@ -536,7 +536,7 @@ Al generar contenido para cualquier semana:
 
 ### ⚠️ Gestión de Dependencias Node.js — Regla de Oro
 
-> Ver documento completo: [`_docs/gestion-dependencias.md`](_docs/gestion-dependencias.md)
+> Ver documento completo: [`docs/gestion-dependencias.md`](docs/gestion-dependencias.md)
 
 **PROHIBIDO usar rangos de versión en cualquier `package.json` del proyecto:**
 
@@ -553,7 +553,7 @@ Al generar contenido para cualquier semana:
 - Versión actual pinnada: `mongodb@7.1.1` (auditada 2026-04-04, 0 CVEs)
 - Siempre incluir `"engines": {"node": ">=18.0.0"}` en cada `package.json`
 - Al actualizar una dependencia: ejecutar `npm audit` y documentar en
-  `_docs/gestion-dependencias.md` antes de hacer commit
+  `docs/gestion-dependencias.md` antes de hacer commit
 
 ### Seguridad en MongoDB
 
@@ -689,7 +689,7 @@ Cada semana incluye **tres tipos de evidencias**:
 ## 🔗 Enlaces Importantes
 
 - **Repositorio**: https://github.com/ergrato-dev/bc-mongodb-ce
-- **Documentación general**: [\_docs/README.md](_docs/README.md)
+- **Documentación general**: [docs/README.md](docs/README.md)
 - **Primera semana**: [bootcamp/week-01-introduccion_a_mongodb_y_nosql/README.md](bootcamp/week-01-introduccion_a_mongodb_y_nosql/README.md)
 
 ---

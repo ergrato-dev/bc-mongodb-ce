@@ -12,17 +12,17 @@ resultado con `$unwind` para acceder a los campos del documento unido.
 1. Asegúrate de tener Docker corriendo
 2. Levanta el contenedor:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 3. Carga los datos de prueba:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec -T mongodb \
+   docker compose -f scripts/docker-compose.yml exec -T mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin \
      bootcamp_db --file /dev/stdin < bootcamp/week-11-lookup_y_unwind_joins/2-practicas/ejercicio-01/starter/setup.js
    ```
 4. Conecta e interactúa:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 

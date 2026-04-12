@@ -104,6 +104,6 @@ Se actualizaron 91+ referencias en 47 archivos incluyendo:
 
 - `README.md` y `README_EN.md` (raíz)
 - `SECURITY.md`, `CONTRIBUTING.md`, `.github/copilot-instructions.md`
-- `_scripts/README.md`
+- `scripts/README.md`
 - `bootcamp/week-XX-*/README.md` (navegación entre semanas)
 - Scripts con rutas absolutas en comentarios

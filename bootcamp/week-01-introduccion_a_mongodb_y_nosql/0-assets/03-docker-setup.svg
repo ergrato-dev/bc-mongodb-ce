@@ -106,7 +106,7 @@
   <!-- ═══════════════════════════════════════════════════════ -->
   <rect x="28" y="388" width="704" height="52" rx="6" fill="#0f172a" stroke="#00684A" stroke-width="1"/>
   <text x="44" y="407" fill="#94a3b8" font-size="9" font-weight="600">Comando de conexión:</text>
-  <text x="44" y="427" fill="#00ED64" font-size="9">docker compose -f _scripts/docker-compose.yml exec mongodb \</text>
+  <text x="44" y="427" fill="#00ED64" font-size="9">docker compose -f scripts/docker-compose.yml exec mongodb \</text>
   <text x="44" y="439" fill="#e2e8f0" font-size="9">  mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db</text>
 
 </svg>

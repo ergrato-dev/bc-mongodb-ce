@@ -13,11 +13,11 @@ Usa la colección `listings` del ejercicio-01. No es necesario recargar datos.
 
 1. Asegúrate de que el contenedor está corriendo:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 2. Conéctate a `mongosh`:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 3. Abre `starter/ejercicio.js` y descomenta cada sección en orden.

@@ -75,7 +75,7 @@
 
 // TODO: Escribe aquí el comando mongodump para tu BD:
 // /*
-// docker compose -f _scripts/docker-compose.yml exec mongodb \
+// docker compose -f scripts/docker-compose.yml exec mongodb \
 //   mongodump \
 //   -u bootcamp -p bootcamp123 \
 //   --authenticationDatabase admin \
@@ -83,7 +83,7 @@
 //   --out /tmp/backup_$(date +%Y%m%d)
 //
 // Para restaurar:
-// docker compose -f _scripts/docker-compose.yml exec mongodb \
+// docker compose -f scripts/docker-compose.yml exec mongodb \
 //   mongorestore \
 //   -u bootcamp -p bootcamp123 \
 //   --authenticationDatabase admin \

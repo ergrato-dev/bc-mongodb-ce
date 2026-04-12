@@ -14,7 +14,7 @@ Usa la colección `sales` del ejercicio-01.
 1. Asegúrate de que los datos estén cargados (ver ejercicio-01).
 2. Conéctate con:
    ```bash
-   docker compose -f _scripts/docker-compose.yml exec mongodb \
+   docker compose -f scripts/docker-compose.yml exec mongodb \
      mongosh -u bootcamp -p bootcamp123 --authenticationDatabase admin bootcamp_db
    ```
 3. Abre `starter/ejercicio.js` y descomenta cada paso.

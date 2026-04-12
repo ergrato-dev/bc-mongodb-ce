@@ -59,7 +59,7 @@ npm install mongodb
 
 1. Levanta Docker:
    ```bash
-   docker compose -f _scripts/docker-compose.yml up -d
+   docker compose -f scripts/docker-compose.yml up -d
    ```
 2. Instala dependencias:
    ```bash
