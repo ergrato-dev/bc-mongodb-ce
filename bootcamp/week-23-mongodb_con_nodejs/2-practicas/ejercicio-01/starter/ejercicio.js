@@ -8,8 +8,10 @@
 
 const { MongoClient } = require("mongodb")
 
-// URI de conexión para el entorno Docker del bootcamp
+// URI de conexión — usa variable de entorno si está definida, o el valor por defecto local
+// ⚠️ En producción, SIEMPRE usa process.env.MONGODB_URI (nunca hardcodees credenciales)
 const uri =
+  process.env.MONGODB_URI ??
   "mongodb://bootcamp:bootcamp123@localhost:27017/bootcamp_db?authSource=admin"
 
 // ============================================

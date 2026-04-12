@@ -71,11 +71,14 @@ services:
     # MongoDB Compass u otras herramientas. El valor se lee de .env; si no
     # existe .env, usa 27017 como valor por defecto (sintaxis: ${VAR:-default}).
     #
-    # Concepto clave — Mapeo de puertos: HOST:CONTENEDOR
-    #   - Puerto izquierdo (host): el que abres en tu navegador/herramienta
+    # Concepto clave — Mapeo de puertos: IP_HOST:PUERTO_HOST:PUERTO_CONTENEDOR
+    #   - IP (127.0.0.1): restringe el acceso a localhost únicamente.
+    #     Sin esta IP, Docker bindea en 0.0.0.0 (todas las interfaces),
+    #     lo que expondría MongoDB a la red local o a internet.
+    #   - Puerto izquierdo (host): el que abres en tu herramienta
     #   - Puerto derecho (contenedor): el que escucha MongoDB internamente
     ports:
-      - "${MONGO_PORT:-27017}:27017"
+      - "127.0.0.1:${MONGO_PORT:-27017}:27017"
 
     # Variables de entorno que MongoDB lee al iniciarse por primera vez para
     # crear el usuario administrador y la base de datos inicial.

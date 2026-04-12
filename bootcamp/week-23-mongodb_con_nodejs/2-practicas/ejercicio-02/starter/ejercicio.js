@@ -4,7 +4,11 @@
 
 import { MongoClient } from "mongodb"
 
-const uri = "mongodb://bootcamp:bootcamp123@localhost:27017/bootcamp_db?authSource=admin"
+// URI de conexión — usa variable de entorno si está definida, o el valor por defecto local
+// ⚠️ En producción, SIEMPRE usa process.env.MONGODB_URI (nunca hardcodees credenciales)
+const uri =
+  process.env.MONGODB_URI ??
+  "mongodb://bootcamp:bootcamp123@localhost:27017/bootcamp_db?authSource=admin"
 
 // ============================================
 // PASO 1: find() con proyección, sort y toArray
