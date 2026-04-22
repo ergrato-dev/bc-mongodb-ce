@@ -6,7 +6,7 @@
 - Filtrar por tipo BSON de un campo con `$type`
 - Gestionar colecciones con esquemas flexibles donde los campos son opcionales
 
-> Ver diagrama: [03-exists-type.svg](../0-assets/03-exists-type.svg)
+![03-exists-type.svg](../0-assets/03-exists-type.svg)
 
 ---
 

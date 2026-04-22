@@ -6,7 +6,7 @@
 - Excluir documentos cuyos campos pertenezcan a una lista con `$nin`
 - Aplicar `$in` sobre campos de tipo array
 
-> Ver diagrama: [02-in-nin.svg](../0-assets/02-in-nin.svg)
+![02-in-nin.svg](../0-assets/02-in-nin.svg)
 
 ---
 

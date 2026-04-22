@@ -6,7 +6,7 @@
 - Usar `findOne()` cuando solo se necesita el primer resultado
 - Construir filtros básicos de igualdad para ambos métodos
 
-> Ver diagrama: [02-find-vs-findone.svg](../0-assets/02-find-vs-findone.svg)
+![02-find-vs-findone.svg](../0-assets/02-find-vs-findone.svg)
 
 ---
 

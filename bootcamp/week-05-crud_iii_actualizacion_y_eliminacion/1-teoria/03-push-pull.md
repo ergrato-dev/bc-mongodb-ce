@@ -6,7 +6,7 @@
 - Eliminar elementos de arrays con `$pull`
 - Entender la diferencia entre `$push` y `$addToSet`
 
-> Ver diagrama: [03-push-pull.svg](../0-assets/03-push-pull.svg)
+![03-push-pull.svg](../0-assets/03-push-pull.svg)
 
 ---
 

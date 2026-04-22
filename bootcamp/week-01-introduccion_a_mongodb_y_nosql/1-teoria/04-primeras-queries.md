@@ -8,7 +8,7 @@
 
 ---
 
-> Ver diagrama: [04-find-query.svg](../0-assets/04-find-query.svg)
+![04-find-query.svg](../0-assets/04-find-query.svg)
 
 ---
 

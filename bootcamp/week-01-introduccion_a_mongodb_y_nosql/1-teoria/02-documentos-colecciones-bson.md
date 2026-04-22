@@ -6,7 +6,7 @@
 - Conocer los tipos BSON fundamentales y cuándo usar cada uno
 - Comprender la jerarquía: servidor → base de datos → colección → documento
 
-> Ver diagrama: [02-modelo-documento.svg](../0-assets/02-modelo-documento.svg)
+![02-modelo-documento.svg](../0-assets/02-modelo-documento.svg)
 
 ---
 

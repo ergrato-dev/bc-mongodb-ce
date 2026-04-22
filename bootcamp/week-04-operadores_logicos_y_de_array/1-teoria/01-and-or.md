@@ -6,7 +6,7 @@
 - Construir queries con `$or` para condiciones alternativas
 - Combinar `$and` y `$or` en queries complejas
 
-> Ver diagrama: [01-and-or.svg](../0-assets/01-and-or.svg)
+![01-and-or.svg](../0-assets/01-and-or.svg)
 
 ---
 

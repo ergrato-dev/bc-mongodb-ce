@@ -6,7 +6,7 @@
 - Combinar operadores de comparación, `$in` y `$exists` en una sola query
 - Construir queries complejas de forma legible y eficiente
 
-> Ver diagrama: [04-combinando.svg](../0-assets/04-combinando.svg)
+![04-combinando.svg](../0-assets/04-combinando.svg)
 
 ---
 
