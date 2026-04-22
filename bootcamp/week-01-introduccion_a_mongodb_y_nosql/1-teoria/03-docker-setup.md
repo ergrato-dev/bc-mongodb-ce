@@ -8,7 +8,7 @@
 
 ---
 
-> Ver diagrama: [03-docker-setup.svg](../0-assets/03-docker-setup.svg)
+![03-docker-setup.svg](../0-assets/03-docker-setup.svg)
 
 ---
 

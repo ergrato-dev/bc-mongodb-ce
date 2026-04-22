@@ -6,7 +6,7 @@
 - Usar `findOneAndUpdate()` para leer y actualizar en una sola operación atómica
 - Entender cuándo preferir marcar como inactivo vs eliminar
 
-> Ver diagrama: [04-delete.svg](../0-assets/04-delete.svg)
+![04-delete.svg](../0-assets/04-delete.svg)
 
 ---
 

@@ -6,7 +6,7 @@
 - Entender la precedencia entre `$or`, `$and` y condiciones de campo
 - Construir queries legibles con múltiples operadores
 
-> Ver diagrama: [04-logica-arrays.svg](../0-assets/04-logica-arrays.svg)
+![04-logica-arrays.svg](../0-assets/04-logica-arrays.svg)
 
 ---
 

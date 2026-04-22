@@ -6,7 +6,7 @@
 - Insertar múltiples documentos con `insertMany()` en una sola operación
 - Comprender las opciones de comportamiento ante errores de inserción
 
-> Ver diagrama: [01-insert-flujo.svg](../0-assets/01-insert-flujo.svg)
+![01-insert-flujo.svg](../0-assets/01-insert-flujo.svg)
 
 ---
 

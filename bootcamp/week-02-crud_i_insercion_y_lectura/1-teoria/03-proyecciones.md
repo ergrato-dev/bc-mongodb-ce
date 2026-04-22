@@ -6,7 +6,7 @@
 - Excluir campos no deseados sin afectar el filtro
 - Entender el comportamiento especial del campo `_id`
 
-> Ver diagrama: [03-proyecciones.svg](../0-assets/03-proyecciones.svg)
+![03-proyecciones.svg](../0-assets/03-proyecciones.svg)
 
 ---
 

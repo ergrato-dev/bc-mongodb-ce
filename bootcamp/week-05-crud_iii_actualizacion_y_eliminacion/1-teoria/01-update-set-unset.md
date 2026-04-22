@@ -6,7 +6,7 @@
 - Usar `updateMany()` para modificar todos los que coinciden
 - Aplicar `$set` para agregar o cambiar campos y `$unset` para eliminarlos
 
-> Ver diagrama: [01-update-set-unset.svg](../0-assets/01-update-set-unset.svg)
+![01-update-set-unset.svg](../0-assets/01-update-set-unset.svg)
 
 ---
 

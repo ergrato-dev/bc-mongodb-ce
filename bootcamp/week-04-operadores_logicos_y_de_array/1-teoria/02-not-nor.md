@@ -6,7 +6,7 @@
 - Usar `$nor` para excluir documentos que cumplan cualquiera de varias condiciones
 - Distinguir `$not` de `$ne` y `$nor` de `$nin`
 
-> Ver diagrama: [02-not-nor.svg](../0-assets/02-not-nor.svg)
+![02-not-nor.svg](../0-assets/02-not-nor.svg)
 
 ---
 

@@ -6,7 +6,7 @@
 - Usar `$eq` y `$ne` para igualdad y desigualdad explícita
 - Construir rangos combinando dos operadores en un mismo campo
 
-> Ver diagrama: [01-operadores-comparacion.svg](../0-assets/01-operadores-comparacion.svg)
+![01-operadores-comparacion.svg](../0-assets/01-operadores-comparacion.svg)
 
 ---
 

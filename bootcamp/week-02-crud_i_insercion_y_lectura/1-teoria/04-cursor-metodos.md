@@ -6,7 +6,7 @@
 - Limitar la cantidad de documentos retornados con `.limit()`
 - Omitir documentos para implementar paginación con `.skip()`
 
-> Ver diagrama: [04-cursor-chain.svg](../0-assets/04-cursor-chain.svg)
+![04-cursor-chain.svg](../0-assets/04-cursor-chain.svg)
 
 ---
 

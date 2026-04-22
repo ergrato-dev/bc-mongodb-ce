@@ -6,7 +6,7 @@
 - Multiplicar valores con `$mul`
 - Renombrar campos con `$rename`
 
-> Ver diagrama: [02-inc-mul.svg](../0-assets/02-inc-mul.svg)
+![02-inc-mul.svg](../0-assets/02-inc-mul.svg)
 
 ---
 

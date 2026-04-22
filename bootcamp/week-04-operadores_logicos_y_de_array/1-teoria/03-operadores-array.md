@@ -6,7 +6,7 @@
 - Usar `$all` para exigir que el array contenga todos los valores especificados
 - Usar `$size` para filtrar por tamaño del array
 
-> Ver diagrama: [03-operadores-array.svg](../0-assets/03-operadores-array.svg)
+![03-operadores-array.svg](../0-assets/03-operadores-array.svg)
 
 ---
 
